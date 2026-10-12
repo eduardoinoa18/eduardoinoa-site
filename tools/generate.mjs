@@ -66,12 +66,17 @@ for (const f of handWritten) {
 }
 
 /* ---------- sitemap ---------- */
+// English posts with a Spanish twin (tools/data/posts.json esPath) get hreflang alternates.
+const postsData = fs.existsSync(path.join(ROOT, "tools/data/posts.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8")) : { en: [] };
+const postEsPath = Object.fromEntries((postsData.en || []).filter((p) => p.esPath).map((p) => [p.path, p.esPath]));
 const STATIC = [
   { path: "/", altPath: "/es/", priority: "1.0", changefreq: "weekly" },
   { path: "/buyers", altPath: "/es/compradores", priority: "0.9", changefreq: "monthly" },
   { path: "/sellers", altPath: "/es/vendedores", priority: "0.9", changefreq: "monthly" },
-  ...fs.readdirSync(path.join(ROOT, "posts")).filter((f) => f.endsWith(".html"))
-    .map((f) => ({ path: "/posts/" + f.replace(/\.html$/, ""), priority: "0.7", changefreq: "monthly" })),
+  ...fs.readdirSync(path.join(ROOT, "posts")).filter((f) => f.endsWith(".html")).map((f) => {
+    const p = "/posts/" + f.replace(/\.html$/, "");
+    return { path: p, altPath: postEsPath[p], priority: "0.7", changefreq: "monthly" };
+  }),
 ];
 const entries = new Map();
 for (const s of STATIC) entries.set(s.path, s);

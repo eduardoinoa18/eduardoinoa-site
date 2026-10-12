@@ -43,8 +43,8 @@ export const credit = (slug) => photo(slug).credit_html;
 
 /* ---------------- copy ---------------- */
 const NAV = {
-  en: [["/buyers", "Buy"], ["/sellers", "Sell"], ["/home-value", "Home value"], ["/cash-offer", "Cash offer"], ["/towns", "Towns"], ["/#market", "Market"], ["/#journal", "Journal"]],
-  es: [["/es/compradores", "Comprar"], ["/es/vendedores", "Vender"], ["/es/valor-de-mi-casa", "Valor de su casa"], ["/es/oferta-en-efectivo", "Oferta en efectivo"], ["/es/pueblos", "Pueblos"], ["/es/#market", "Mercado"], ["/es/#journal", "Blog"]],
+  en: [["/buyers", "Buy"], ["/sellers", "Sell"], ["/home-value", "Home value"], ["/cash-offer", "Cash offer"], ["/towns", "Towns"], ["/#market", "Market"], ["/journal", "Journal"]],
+  es: [["/es/compradores", "Comprar"], ["/es/vendedores", "Vender"], ["/es/valor-de-mi-casa", "Valor de su casa"], ["/es/oferta-en-efectivo", "Oferta en efectivo"], ["/es/pueblos", "Pueblos"], ["/es/#market", "Mercado"], ["/es/blog", "Blog"]],
 };
 const UI = {
   en: { skip: "Skip to content", menu: "Menu", book: "Book a call", call: "Call", text: "Text", other: "Español", explore: "Explore", connect: "Connect", review: "Leave a Google review", card: "Digital card", hub: "All my links", credits: "Photo credits" },
