@@ -8,6 +8,7 @@
 <meta name="description" content="Thinking of selling? Bilingual REALTOR® Eduardo Inoa shows your home&#x27;s value, what you would keep, and the plan to sell in the Merrimack Valley and Southern NH.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://eduardoinoa.com/sellers">
+<link rel="alternate" hreflang="en" href="https://eduardoinoa.com/sellers"><link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/vendedores"><link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/sellers">
 <meta name="author" content="Eduardo Inoa">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Eduardo Inoa, REALTOR®">
 <meta property="og:url" content="https://eduardoinoa.com/sellers">
@@ -478,6 +479,21 @@ input[type=number],input[type=text],input[type=email],input[type=tel],input[type
   footer p small,footer small{font-size:12px}
 }
 }
+
+/* call/text consent checkbox (unchecked by default; 44px tap zone via the label) */
+.consent{display:flex;gap:12px;align-items:flex-start;min-height:44px;margin-top:20px;padding:2px 0;cursor:pointer;font-size:12.5px;line-height:1.55;color:var(--muted);text-align:left}
+.consent input{width:20px;height:20px;min-height:0;flex:none;margin:1px 0 0;padding:0;accent-color:var(--deep);cursor:pointer}
+section.night .consent{color:#8EA3B8}
+section.night .consent input{accent-color:var(--accent)}
+/* link to the other-language twin page */
+.lang .twin{display:inline-flex;align-items:center;justify-content:center;min-height:40px;min-width:30px;padding:0 5px;margin-left:2px;border-left:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);text-decoration:none}
+.lang .twin svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5}
+.lang .twin span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lang .twin:hover{color:#fff}
+nav.solid .lang .twin{color:var(--mut2);border-color:var(--line)}
+nav.solid .lang .twin:hover{color:var(--deep)}
+/* shown only where the nav row has room for it (no wrap of the CTA / links) */
+@media(max-width:400px),(min-width:601px) and (max-width:740px),(min-width:1021px) and (max-width:1260px){.lang .twin{display:none}}
 </style>
 </head>
 <body>
@@ -494,7 +510,7 @@ input[type=number],input[type=text],input[type=email],input[type=tel],input[type
       <a href="#reviews" data-es="Reseñas">Reviews</a>
     </div>
     <span class="spacer"></span>
-    <div class="lang" role="group" aria-label="Language"><button data-l="en" class="on">EN</button><button data-l="es">ES</button></div>
+    <div class="lang" role="group" aria-label="Language"><button data-l="en" class="on">EN</button><button data-l="es">ES</button><a class="twin" data-twin href="/es/vendedores" hreflang="es" lang="es" title="Ver esta página en español"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>Español</span></a></div>
     <a class="btn pri navcta" data-href="book" target="_blank" rel="noopener" data-es="Agendar">Book a consultation</a>
     <button class="burger" aria-label="Menu" aria-controls="links" aria-expanded="false"><i></i></button>
   </div>
@@ -839,8 +855,8 @@ input[type=number],input[type=text],input[type=email],input[type=tel],input[type
         <label class="f" for="lfT" data-es="Plazo">Timeframe</label>
         <select id="lfT" name="timeframe"><option value="ASAP" data-es="Lo antes posible">As soon as possible</option><option value="1-3 months" data-es="1–3 meses">1–3 months</option><option value="3-6 months" data-es="3–6 meses">3–6 months</option><option value="6-12 months" data-es="6–12 meses">6–12 months</option><option value="Just exploring" data-es="Solo explorando">Just exploring</option></select>
         <div class="hp" aria-hidden="true"><label>Company<input name="company" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" name="smsConsent" value="yes"><span data-consent data-es="Acepto que Eduardo Inoa, de The Fermin Group at Century 21 North East, me llame y me envíe mensajes de texto al número indicado sobre mi consulta de bienes raíces, incluso por medios automatizados. El consentimiento no es condición para recibir ningún servicio. Pueden aplicar tarifas de mensajes y datos; la frecuencia varía. Responda STOP para cancelar o HELP para ayuda.">I agree that Eduardo Inoa of The Fermin Group at Century 21 North East may call and text me at the number above about my real-estate inquiry, including by automated means. Consent is not a condition of any service. Message and data rates may apply; message frequency varies. Reply STOP to opt out, HELP for help.</span></label>
         <button class="btn pri" style="margin-top:28px;width:100%" type="submit"><span data-es="Enviar a Eduardo">Send to Eduardo</span><span class="arrow"></span></button>
-        <p class="note" style="margin-top:14px" data-es="Al enviar, acepta que Eduardo le llame o le envíe textos sobre su casa. Pueden aplicar tarifas de mensajes.">By sending, you agree Eduardo may call or text you about your home. Message rates may apply.</p>
         <p class="formmsg" aria-live="polite"></p>
       </form>
     </div>
@@ -1031,8 +1047,11 @@ function sendLead(data, onOk, onFail){
   var src = String(data.source || "deck").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 40);
   var type = data.type || (/seller|listing|prelist/.test(src) ? "seller" : /invest/.test(src) ? "investor" : /buyer/.test(src) ? "buyer" : "");
   var extra = [["timeframe","Timeframe"]].filter(function(x){ return data[x[0]]; }).map(function(x){ return x[1] + ": " + data[x[0]]; });
-  var message = [data.message || "", extra.join("\n")].filter(Boolean).join("\n").slice(0, 2000);
-  var payload = {source: src, type: type, deck: window.DECK_ID, materialId: CFG.materialId || null, agentHandle: CFG.agentHandle || window.AGENT.handle};
+  var consent = data.smsConsent === true;
+  var tail = "Calls/texts consent: " + (consent ? "yes" : "no") + "\nLanguage: " + (LANG === "es" ? "Spanish" : "English") + (window.DECK_DEFAULT_LANG === "es" ? " (Spanish page)" : "");
+  var body = [data.message || "", extra.join("\n")].filter(Boolean).join("\n");
+  var message = (body ? body.slice(0, 2000 - tail.length - 1) + "\n" : "") + tail;
+  var payload = {source: src, type: type, deck: window.DECK_ID, materialId: CFG.materialId || null, agentHandle: CFG.agentHandle || window.AGENT.handle, smsConsent: consent};
   var cap = {name:120, phone:40, email:160, address:300};
   Object.keys(cap).forEach(function(k){ if (data[k]) payload[k] = String(data[k]).slice(0, cap[k]); });
   if (message) payload.message = message;
@@ -1043,7 +1062,7 @@ function sendLead(data, onOk, onFail){
   var opts = same ? {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload), keepalive: true}
                   : {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=UTF-8"}, body: JSON.stringify(payload), keepalive: true};
   try {
-    fetch(url, opts).then(function(r){ if (same && !r.ok) throw 0; onOk(); }).catch(function(){ onFail(payload); });
+    fetch(url, opts).then(function(r){ if (same && !r.ok) throw 0; leadEvent(src); onOk(); }).catch(function(){ onFail(payload); });
   } catch(_){ onFail(payload); }
 }
 function mailFallback(payload, subject){
@@ -1054,7 +1073,7 @@ function mailFallback(payload, subject){
 function leadForm(form, source, subject){
   form.addEventListener("submit", function(e){
     e.preventDefault();
-    var d = {source: source}; $$("input,select,textarea", form).forEach(function(i){ if (i.name) d[i.name] = i.value.trim(); });
+    var d = {source: source}; $$("input,select,textarea", form).forEach(function(i){ if (i.name) d[i.name] = i.type === "checkbox" ? i.checked : i.value.trim(); });
     var msg = $(".formmsg", form);
     if (!d.name || !(d.phone || d.email)) { msg.style.color = "var(--bad)"; msg.textContent = T("Please add your name and a phone or email.","Agregue su nombre y un teléfono o email."); return; }
     msg.style.color = ""; msg.textContent = T("Sending…","Enviando…");
@@ -1062,10 +1081,26 @@ function leadForm(form, source, subject){
       function(p){ mailFallback(p, subject + " — " + (d.name||"")); msg.textContent = T("Opening your email app — just press send.","Abriendo su correo — solo presione enviar."); });
   });
 }
+/* Call/text consent wording, built from the agent identity so a re-branded deck names that agent. */
+function consentText(){
+  var A = window.AGENT || {}, name = A.name || "Eduardo Inoa", bk = A.brokerage || "";
+  if (bk === "The Fermin Group · Century 21 North East") bk = "The Fermin Group at Century 21 North East";
+  var en = "I agree that " + esc(name) + (bk ? " of " + esc(bk) : "") + " may call and text me at the number above about my real-estate inquiry, including by automated means. Consent is not a condition of any service. Message and data rates may apply; message frequency varies. Reply STOP to opt out, HELP for help.";
+  var es = "Acepto que " + esc(name) + (bk ? ", de " + esc(bk) + "," : "") + " me llame y me envíe mensajes de texto al número indicado sobre mi consulta de bienes raíces, incluso por medios automatizados. El consentimiento no es condición para recibir ningún servicio. Pueden aplicar tarifas de mensajes y datos; la frecuencia varía. Responda STOP para cancelar o HELP para ayuda.";
+  $$("[data-consent]").forEach(function(el){ el.setAttribute("data-en", en); el.setAttribute("data-es", es); el.innerHTML = LANG === "es" ? es : en; });
+}
+/* Link to the static other-language twin page — only on eduardoinoa.com; re-hosted copies drop it. */
+function twinLink(){
+  var ok = /(^|\.)eduardoinoa\.com$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+  $$("[data-twin]").forEach(function(a){ if (!ok) { a.remove(); return; } if (location.search) a.setAttribute("href", a.getAttribute("href") + location.search);
+    a.addEventListener("click", function(){ store("deckLang", a.getAttribute("hreflang")); }); });
+}
+function leadEvent(src){ try { if (typeof window.gtag === "function") window.gtag("event", "generate_lead", {lead_source: src}); } catch(_){} }
 function boot(init){
   document.addEventListener("DOMContentLoaded", function(){
-    bindAgent(); chrome(); init();
-    var l = store("deckLang") || CFG.lang || "en"; if (l !== "en") setLang(l); else if (window.onLang) window.onLang();
+    bindAgent(); consentText(); twinLink(); chrome(); init();
+    var saved = store("deckLang"), l = window.DECK_DEFAULT_LANG || saved || CFG.lang || "en"; if (l !== "en") setLang(l); else if (window.onLang) window.onLang();
+    if (window.DECK_DEFAULT_LANG) store("deckLang", saved); /* a page default is not a visitor choice */
   });
 }
 </script>
