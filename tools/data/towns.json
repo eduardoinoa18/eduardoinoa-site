@@ -1,0 +1,1568 @@
+{
+  "_note": "Town-page content for tools/pages/towns.mjs. Every fact here is meant to be evergreen and verifiable; `sources` are for Eduardo's review and are not printed. Market numbers are NEVER written here — the live Market Pulse block renders them from /market.json. Fair Housing: describe places, housing, roads and services, never who lives somewhere.",
+  "serviceArea": [
+    {
+      "name": "Methuen",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "slug": "methuen"
+    },
+    {
+      "name": "Lawrence",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "slug": "lawrence"
+    },
+    {
+      "name": "Haverhill",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "slug": "haverhill"
+    },
+    {
+      "name": "Andover",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "slug": "andover"
+    },
+    {
+      "name": "North Andover",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "slug": "north-andover"
+    },
+    {
+      "name": "Dracut",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "slug": "dracut"
+    },
+    {
+      "name": "Tewksbury",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "slug": "tewksbury"
+    },
+    {
+      "name": "Lowell",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "slug": "lowell"
+    },
+    {
+      "name": "Tyngsborough",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "slug": "tyngsborough"
+    },
+    {
+      "name": "Chelmsford",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "slug": "chelmsford"
+    },
+    {
+      "name": "Westford",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "slug": "westford"
+    },
+    {
+      "name": "Salem",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "slug": "salem-nh"
+    },
+    {
+      "name": "Windham",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "slug": "windham-nh"
+    },
+    {
+      "name": "Pelham",
+      "state": "NH",
+      "county": "Hillsborough County, NH",
+      "slug": "pelham-nh"
+    },
+    {
+      "name": "Nashua",
+      "state": "NH",
+      "county": "Hillsborough County, NH",
+      "slug": null,
+      "photoKey": "nashua"
+    },
+    {
+      "name": "Derry",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "slug": null,
+      "photoKey": "derry"
+    },
+    {
+      "name": "Londonderry",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "slug": null,
+      "photoKey": "londonderry"
+    },
+    {
+      "name": "Hudson",
+      "state": "NH",
+      "county": "Hillsborough County, NH",
+      "slug": null,
+      "photoKey": "hudson"
+    },
+    {
+      "name": "Atkinson",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "slug": null,
+      "photoKey": "atkinson"
+    },
+    {
+      "name": "Plaistow",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "slug": null,
+      "photoKey": "plaistow"
+    }
+  ],
+  "commonSources": [
+    "https://en.wikipedia.org/wiki/Haverhill_Line",
+    "https://en.wikipedia.org/wiki/Lowell_Line",
+    "https://www.mbta.com/schedules/commuter-rail",
+    "https://www.mclane.com/insights/nh-interest-and-dividends-tax-repealed-as-of-january-1/",
+    "https://www.getsphere.com/blog/new-hampshire-sales-tax",
+    "https://profiles.doe.mass.edu/",
+    "https://www.mass.gov/service-details/learn-about-massachusetts-lead-law",
+    "https://www.mass.gov/guides/buying-or-selling-property-with-a-septic-system",
+    "https://www.mass.gov/doc/consumer-guide-to-smoke-detectors-when-selling-home/download"
+  ],
+  "towns": [
+    {
+      "slug": "methuen",
+      "name": "Methuen",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "incorporated": "1725–26 (a city government today)",
+      "rail": "None in town — Lawrence, Bradford and Haverhill stations (Haverhill Line) nearby",
+      "roads": "I-93, I-495, Route 213, Routes 28, 110 and 113",
+      "district": {
+        "name": "Methuen Public School District",
+        "url": "https://www.methuen.k12.ma.us"
+      },
+      "card": "I-93 and I-495, Forest Lake, the Music Hall",
+      "description": "Living in, buying or selling a home in Methuen, MA: the housing stock, I-93/I-495 and the nearby Haverhill Line, schools, local facts and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "On the New Hampshire line between Lawrence, Haverhill and Dracut — with I-93 and I-495 both running through it.",
+      "intro": [
+        "Methuen sits on the New Hampshire border, wrapped around the north side of Lawrence, with Haverhill to the east and Dracut to the west. I-93 begins its Massachusetts run here and I-495 crosses the eastern side of the city, so for a lot of my clients it is the practical middle of the Merrimack Valley: quick to the highways, quick to Salem, NH, and a short drive to the Lawrence train station.",
+        "It has a mayor–council city government, though you will still hear plenty of people call it “the town.” My office is a few minutes away in Lawrence, and Methuen is one of the places I work most."
+      ],
+      "housing": [
+        "Methuen’s housing is varied, which is a big part of its appeal. Closer to the Lawrence line and around the older center you will find two- and three-family homes and older single-families on smaller lots. Further out, mid-century capes, ranches and split-levels give way to colonials, newer subdivisions and condominium communities.",
+        "That range lets a buyer trade lot size against commute, and it gives investors owner-occupied multi-family options without leaving a suburban city. On older homes, we plan the inspection around heating systems, electrical, roofs and — for any home built before 1978 — lead paint."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in Methuen. Most commuters drive to Lawrence station on the MBTA Haverhill Line, or to Bradford or Haverhill, for service to Boston’s North Station."
+        },
+        {
+          "t": "By car",
+          "d": "I-93 has exits in Methuen and I-495 crosses the east side of the city; Route 213, the Loop Connector, links the two. Routes 28, 110 and 113 handle local trips."
+        },
+        {
+          "t": "Across the line",
+          "d": "Salem and Pelham, New Hampshire, border Methuen to the north, so shopping and work in Southern New Hampshire are a short drive."
+        }
+      ],
+      "schools": "Methuen’s public schools are run by the Methuen Public School District. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Methuen Memorial Music Hall",
+          "d": "A concert hall built to house a large pipe organ, and one of the city’s best-known landmarks."
+        },
+        {
+          "t": "Forest Lake",
+          "d": "A recreational great pond of a little over 55 acres in the city."
+        },
+        {
+          "t": "Nevins Memorial Library",
+          "d": "The public library building was completed in 1883. The nearby Searles Tenney Nevins Historic District was established in 1992."
+        },
+        {
+          "t": "Tenney State Park",
+          "d": "A small state park within the city."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train from Methuen to Boston?",
+          "Not inside Methuen. Most people drive to Lawrence station on the MBTA Haverhill Line, or to Bradford or Haverhill, for service to North Station. Check the MBTA schedule for current times and parking."
+        ],
+        [
+          "What kinds of homes are in Methuen?",
+          "A wide mix: two- and three-family homes and older single-families near the Lawrence line and the older center, and capes, ranches, split-levels, colonials and condominiums further out."
+        ],
+        [
+          "Can my first home in Methuen be a two- or three-family?",
+          "Yes. If you live in one unit, owner-occupied financing such as FHA can be used on two- to four-unit homes, and part of the rent can help you qualify. My <a href=\"/posts/first-multi-family-merrimack-valley\">first multi-family guide</a> walks through the numbers."
+        ]
+      ],
+      "neighbors": [
+        "lawrence",
+        "haverhill",
+        "andover",
+        "north-andover",
+        "dracut",
+        "salem-nh",
+        "pelham-nh"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Methuen,_Massachusetts",
+        "https://www.methuen.k12.ma.us",
+        "https://en.wikipedia.org/wiki/Haverhill_Line"
+      ],
+      "es": {
+        "incorporated": "1725–26 (hoy con gobierno de ciudad)",
+        "rail": "No hay estación en Methuen — Lawrence, Bradford y Haverhill (línea Haverhill) quedan cerca",
+        "roads": "I-93, I-495, Ruta 213, Rutas 28, 110 y 113",
+        "card": "La I-93 y la I-495, Forest Lake, el Music Hall",
+        "description": "Vivir, comprar o vender en Methuen, MA: tipos de vivienda, I-93/I-495 y el tren en Lawrence, escuelas, datos locales y el mercado al día — con Eduardo Inoa, REALTOR® bilingüe.",
+        "lede": "En la frontera con New Hampshire, entre Lawrence, Haverhill y Dracut — con la I-93 y la I-495 pasando por la ciudad.",
+        "intro": [
+          "Methuen rodea el norte de Lawrence, con Haverhill al este, Dracut al oeste y New Hampshire justo arriba. La I-93 empieza su recorrido por Massachusetts aquí y la I-495 cruza el lado este de la ciudad. Por eso, para muchas de las familias con las que trabajo, Methuen es el punto práctico del Merrimack Valley: cerca de las autopistas, cerca de Salem, NH, y a pocos minutos de la estación de tren de Lawrence.",
+          "Tiene gobierno de ciudad, con alcalde y concejo, aunque mucha gente todavía le dice “el pueblo”. Mi oficina está a pocos minutos, en Lawrence, y Methuen es uno de los lugares donde más trabajo."
+        ],
+        "housing": [
+          "En Methuen hay de todo, y eso es parte de su atractivo. Cerca de la línea con Lawrence y alrededor del centro viejo hay casas de dos y tres familias y casas unifamiliares antiguas en lotes más pequeños. Más hacia afuera encontrará capes, ranches y split-levels de mediados del siglo pasado, colonials, urbanizaciones más nuevas y condominios.",
+          "Esa variedad le permite escoger entre más terreno o un trayecto más corto, y le da al inversionista opciones de multifamiliares para vivir en una unidad sin salir de una ciudad tranquila. En las casas antiguas revisamos con cuidado la calefacción, la electricidad, el techo y — en toda casa construida antes de 1978 — la pintura con plomo."
+        ],
+        "ways": [
+          {
+            "t": "En tren",
+            "d": "No hay estación en Methuen. La mayoría maneja hasta la estación de Lawrence, en la línea Haverhill del MBTA, o hasta Bradford o Haverhill, para llegar a North Station en Boston."
+          },
+          {
+            "t": "En carro",
+            "d": "La I-93 tiene salidas en Methuen y la I-495 cruza el lado este de la ciudad; la Ruta 213 (el Loop Connector) une las dos. Las Rutas 28, 110 y 113 sirven para moverse dentro de la zona."
+          },
+          {
+            "t": "Al otro lado de la frontera",
+            "d": "Salem y Pelham, New Hampshire, colindan con Methuen por el norte, así que las tiendas y los trabajos del sur de New Hampshire quedan muy cerca."
+          }
+        ],
+        "schools": "Las escuelas públicas de Methuen dependen del Methuen Public School District. Para asignación de escuela, matrícula y programas, consulte directamente con el distrito — es la única fuente que yo recomiendo.",
+        "know": [
+          {
+            "t": "Methuen Memorial Music Hall",
+            "d": "Una sala de conciertos construida para albergar un gran órgano de tubos; uno de los lugares más conocidos de la ciudad."
+          },
+          {
+            "t": "Forest Lake",
+            "d": "Un lago recreativo de poco más de 55 acres dentro de la ciudad."
+          },
+          {
+            "t": "Nevins Memorial Library",
+            "d": "El edificio de la biblioteca pública se terminó en 1883. El distrito histórico Searles Tenney Nevins se estableció en 1992."
+          },
+          {
+            "t": "Tenney State Park",
+            "d": "Un pequeño parque estatal dentro de la ciudad."
+          }
+        ],
+        "faq": [
+          [
+            "¿Hay tren de Methuen a Boston?",
+            "Dentro de Methuen no. La mayoría maneja hasta la estación de Lawrence, en la línea Haverhill del MBTA, o hasta Bradford o Haverhill, para llegar a North Station. Revise el horario del MBTA para los horarios y el estacionamiento actuales."
+          ],
+          [
+            "¿Qué tipo de casas hay en Methuen?",
+            "Una mezcla amplia: casas de dos y tres familias y unifamiliares antiguas cerca de Lawrence y del centro viejo, y capes, ranches, split-levels, colonials y condominios más hacia afuera."
+          ],
+          [
+            "¿Mi primera casa en Methuen puede ser de dos o tres familias?",
+            "Sí. Si usted vive en una de las unidades, puede usar financiamiento para dueño-ocupante, como FHA, en casas de dos a cuatro unidades, y parte de la renta puede ayudarle a calificar. Se lo explico con números en una llamada de 20 minutos."
+          ]
+        ]
+      },
+      "stock": "multi"
+    },
+    {
+      "slug": "lawrence",
+      "name": "Lawrence",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "incorporated": "1847 (town), 1853 (city)",
+      "rail": "Lawrence station, MBTA Haverhill Line",
+      "roads": "I-495, Routes 28 and 114, I-93 nearby",
+      "district": {
+        "name": "Lawrence Public Schools",
+        "url": "https://www.lawrence.k12.ma.us"
+      },
+      "card": "Mill city on the Merrimack, with its own train station",
+      "description": "Living in, buying or selling a home in Lawrence, MA: triple-deckers and multi-families, the Haverhill Line station, schools, local history and live market data — from bilingual REALTOR® Eduardo Inoa, based in Lawrence.",
+      "lede": "A compact mill city on both banks of the Merrimack — and the home of my office.",
+      "intro": [
+        "Lawrence is where I work from every day — our office is at 130 Parker Street. The city was laid out in the 1840s as a planned industrial city, built around the Great Stone Dam and the canals that powered its mills on both banks of the Merrimack River.",
+        "What that history left behind is what buyers come for today: a commuter rail station with direct service to Boston, I-495 along the city’s edge, and a large stock of two-, three- and four-family homes that make owning — and renting out part of what you own — possible."
+      ],
+      "housing": [
+        "Lawrence is a city of triple-deckers and two-families, many built in the late 1800s and early 1900s, along with brick mill-era buildings, single-families in the outer sections of the city and residential lofts in converted mill buildings near the river and canals.",
+        "For buyers who want to live in one unit and rent the others, Lawrence is often where we look first. Older buildings need a careful plan: heating systems, electrical, porches and egress, and lead paint — in Massachusetts, the owner must delead a unit when a child under six lives there. At sale, every home needs a smoke and carbon-monoxide certificate from the fire department."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "Lawrence station is on the MBTA Haverhill Line with service to Boston’s North Station; Andover is the next stop south and Bradford the next stop north."
+        },
+        {
+          "t": "By car",
+          "d": "I-495 runs along the city with several exits, Routes 28 and 114 cross the city, and I-93 is a short drive west through Methuen or Andover."
+        },
+        {
+          "t": "By bus",
+          "d": "The Merrimack Valley Regional Transit Authority (MVRTA) runs local bus routes through Lawrence and the surrounding towns."
+        }
+      ],
+      "schools": "Lawrence’s public schools are run by Lawrence Public Schools. For school assignments, enrollment, bilingual programs and registration, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "The Great Stone Dam",
+          "d": "Built across the Merrimack in the 1840s to power the mills; when it was finished it was described as the largest dam in the world."
+        },
+        {
+          "t": "Bread and Roses, 1912",
+          "d": "The textile strike that began in Lawrence’s mills in 1912 is one of the most widely studied labor struggles in American history."
+        },
+        {
+          "t": "Lawrence Heritage State Park",
+          "d": "A state park that tells the story of the mill city, near the canals downtown."
+        },
+        {
+          "t": "Named for Abbott Lawrence",
+          "d": "The community was set off as a town in 1847 and became a city in 1853."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train from Lawrence to Boston?",
+          "Yes. Lawrence station is on the MBTA Haverhill Line with service to North Station. Check the MBTA schedule for current times and parking."
+        ],
+        [
+          "Can I buy a two- or three-family in Lawrence as my first home?",
+          "Yes. If you live in one unit, owner-occupied financing such as FHA can be used on two- to four-unit homes, and part of the rent can help you qualify. My <a href=\"/posts/first-multi-family-merrimack-valley\">first multi-family guide</a> covers the numbers lenders look at."
+        ],
+        [
+          "What should I check before buying an older multi-family in Lawrence?",
+          "Heating, electrical, roof, porches and exits, and the lead paint status of each unit. Massachusetts requires an owner to delead a unit when a child under six lives there, and every sale needs a smoke and carbon-monoxide certificate. I build those into the offer and inspection plan from day one."
+        ]
+      ],
+      "neighbors": [
+        "methuen",
+        "andover",
+        "north-andover",
+        "haverhill",
+        "dracut"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lawrence,_Massachusetts",
+        "https://www.lawrence.k12.ma.us",
+        "https://en.wikipedia.org/wiki/Haverhill_Line",
+        "https://www.mass.gov/service-details/learn-about-massachusetts-lead-law",
+        "https://www.mass.gov/doc/consumer-guide-to-smoke-detectors-when-selling-home/download"
+      ],
+      "es": {
+        "incorporated": "1847 (pueblo), 1853 (ciudad)",
+        "rail": "Estación de Lawrence, línea Haverhill del MBTA",
+        "roads": "I-495, Rutas 28 y 114, la I-93 cerca",
+        "card": "Ciudad de molinos sobre el Merrimack, con estación de tren",
+        "description": "Vivir, comprar o vender en Lawrence, MA: casas de dos y tres familias, el tren a Boston, escuelas, historia y el mercado al día — con Eduardo Inoa, REALTOR® bilingüe con oficina en Lawrence.",
+        "lede": "Una ciudad de molinos a ambos lados del río Merrimack — y donde está mi oficina.",
+        "intro": [
+          "Lawrence es mi casa de trabajo — nuestra oficina está en el 130 de Parker Street. La ciudad se diseñó en los años 1840 como ciudad industrial, alrededor de la Great Stone Dam y de los canales que movían los molinos a ambos lados del río Merrimack.",
+          "Esa historia dejó justo lo que muchos compradores buscan hoy: una estación de tren con servicio directo a Boston, la I-495 al lado de la ciudad y muchísimas casas de dos, tres y cuatro familias, que hacen posible comprar y que parte de la renta le ayude a pagar la hipoteca."
+        ],
+        "housing": [
+          "Lawrence es una ciudad de triple-deckers y casas de dos familias, muchas construidas entre finales del 1800 y principios del 1900, además de edificios de ladrillo de la época de los molinos, casas unifamiliares en las zonas más afueras y lofts en molinos convertidos cerca del río y los canales.",
+          "Si usted quiere vivir en una unidad y alquilar las otras, Lawrence suele ser el primer lugar donde buscamos. Los edificios antiguos piden un buen plan: calefacción, electricidad, balcones y salidas, y la pintura con plomo — en Massachusetts, el dueño tiene que hacer el desleading de una unidad cuando vive allí un niño menor de seis años. Y al vender, toda casa necesita el certificado de detectores de humo y monóxido de carbono del departamento de bomberos."
+        ],
+        "ways": [
+          {
+            "t": "En tren",
+            "d": "La estación de Lawrence está en la línea Haverhill del MBTA, con servicio a North Station en Boston; Andover es la próxima parada hacia el sur y Bradford hacia el norte."
+          },
+          {
+            "t": "En carro",
+            "d": "La I-495 pasa por la ciudad con varias salidas, las Rutas 28 y 114 la cruzan, y la I-93 queda a pocos minutos al oeste, por Methuen o Andover."
+          },
+          {
+            "t": "En autobús",
+            "d": "La Merrimack Valley Regional Transit Authority (MVRTA) tiene rutas de autobús locales en Lawrence y los pueblos de alrededor."
+          }
+        ],
+        "schools": "Las escuelas públicas de Lawrence dependen de Lawrence Public Schools. Para asignación de escuela, matrícula, programas bilingües e inscripción, consulte directamente con el distrito — es la única fuente que yo recomiendo.",
+        "know": [
+          {
+            "t": "La Great Stone Dam",
+            "d": "Se construyó sobre el Merrimack en los años 1840 para darle fuerza a los molinos; cuando se terminó, se describía como la represa más grande del mundo."
+          },
+          {
+            "t": "Pan y Rosas, 1912",
+            "d": "La huelga textil que empezó en los molinos de Lawrence en 1912 es una de las luchas obreras más estudiadas de la historia de Estados Unidos."
+          },
+          {
+            "t": "Lawrence Heritage State Park",
+            "d": "Un parque estatal que cuenta la historia de la ciudad de los molinos, cerca de los canales del centro."
+          },
+          {
+            "t": "Lleva el nombre de Abbott Lawrence",
+            "d": "Se estableció como pueblo en 1847 y se convirtió en ciudad en 1853."
+          }
+        ],
+        "faq": [
+          [
+            "¿Hay tren de Lawrence a Boston?",
+            "Sí. La estación de Lawrence está en la línea Haverhill del MBTA, con servicio a North Station. Revise el horario del MBTA para los horarios y el estacionamiento actuales."
+          ],
+          [
+            "¿Puedo comprar una casa de dos o tres familias en Lawrence como mi primera casa?",
+            "Sí. Si usted vive en una de las unidades, puede usar financiamiento para dueño-ocupante, como FHA, en casas de dos a cuatro unidades, y parte de la renta puede ayudarle a calificar. Le explico los números que mira el banco en una llamada de 20 minutos."
+          ],
+          [
+            "¿Qué debo revisar antes de comprar un multifamiliar antiguo en Lawrence?",
+            "La calefacción, la electricidad, el techo, los balcones y las salidas, y la situación del plomo en cada unidad. En Massachusetts, el dueño tiene que hacer el desleading cuando vive allí un niño menor de seis años, y toda venta necesita el certificado de detectores de humo y monóxido de carbono. Eso lo incluyo en la oferta y en el plan de inspección desde el primer día."
+          ]
+        ]
+      },
+      "stock": "multi"
+    },
+    {
+      "slug": "haverhill",
+      "name": "Haverhill",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "incorporated": "Founded 1640; Bradford joined the city in 1897",
+      "rail": "Haverhill and Bradford stations, MBTA Haverhill Line",
+      "roads": "I-495, Routes 97, 108, 110, 113 and 125",
+      "district": {
+        "name": "Haverhill Public Schools",
+        "url": "https://www.haverhill-ps.org"
+      },
+      "card": "Two train stations, a riverfront downtown, room to spread out",
+      "description": "Living in, buying or selling a home in Haverhill, MA: multi-families, shoe-factory lofts and larger lots, two Haverhill Line stations, schools, local facts and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "On the Merrimack at the end of the train line that carries its name — with the New Hampshire border along its northern edge.",
+      "intro": [
+        "Haverhill sits on the Merrimack River at the end of the MBTA line that carries its name, with the New Hampshire border along its northern edge. It has two commuter rail stations — Haverhill and Bradford — a downtown of brick buildings from its shoe-making years, and quieter, more open roads toward its outer edges.",
+        "Bradford, across the river from downtown, was its own town until it joined Haverhill in 1897. Between the two sides you get a wide spread of homes, prices and lot sizes inside one city."
+      ],
+      "housing": [
+        "Downtown and the older neighborhoods around it have two- and three-family homes, Victorians, and residential lofts in converted shoe-factory buildings. Bradford mixes older homes with mid-century streets. Further out you will find colonials, capes and newer subdivisions on larger lots, and some farm properties.",
+        "For owner-occupant investors, Haverhill’s multi-families sit within reach of a train station; for buyers who want space, the outer sections offer it without leaving Massachusetts. On older homes we plan around heating, electrical, roofs and lead paint for anything built before 1978."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "Haverhill is the outer end of the MBTA Haverhill Line, and Bradford is the stop just before it — both with service to Boston’s North Station."
+        },
+        {
+          "t": "By car",
+          "d": "I-495 has several exits in the city. Routes 97, 108, 110, 113 and 125 handle local trips and connections to New Hampshire."
+        },
+        {
+          "t": "Across the line",
+          "d": "Salem, Atkinson and Plaistow, New Hampshire, border Haverhill to the north."
+        }
+      ],
+      "schools": "Haverhill’s public schools are run by Haverhill Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "“Queen Slipper City”",
+          "d": "Haverhill was a shoe-making center; by the end of 1913, about one in ten shoes made in the United States came from the city."
+        },
+        {
+          "t": "Winnekenni Castle",
+          "d": "Built in 1875 as a residence, it stands in the Winnekenni Park Conservation Area."
+        },
+        {
+          "t": "John Greenleaf Whittier",
+          "d": "The poet was from Haverhill, and his best-known poem, “Snow-Bound,” is set there."
+        },
+        {
+          "t": "Bradford",
+          "d": "A separate town until January 1, 1897, when it became part of Haverhill."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train from Haverhill to Boston?",
+          "Yes, two stations: Haverhill, at the outer end of the MBTA Haverhill Line, and Bradford. Both have service to North Station. Check the MBTA schedule for current times and parking."
+        ],
+        [
+          "What kinds of homes are in Haverhill?",
+          "Two- and three-family homes, Victorians and converted shoe-factory lofts near downtown; older and mid-century homes in Bradford; colonials, capes, newer subdivisions and some farm properties further out."
+        ],
+        [
+          "Is Haverhill close to New Hampshire?",
+          "Yes. Salem, Atkinson and Plaistow, New Hampshire, border the city to the north, and I am licensed in both states, so we can compare homes on either side of the line."
+        ]
+      ],
+      "neighbors": [
+        "methuen",
+        "north-andover",
+        "lawrence",
+        "salem-nh"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Haverhill,_Massachusetts",
+        "https://www.haverhill-ps.org",
+        "https://en.wikipedia.org/wiki/Haverhill_Line"
+      ],
+      "es": {
+        "incorporated": "Fundada en 1640; Bradford se unió a la ciudad en 1897",
+        "rail": "Estaciones de Haverhill y Bradford, línea Haverhill del MBTA",
+        "roads": "I-495, Rutas 97, 108, 110, 113 y 125",
+        "card": "Dos estaciones de tren, un centro junto al río, espacio para crecer",
+        "description": "Vivir, comprar o vender en Haverhill, MA: multifamiliares, lofts en fábricas de zapatos y lotes más grandes, dos estaciones de tren, escuelas y el mercado al día — con Eduardo Inoa, REALTOR® bilingüe.",
+        "lede": "Sobre el Merrimack, al final de la línea de tren que lleva su nombre — con New Hampshire justo al norte.",
+        "intro": [
+          "Haverhill está sobre el río Merrimack, al final de la línea del MBTA que lleva su nombre, con la frontera de New Hampshire al norte. Tiene dos estaciones de tren — Haverhill y Bradford —, un centro de edificios de ladrillo de la época de las fábricas de zapatos y, hacia las afueras, calles más tranquilas y con más terreno.",
+          "Bradford, al otro lado del río, era un pueblo aparte hasta que se unió a Haverhill en 1897. Entre los dos lados hay una gran variedad de casas, precios y tamaños de lote dentro de una misma ciudad."
+        ],
+        "housing": [
+          "En el centro y los vecindarios viejos alrededor hay casas de dos y tres familias, casas victorianas y lofts en antiguas fábricas de zapatos. Bradford combina casas antiguas con calles de mediados del siglo pasado. Más hacia afuera hay colonials, capes y urbanizaciones nuevas en lotes más grandes, y algunas fincas.",
+          "Para el que quiere vivir en una unidad y alquilar las demás, los multifamiliares de Haverhill quedan cerca de una estación de tren; para el que busca espacio, las afueras lo ofrecen sin salir de Massachusetts. En las casas antiguas revisamos la calefacción, la electricidad, el techo y el plomo en todo lo construido antes de 1978."
+        ],
+        "ways": [
+          {
+            "t": "En tren",
+            "d": "Haverhill es la última parada de la línea Haverhill del MBTA, y Bradford es la anterior — las dos con servicio a North Station en Boston."
+          },
+          {
+            "t": "En carro",
+            "d": "La I-495 tiene varias salidas en la ciudad. Las Rutas 97, 108, 110, 113 y 125 sirven para moverse dentro de la zona y hacia New Hampshire."
+          },
+          {
+            "t": "Al otro lado de la frontera",
+            "d": "Salem, Atkinson y Plaistow, New Hampshire, colindan con Haverhill por el norte."
+          }
+        ],
+        "schools": "Las escuelas públicas de Haverhill dependen de Haverhill Public Schools. Para asignación de escuela, matrícula y programas, consulte directamente con el distrito — es la única fuente que yo recomiendo.",
+        "know": [
+          {
+            "t": "La “Queen Slipper City”",
+            "d": "Haverhill fue un centro del calzado; a finales de 1913, cerca de uno de cada diez zapatos hechos en Estados Unidos salía de la ciudad."
+          },
+          {
+            "t": "Winnekenni Castle",
+            "d": "Se construyó en 1875 como residencia y está dentro del área de conservación del Winnekenni Park."
+          },
+          {
+            "t": "John Greenleaf Whittier",
+            "d": "El poeta era de Haverhill, y su poema más conocido, “Snow-Bound”, transcurre allí."
+          },
+          {
+            "t": "Bradford",
+            "d": "Fue un pueblo aparte hasta el 1 de enero de 1897, cuando pasó a formar parte de Haverhill."
+          }
+        ],
+        "faq": [
+          [
+            "¿Hay tren de Haverhill a Boston?",
+            "Sí, dos estaciones: Haverhill, al final de la línea Haverhill del MBTA, y Bradford. Las dos tienen servicio a North Station. Revise el horario del MBTA para los horarios y el estacionamiento actuales."
+          ],
+          [
+            "¿Qué tipo de casas hay en Haverhill?",
+            "Casas de dos y tres familias, victorianas y lofts en antiguas fábricas cerca del centro; casas antiguas y de mediados del siglo pasado en Bradford; y colonials, capes, urbanizaciones nuevas y algunas fincas más hacia afuera."
+          ],
+          [
+            "¿Haverhill queda cerca de New Hampshire?",
+            "Sí. Salem, Atkinson y Plaistow, New Hampshire, colindan con la ciudad por el norte, y yo tengo licencia en los dos estados, así que podemos comparar casas a ambos lados de la frontera."
+          ]
+        ]
+      },
+      "stock": "multi"
+    },
+    {
+      "slug": "andover",
+      "name": "Andover",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "incorporated": "1646",
+      "rail": "Andover and Ballardvale stations, MBTA Haverhill Line",
+      "roads": "I-93 and I-495 (they meet in town), Routes 28, 125 and 133",
+      "district": {
+        "name": "Andover Public Schools",
+        "url": "https://www.aps1.net"
+      },
+      "card": "Two train stations and the I-93/I-495 interchange",
+      "description": "Living in, buying or selling a home in Andover, MA: colonials and historic homes, two Haverhill Line stations, the I-93/I-495 interchange, schools and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "A classic New England town just south of Lawrence, with two train stations and the I-93/I-495 interchange inside its borders.",
+      "intro": [
+        "Andover sits just south of Lawrence, with a traditional downtown along Main Street, two commuter rail stations and the interchange of I-93 and I-495 inside the town. Few places in the region combine rail, both interstates and a classic town center so closely.",
+        "It is one of the oldest towns in the area — incorporated in 1646 — and that shows in its historic centers, from the village around Main Street to Shawsheen Village and Ballardvale."
+      ],
+      "housing": [
+        "Andover is mostly single-family. Colonials from many decades dominate, from historic homes near the center, in Shawsheen Village and in Ballardvale, to larger contemporary colonials on bigger lots in the outer parts of town. There are also condominium and townhouse communities and a smaller number of two-families.",
+        "Because so much of the stock is single-family on established lots, buyers here usually weigh age and condition against lot and location. On historic homes, ask the town early whether any local preservation rules apply before planning exterior changes."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "Andover has two stops on the MBTA Haverhill Line — Andover and Ballardvale — with service to Boston’s North Station."
+        },
+        {
+          "t": "By car",
+          "d": "I-93 and I-495 meet in Andover. Route 28 is the main north–south road through town, and Routes 125 and 133 also cross it."
+        },
+        {
+          "t": "Nearby",
+          "d": "Lawrence, North Andover and Tewksbury are next door, and the Lawrence station is one stop north."
+        }
+      ],
+      "schools": "Andover’s public schools are run by Andover Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Phillips Academy",
+          "d": "The independent boarding school was founded in Andover in 1778."
+        },
+        {
+          "t": "Shawsheen Village",
+          "d": "A planned mill community; its mill was announced in 1919 and began operating in 1922."
+        },
+        {
+          "t": "Harold Parker State Forest",
+          "d": "A state forest on the border of Andover, Middleton and North Reading."
+        },
+        {
+          "t": "Incorporated in 1646",
+          "d": "One of the oldest towns in the Merrimack Valley; North Andover was part of it until 1855."
+        }
+      ],
+      "faq": [
+        [
+          "Does Andover have commuter rail?",
+          "Yes, two stations on the MBTA Haverhill Line: Andover and Ballardvale, both with service to North Station. Check the MBTA schedule for current times and parking."
+        ],
+        [
+          "What kinds of homes are in Andover?",
+          "Mostly single-family colonials, from historic homes near the center and in Shawsheen Village and Ballardvale to newer colonials on larger lots, plus condominium and townhouse communities."
+        ],
+        [
+          "How close is Andover to the interstates?",
+          "Very close: I-93 and I-495 meet inside the town, and Route 28 runs north–south through it."
+        ]
+      ],
+      "neighbors": [
+        "lawrence",
+        "north-andover",
+        "methuen",
+        "tewksbury"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andover,_Massachusetts",
+        "https://www.aps1.net",
+        "https://en.wikipedia.org/wiki/Haverhill_Line"
+      ],
+      "stock": "single",
+      "card_es": "Dos estaciones de tren y el cruce de la I-93 con la I-495"
+    },
+    {
+      "slug": "north-andover",
+      "name": "North Andover",
+      "state": "MA",
+      "county": "Essex County, MA",
+      "incorporated": "1855 (separated from Andover)",
+      "rail": "None in town — Lawrence station (Haverhill Line) is closest",
+      "roads": "I-495, Route 114, Routes 125 and 133",
+      "district": {
+        "name": "North Andover Public Schools",
+        "url": "https://www.northandoverpublicschools.com"
+      },
+      "card": "The Old Center, Lake Cochichewick, Route 114",
+      "description": "Living in, buying or selling a home in North Andover, MA: colonials, antiques and larger lots, I-495 and Route 114, the nearby Lawrence station, schools and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "A town of its own since 1855 — with a historic Old Center, Lake Cochichewick and quick access to I-495.",
+      "intro": [
+        "North Andover separated from Andover in 1855 and has its own distinct shape: a historic Old Center near the geographic middle of town, Lake Cochichewick across the north-east, Merrimack College, and I-495 along the Lawrence border.",
+        "For buyers it is a town of single-family homes on established lots, a short drive from the Lawrence train station and from the stores and services of Route 114."
+      ],
+      "housing": [
+        "North Andover is mostly single-family: antique homes around the Old Center, capes and ranches from the middle of the last century, colonials of many ages, and newer subdivisions with larger lots. There are also condominium and townhouse communities.",
+        "Lots tend to be larger than in the cities next door, and some homes use a private septic system instead of town sewer — something we confirm on every home before an offer, because Massachusetts generally requires a Title 5 septic inspection when a home with a septic system is sold."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in North Andover. The closest is Lawrence station on the MBTA Haverhill Line; Andover station is also nearby."
+        },
+        {
+          "t": "By car",
+          "d": "I-495 crosses the western part of town along the Lawrence border. Route 114, the Salem Turnpike, runs through town, and Routes 125 and 133 share much of their path here."
+        },
+        {
+          "t": "Nearby",
+          "d": "Lawrence, Andover, Methuen and Haverhill are next door, with Boxford and Middleton to the east and south."
+        }
+      ],
+      "schools": "North Andover’s public schools are run by North Andover Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "The Old Center",
+          "d": "North Andover’s historic Old Center, near the middle of town, hosts many town events."
+        },
+        {
+          "t": "Lake Cochichewick",
+          "d": "The lake takes up much of the north-east quarter of town."
+        },
+        {
+          "t": "Merrimack College",
+          "d": "A Catholic, Augustinian four-year college located in the town."
+        },
+        {
+          "t": "Weir Hill and Harold Parker",
+          "d": "Weir Hill has trails with views over the area, and Harold Parker State Forest nearby offers trails, a campground and a freshwater swimming beach."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train station in North Andover?",
+          "No. Most commuters use Lawrence station, a short drive away on the MBTA Haverhill Line, or Andover station."
+        ],
+        [
+          "What kinds of homes are in North Andover?",
+          "Mostly single-family: antiques around the Old Center, mid-century capes and ranches, colonials of many ages, newer subdivisions on larger lots, and some condominium and townhouse communities."
+        ],
+        [
+          "Do homes in North Andover have septic systems?",
+          "Some do, especially in the outer parts of town. When a home has a septic system, Massachusetts generally requires a Title 5 inspection at sale, so we confirm sewer or septic on every home before making an offer."
+        ]
+      ],
+      "neighbors": [
+        "andover",
+        "lawrence",
+        "methuen",
+        "haverhill"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/North_Andover,_Massachusetts",
+        "https://www.northandoverpublicschools.com",
+        "https://www.mass.gov/guides/buying-or-selling-property-with-a-septic-system"
+      ],
+      "stock": "single",
+      "card_es": "El Old Center, el lago Cochichewick y la Ruta 114"
+    },
+    {
+      "slug": "dracut",
+      "name": "Dracut",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "incorporated": "1701",
+      "rail": "None in town — Lowell station (Lowell Line) is closest",
+      "roads": "Routes 38, 110 and 113; I-93, I-495 and Route 3 nearby",
+      "district": {
+        "name": "Dracut Public Schools",
+        "url": "https://www.dracutps.org"
+      },
+      "card": "Across the river from Lowell, up to the NH line",
+      "description": "Living in, buying or selling a home in Dracut, MA: single-families, open space and newer subdivisions, Routes 38/110/113 and nearby Lowell station, schools and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "Across the Merrimack from Lowell, running north to the New Hampshire line — with open land still in the mix.",
+      "intro": [
+        "Dracut sits across the Merrimack River from Lowell and runs north to Pelham, New Hampshire, with Methuen to the east and Tyngsborough to the west. It was settled as a farming and mill community, and some of those rural landscapes are still intact alongside newer neighborhoods.",
+        "It is also one of the largest towns in Massachusetts still governed by an open town meeting. For buyers, the draw is a suburban town within a short drive of Lowell’s train station, I-93 and I-495."
+      ],
+      "housing": [
+        "Most of Dracut is single-family: capes, ranches and colonials from the post-war decades, newer subdivisions, and condominium communities, with some two-families in the sections closest to Lowell and a few remaining farm properties.",
+        "Many homes in town are on public sewer and some are on septic. We confirm which before an offer, because Massachusetts generally requires a Title 5 inspection when a home with a septic system is sold."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in Dracut. Lowell station, the end of the MBTA Lowell Line, is closest, and the LRTA 10 bus connects to it."
+        },
+        {
+          "t": "By car",
+          "d": "Routes 38, 110 and 113 run directly through town. I-93 is reached through Methuen, and I-495 and Route 3 through Lowell."
+        },
+        {
+          "t": "Across the line",
+          "d": "Pelham, New Hampshire, borders Dracut to the north."
+        }
+      ],
+      "schools": "Dracut’s public schools are run by Dracut Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Incorporated in 1701",
+          "d": "Dracut was settled around 1653 and became a town in 1701."
+        },
+        {
+          "t": "Open town meeting",
+          "d": "One of the largest towns in Massachusetts still run by an open town meeting."
+        },
+        {
+          "t": "Beaver Brook",
+          "d": "The brook runs through the middle of town on its way to the Merrimack."
+        },
+        {
+          "t": "State forest",
+          "d": "The Lowell–Dracut–Tyngsboro State Forest extends into the town."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train from Dracut to Boston?",
+          "Not in Dracut itself. Lowell station, at the end of the MBTA Lowell Line, is the closest, and the LRTA 10 bus connects to it."
+        ],
+        [
+          "What kinds of homes are in Dracut?",
+          "Mostly single-family capes, ranches and colonials, newer subdivisions and condominium communities, with some two-families near Lowell and a few farm properties."
+        ],
+        [
+          "Are homes in Dracut on sewer or septic?",
+          "Both exist in town. We confirm it on every home before an offer, because Massachusetts generally requires a Title 5 septic inspection at sale."
+        ]
+      ],
+      "neighbors": [
+        "lowell",
+        "methuen",
+        "tyngsborough",
+        "pelham-nh",
+        "tewksbury",
+        "andover"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dracut,_Massachusetts",
+        "https://www.dracutps.org",
+        "https://en.wikipedia.org/wiki/Lowell_Line",
+        "https://www.mass.gov/guides/buying-or-selling-property-with-a-septic-system"
+      ],
+      "stock": "single",
+      "card_es": "Al otro lado del río desde Lowell, hasta la frontera con NH"
+    },
+    {
+      "slug": "tewksbury",
+      "name": "Tewksbury",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "incorporated": "1734 (from Billerica)",
+      "rail": "None in town — Lowell, North Billerica and Wilmington (Lowell Line) nearby",
+      "roads": "I-93, I-495, Route 38",
+      "district": {
+        "name": "Tewksbury Public Schools",
+        "url": "https://www.tewksbury.k12.ma.us"
+      },
+      "card": "Both interstates, about 19 miles from Boston",
+      "description": "Living in, buying or selling a home in Tewksbury, MA: capes, colonials and condominiums, I-93 and I-495, nearby Lowell Line stations, schools and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "About 19 miles north-northwest of Boston, with I-93 and I-495 both running through town.",
+      "intro": [
+        "Tewksbury’s biggest asset is access. I-93 and I-495 both run through town, Lowell is next door, and Boston is about 19 miles away. The Merrimack River forms part of its northern boundary and the Shawsheen River runs through its southern end.",
+        "For buyers commuting by car in almost any direction — Boston, the 495 belt or Southern New Hampshire — it is one of the most convenient towns in the area."
+      ],
+      "housing": [
+        "Tewksbury is mostly single-family: capes, ranches, split-levels and colonials from the post-war decades, newer colonials, and condominium and townhouse communities.",
+        "Much of the housing is on established mid-size lots. We confirm sewer or septic on each home before an offer, since Massachusetts generally requires a Title 5 inspection at sale when a home has a septic system."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in Tewksbury. The LRTA 12 bus connects the town to Lowell and Wilmington on the MBTA Lowell Line, and North Billerica and North Wilmington stations are nearby."
+        },
+        {
+          "t": "By car",
+          "d": "I-93 and I-495 both pass through town, and Route 38 is the main local road."
+        },
+        {
+          "t": "Nearby",
+          "d": "Lowell, Dracut, Andover, Wilmington and Billerica border the town."
+        }
+      ],
+      "schools": "Tewksbury’s public schools are run by Tewksbury Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Incorporated in 1734",
+          "d": "Tewksbury was first settled in 1637 and set off from Billerica as its own town in 1734."
+        },
+        {
+          "t": "Two rivers",
+          "d": "The Merrimack forms part of the northern boundary and the Shawsheen runs through the south end of town."
+        },
+        {
+          "t": "Tewksbury Hospital",
+          "d": "A state-owned hospital located in the town."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train station in Tewksbury?",
+          "No. The LRTA 12 bus connects to Lowell and Wilmington stations on the MBTA Lowell Line, and North Billerica and North Wilmington stations are a short drive."
+        ],
+        [
+          "What kinds of homes are in Tewksbury?",
+          "Mostly single-family capes, ranches, split-levels and colonials, plus newer colonials and condominium and townhouse communities."
+        ],
+        [
+          "How far is Tewksbury from Boston?",
+          "About 19 miles, with I-93 running through town toward the city."
+        ]
+      ],
+      "neighbors": [
+        "lowell",
+        "andover",
+        "dracut",
+        "chelmsford"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tewksbury,_Massachusetts",
+        "https://www.tewksbury.k12.ma.us",
+        "https://en.wikipedia.org/wiki/Lowell_Line",
+        "https://www.mass.gov/guides/buying-or-selling-property-with-a-septic-system"
+      ],
+      "stock": "single",
+      "card_es": "Las dos interestatales, a unas 19 millas de Boston"
+    },
+    {
+      "slug": "lowell",
+      "name": "Lowell",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "incorporated": "1826 (town), 1836 (city)",
+      "rail": "Lowell station, end of the MBTA Lowell Line",
+      "roads": "I-495, Route 3, the Lowell Connector, Routes 38, 110 and 113",
+      "district": {
+        "name": "Lowell Public Schools",
+        "url": "https://www.lowell.k12.ma.us"
+      },
+      "card": "Canals, mills, a national park and its own rail line",
+      "description": "Living in, buying or selling a home in Lowell, MA: triple-deckers, Victorians and mill lofts, the Lowell Line to Boston, schools, local history and live market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "The mill city at full scale — where the Merrimack and Concord rivers meet, and where the Lowell Line begins.",
+      "intro": [
+        "Lowell was built at the meeting of the Merrimack and Concord rivers as a planned mill town, and its canals still run through downtown. Today it is home to Lowell National Historical Park, UMass Lowell and the outer end of the MBTA Lowell Line, with I-495 and Route 3 linked by the Lowell Connector.",
+        "For buyers, that adds up to a city with real transit, a deep stock of multi-family homes and a wide range of housing from downtown lofts to single-families in the outer neighborhoods."
+      ],
+      "housing": [
+        "Lowell has triple-deckers and two-families throughout its older neighborhoods, Victorians on its hillside streets, and loft condominiums and apartments in converted mill buildings downtown. The outer neighborhoods add capes, ranches and colonials.",
+        "For house-hackers, Lowell is one of the main places in the region to buy a two- to four-family and live in one unit. Older buildings need a careful plan: heating, electrical, porches and egress, and lead paint — Massachusetts requires an owner to delead a unit when a child under six lives there."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "Lowell station, at Gallagher Terminal, is the outer end of the MBTA Lowell Line, about 25 miles from Boston’s North Station."
+        },
+        {
+          "t": "By car",
+          "d": "I-495 and Route 3 both serve the city, joined by the Lowell Connector. Routes 38, 110 and 113 handle local trips."
+        },
+        {
+          "t": "By bus",
+          "d": "The Lowell Regional Transit Authority (LRTA) runs bus routes connecting Lowell with the surrounding towns."
+        }
+      ],
+      "schools": "Lowell’s public schools are run by Lowell Public Schools. For school assignments, enrollment, language programs and registration, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Lowell National Historical Park",
+          "d": "Established in the late 1970s, it includes about 5.6 miles of restored canals and the mill buildings that made Lowell."
+        },
+        {
+          "t": "Two rivers",
+          "d": "The city sits where the Concord River meets the Merrimack, near the mile-long rapids of Pawtucket Falls."
+        },
+        {
+          "t": "UMass Lowell",
+          "d": "The state university has its campuses in the city."
+        },
+        {
+          "t": "Jack Kerouac",
+          "d": "The writer was born in Lowell, in the Centralville neighborhood."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train from Lowell to Boston?",
+          "Yes. Lowell station is the outer end of the MBTA Lowell Line, with service to North Station. Check the MBTA schedule for current times and parking."
+        ],
+        [
+          "Can I buy a two- or three-family in Lowell as my first home?",
+          "Yes. If you live in one unit, owner-occupied financing such as FHA can be used on two- to four-unit homes, and part of the rent can help you qualify. My <a href=\"/posts/first-multi-family-merrimack-valley\">first multi-family guide</a> covers the numbers lenders look at."
+        ],
+        [
+          "What kinds of homes are in Lowell?",
+          "Triple-deckers and two-families, Victorians, loft condominiums in converted mills downtown, and capes, ranches and colonials in the outer neighborhoods."
+        ]
+      ],
+      "neighbors": [
+        "dracut",
+        "chelmsford",
+        "tewksbury",
+        "tyngsborough"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lowell,_Massachusetts",
+        "https://www.lowell.k12.ma.us",
+        "https://en.wikipedia.org/wiki/Lowell_Line",
+        "https://www.mass.gov/service-details/learn-about-massachusetts-lead-law"
+      ],
+      "es": {
+        "incorporated": "1826 (pueblo), 1836 (ciudad)",
+        "rail": "Estación de Lowell, última parada de la línea Lowell del MBTA",
+        "roads": "I-495, Ruta 3, el Lowell Connector, Rutas 38, 110 y 113",
+        "card": "Canales, molinos, un parque nacional y su propia línea de tren",
+        "description": "Vivir, comprar o vender en Lowell, MA: triple-deckers, casas victorianas y lofts en molinos, el tren a Boston, escuelas, historia y el mercado al día — con Eduardo Inoa, REALTOR® bilingüe.",
+        "lede": "La ciudad de los molinos en grande — donde se unen los ríos Merrimack y Concord, y donde empieza la línea Lowell.",
+        "intro": [
+          "Lowell se construyó donde se unen los ríos Merrimack y Concord, como ciudad de molinos planificada, y sus canales todavía cruzan el centro. Hoy tiene el Lowell National Historical Park, la universidad UMass Lowell y la última parada de la línea Lowell del MBTA, con la I-495 y la Ruta 3 unidas por el Lowell Connector.",
+          "Para el comprador, eso significa una ciudad con transporte de verdad, muchísimas casas multifamiliares y opciones que van desde lofts en el centro hasta casas unifamiliares en los vecindarios de afuera."
+        ],
+        "housing": [
+          "Lowell tiene triple-deckers y casas de dos familias en todos sus vecindarios viejos, casas victorianas en las calles de las lomas y lofts — condominios y apartamentos — en molinos convertidos del centro. Los vecindarios de afuera suman capes, ranches y colonials.",
+          "Si usted quiere comprar de dos a cuatro unidades y vivir en una, Lowell es uno de los lugares principales de la región. Los edificios antiguos piden un buen plan: calefacción, electricidad, balcones y salidas, y la pintura con plomo — en Massachusetts, el dueño tiene que hacer el desleading de una unidad cuando vive allí un niño menor de seis años."
+        ],
+        "ways": [
+          {
+            "t": "En tren",
+            "d": "La estación de Lowell, en el Gallagher Terminal, es la última parada de la línea Lowell del MBTA, a unas 25 millas de North Station en Boston."
+          },
+          {
+            "t": "En carro",
+            "d": "La I-495 y la Ruta 3 pasan por la ciudad, unidas por el Lowell Connector. Las Rutas 38, 110 y 113 sirven para moverse dentro de la zona."
+          },
+          {
+            "t": "En autobús",
+            "d": "La Lowell Regional Transit Authority (LRTA) tiene rutas de autobús entre Lowell y los pueblos de alrededor."
+          }
+        ],
+        "schools": "Las escuelas públicas de Lowell dependen de Lowell Public Schools. Para asignación de escuela, matrícula, programas de idiomas e inscripción, consulte directamente con el distrito — es la única fuente que yo recomiendo.",
+        "know": [
+          {
+            "t": "Lowell National Historical Park",
+            "d": "Creado a finales de los años 70, incluye unas 5.6 millas de canales restaurados y los molinos que hicieron a Lowell."
+          },
+          {
+            "t": "Dos ríos",
+            "d": "La ciudad está donde el río Concord se une al Merrimack, cerca de los rápidos de Pawtucket Falls."
+          },
+          {
+            "t": "UMass Lowell",
+            "d": "La universidad estatal tiene sus recintos en la ciudad."
+          },
+          {
+            "t": "Jack Kerouac",
+            "d": "El escritor nació en Lowell, en el vecindario de Centralville."
+          }
+        ],
+        "faq": [
+          [
+            "¿Hay tren de Lowell a Boston?",
+            "Sí. La estación de Lowell es la última parada de la línea Lowell del MBTA, con servicio a North Station. Revise el horario del MBTA para los horarios y el estacionamiento actuales."
+          ],
+          [
+            "¿Puedo comprar una casa de dos o tres familias en Lowell como mi primera casa?",
+            "Sí. Si usted vive en una de las unidades, puede usar financiamiento para dueño-ocupante, como FHA, en casas de dos a cuatro unidades, y parte de la renta puede ayudarle a calificar. Le explico los números que mira el banco en una llamada de 20 minutos."
+          ],
+          [
+            "¿Qué tipo de casas hay en Lowell?",
+            "Triple-deckers y casas de dos familias, victorianas, lofts en molinos convertidos del centro, y capes, ranches y colonials en los vecindarios de afuera."
+          ]
+        ]
+      },
+      "stock": "multi"
+    },
+    {
+      "slug": "tyngsborough",
+      "name": "Tyngsborough",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "incorporated": "1809",
+      "rail": "None in town — Lowell station (Lowell Line) is closest",
+      "roads": "Route 3 (US 3) corridor",
+      "district": {
+        "name": "Tyngsborough Public Schools",
+        "url": "https://www.tyngsboroughps.org"
+      },
+      "card": "On the Route 3 corridor, between Lowell and Nashua",
+      "description": "Living in, buying or selling a home in Tyngsborough, MA: single-families on wooded lots, the Route 3 corridor between Lowell and Nashua, schools and county market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "On the Route 3 corridor between Lowell and Nashua, with the Merrimack running through town and New Hampshire on its northern border.",
+      "intro": [
+        "Tyngsborough sits on the Route 3 corridor between Lowell and Nashua, New Hampshire. The Merrimack River runs through town, crossed by the Tyngsborough Bridge, and the town borders Nashua, Hudson and Pelham to the north.",
+        "For buyers who work along Route 3 — in Massachusetts or Southern New Hampshire — it is a town where the drive is the selling point."
+      ],
+      "housing": [
+        "Tyngsborough is mostly single-family: capes, ranches and colonials, many on wooded lots, plus newer homes and condominium communities.",
+        "Some homes here use private septic systems or private wells, so we confirm both before an offer. Massachusetts generally requires a Title 5 septic inspection when a home with a septic system is sold, and a water test is worth doing on any private well."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in Tyngsborough. Lowell station, the end of the MBTA Lowell Line, is closest; the LRTA 10 bus links eastern Tyngsborough to it."
+        },
+        {
+          "t": "By car",
+          "d": "Route 3 runs through town, toward Lowell and I-495 to the south and Nashua to the north."
+        },
+        {
+          "t": "Across the line",
+          "d": "Nashua, Hudson and Pelham, New Hampshire, border the town to the north."
+        }
+      ],
+      "schools": "Tyngsborough’s public schools are run by Tyngsborough Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "The Tyngsborough Bridge",
+          "d": "A green, single-arch steel bridge over the Merrimack, built in 1931."
+        },
+        {
+          "t": "Incorporated in 1809",
+          "d": "Tyngsborough became a town on February 23, 1809."
+        },
+        {
+          "t": "State forest",
+          "d": "The Lowell–Dracut–Tyngsboro State Forest extends into the town."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train from Tyngsborough to Boston?",
+          "Not in town. Lowell station, at the end of the MBTA Lowell Line, is the closest, and the LRTA 10 bus links eastern Tyngsborough to it."
+        ],
+        [
+          "What kinds of homes are in Tyngsborough?",
+          "Mostly single-family capes, ranches and colonials, many on wooded lots, plus newer homes and condominium communities."
+        ],
+        [
+          "Is Tyngsborough close to New Hampshire?",
+          "Yes — it borders Nashua, Hudson and Pelham, and I am licensed in both states, so we can compare homes on both sides of the line."
+        ]
+      ],
+      "neighbors": [
+        "lowell",
+        "dracut",
+        "chelmsford",
+        "westford",
+        "pelham-nh"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tyngsborough,_Massachusetts",
+        "https://www.tyngsboroughps.org/en-US",
+        "https://www.mass.gov/guides/buying-or-selling-property-with-a-septic-system"
+      ],
+      "stock": "single",
+      "card_es": "En el corredor de la Ruta 3, entre Lowell y Nashua"
+    },
+    {
+      "slug": "chelmsford",
+      "name": "Chelmsford",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "incorporated": "1655",
+      "rail": "None in town — Lowell and North Billerica (Lowell Line) nearby",
+      "roads": "I-495 and Route 3 (they meet in town), Routes 3A, 4, 27, 40, 110 and 129",
+      "district": {
+        "name": "Chelmsford Public Schools",
+        "url": "https://chelmsfordschools.org"
+      },
+      "card": "Where I-495 meets Route 3, with a rail trail through the center",
+      "description": "Living in, buying or selling a home in Chelmsford, MA: colonials, capes and village homes, the I-495/Route 3 junction, the Bruce Freeman Rail Trail, schools and county market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "Just south-west of Lowell, where I-495 crosses Route 3 — one of the region’s easiest places to drive from.",
+      "intro": [
+        "Chelmsford sits just south-west of Lowell, at the intersection of I-495 and Route 3, with the Merrimack along its north-east edge and the Concord River at its eastern boundary. That junction puts Boston, Nashua and the 495 belt within an easy drive.",
+        "It is a town of villages — Chelmsford Center, North Chelmsford, South, East and West Chelmsford and the Westlands — with the Bruce Freeman Rail Trail running through the center."
+      ],
+      "housing": [
+        "Chelmsford is mostly single-family: colonials, capes, ranches and split-levels, with antique homes around the historic center and older village housing, including some multi-families, in North Chelmsford. There are also condominium and townhouse communities.",
+        "Because the stock is mostly established single-family, the usual trade-offs are age and condition against lot and location. We confirm sewer or septic on every home before an offer."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in Chelmsford. LRTA bus routes connect the town to Lowell station on the MBTA Lowell Line, and North Billerica station is nearby."
+        },
+        {
+          "t": "By car",
+          "d": "I-495 and Route 3 meet in town. Routes 3A, 4, 27, 40, 110 and 129 also run through Chelmsford."
+        },
+        {
+          "t": "On foot or bike",
+          "d": "The Bruce Freeman Rail Trail runs through Chelmsford Center on its way south through Westford and beyond."
+        }
+      ],
+      "schools": "Chelmsford’s public schools are run by Chelmsford Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Bruce Freeman Rail Trail",
+          "d": "The first section, through Lowell, Chelmsford and Westford, opened in 2009; the trail is named for a Chelmsford state legislator."
+        },
+        {
+          "t": "Old Chelmsford Garrison House",
+          "d": "A house from 1691, now a museum."
+        },
+        {
+          "t": "The Middlesex Canal",
+          "d": "The early-1800s canal ran through the town; its history is part of the local heritage."
+        },
+        {
+          "t": "Incorporated in 1655",
+          "d": "Chelmsford was settled in 1652 and incorporated three years later."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train station in Chelmsford?",
+          "No. LRTA buses connect to Lowell station on the MBTA Lowell Line, and North Billerica station is a short drive."
+        ],
+        [
+          "What kinds of homes are in Chelmsford?",
+          "Mostly single-family colonials, capes, ranches and split-levels, antique homes around the center, some older multi-families in North Chelmsford, and condominium and townhouse communities."
+        ],
+        [
+          "How is Chelmsford for commuting by car?",
+          "It is at the junction of I-495 and Route 3, so trips toward Boston, Nashua and the 495 belt start right in town."
+        ]
+      ],
+      "neighbors": [
+        "lowell",
+        "westford",
+        "tyngsborough",
+        "tewksbury"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chelmsford,_Massachusetts",
+        "https://chelmsfordschools.org/",
+        "https://en.wikipedia.org/wiki/Bruce_Freeman_Rail_Trail",
+        "https://brucefreemanrailtrail.org/"
+      ],
+      "stock": "single",
+      "card_es": "Donde la I-495 cruza la Ruta 3, con un sendero en el centro"
+    },
+    {
+      "slug": "westford",
+      "name": "Westford",
+      "state": "MA",
+      "county": "Middlesex County, MA",
+      "incorporated": "1729 (formerly part of Chelmsford)",
+      "rail": "None in town — Lowell station (Lowell Line) via LRTA bus",
+      "roads": "I-495, Routes 27, 40, 110 and 225; Route 3 nearby",
+      "district": {
+        "name": "Westford Public Schools",
+        "url": "https://www.westfordk12.us"
+      },
+      "card": "Villages, orchards and I-495",
+      "description": "Living in, buying or selling a home in Westford, MA: colonials on larger lots, historic villages, I-495, the Bruce Freeman Rail Trail, schools and county market data — from bilingual REALTOR® Eduardo Inoa.",
+      "lede": "At the western edge of the Merrimack Valley — a town of villages, with I-495 running through it.",
+      "intro": [
+        "Westford sits on the western edge of the Merrimack Valley, where it meets the Nashoba Valley. I-495 runs through town and Route 3 is just to the east. It began as a village of Chelmsford called West Chelmsford and was incorporated in 1729.",
+        "The town is made up of distinct areas — Westford Center, Forge Village, Graniteville, Nabnasset and Parker Village — and historically produced granite, apples and worsted yarn."
+      ],
+      "housing": [
+        "Westford is mostly single-family, with many colonials on larger lots, antique homes around the town center and the historic villages, and some condominium and townhouse communities.",
+        "Larger lots often come with private septic systems and, in places, private wells. We confirm both before an offer — Massachusetts generally requires a Title 5 septic inspection when a home with a septic system is sold."
+      ],
+      "ways": [
+        {
+          "t": "By train",
+          "d": "There is no station in Westford. The LRTA 15 bus runs along Route 110 to Chelmsford and Lowell station on the MBTA Lowell Line."
+        },
+        {
+          "t": "By car",
+          "d": "I-495 passes through town. Route 3 runs just to the east, with interchanges in Chelmsford and Tyngsborough, and Routes 27, 40, 110 and 225 serve the town."
+        },
+        {
+          "t": "On foot or bike",
+          "d": "The Bruce Freeman Rail Trail runs through Westford between Chelmsford and Carlisle."
+        }
+      ],
+      "schools": "Westford’s public schools are run by Westford Public Schools. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "A town of villages",
+          "d": "Forge Village, Graniteville, Nabnasset and Parker Village each have their own history alongside Westford Center."
+        },
+        {
+          "t": "Granite, apples and yarn",
+          "d": "Those were the town’s main products in the late 18th and early 19th centuries."
+        },
+        {
+          "t": "Nashoba Valley Ski Area",
+          "d": "A local ski area within the town."
+        },
+        {
+          "t": "Bruce Freeman Rail Trail",
+          "d": "The trail’s section between Westford, Carlisle and Acton opened in 2018."
+        }
+      ],
+      "faq": [
+        [
+          "Is there a train station in Westford?",
+          "No. The LRTA 15 bus runs along Route 110 to Lowell station on the MBTA Lowell Line; most commuters drive to I-495 or Route 3."
+        ],
+        [
+          "What kinds of homes are in Westford?",
+          "Mostly single-family colonials on larger lots, antique homes in the center and villages, and some condominium and townhouse communities."
+        ],
+        [
+          "Do homes in Westford have septic or wells?",
+          "Some do. We confirm both on every home before an offer, since Massachusetts generally requires a Title 5 septic inspection when a home with a septic system is sold."
+        ]
+      ],
+      "neighbors": [
+        "chelmsford",
+        "tyngsborough"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Westford,_Massachusetts",
+        "https://www.westfordk12.us",
+        "https://en.wikipedia.org/wiki/Bruce_Freeman_Rail_Trail",
+        "https://www.mass.gov/guides/buying-or-selling-property-with-a-septic-system"
+      ],
+      "stock": "single",
+      "card_es": "Villas, huertos de manzanas y la I-495"
+    },
+    {
+      "slug": "salem-nh",
+      "name": "Salem",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "incorporated": "1750",
+      "rail": "No passenger rail — the closest stations are across the line in Massachusetts",
+      "roads": "I-93, NH Routes 28, 38, 97 and 111",
+      "district": {
+        "name": "Salem School District",
+        "url": "https://www.sau57.org"
+      },
+      "card": "First stop on I-93 in New Hampshire",
+      "description": "Living in, buying or selling a home in Salem, NH: housing stock, I-93 and Route 28, New Hampshire taxes explained carefully, schools and live market data — from Eduardo Inoa, REALTOR® licensed in NH and MA.",
+      "lede": "The first New Hampshire town on I-93, right on the line with Methuen and Haverhill.",
+      "intro": [
+        "Salem is the first New Hampshire town you reach on I-93, with Methuen and Haverhill on its southern border. It is known for retail along Route 28, the Mall at Rockingham Park and Tuscan Village, built on the site of the former Rockingham Park race track.",
+        "Because it is right on the state line, many of my clients compare Salem directly with Methuen, Haverhill and the other Merrimack Valley towns. I am licensed in both states, so we can do that side by side."
+      ],
+      "housing": [
+        "Salem is mostly single-family: capes, ranches, split-levels and colonials, homes near Canobie Lake and the town’s other ponds, newer construction, and condominium communities.",
+        "Taxes are the other half of the housing picture. New Hampshire has no general sales tax and no state income tax on wages, and its tax on interest and dividends was repealed for tax periods beginning in 2025. The state relies more on local property taxes, so expect a higher property-tax rate than in many nearby Massachusetts towns — compare the actual tax bill on any home you consider. If you work in Massachusetts, Massachusetts generally taxes the wages you earn there; a tax professional can tell you what applies to you."
+      ],
+      "ways": [
+        {
+          "t": "By car",
+          "d": "I-93 runs through town with its first New Hampshire exits. NH Routes 28, 38, 97 and 111 handle local trips."
+        },
+        {
+          "t": "By train",
+          "d": "There is no passenger rail in Salem. The nearest commuter rail stations are in Massachusetts — Lawrence, Bradford and Haverhill on the MBTA Haverhill Line."
+        },
+        {
+          "t": "Across the line",
+          "d": "Methuen and Haverhill, Massachusetts, border Salem to the south; Windham, Pelham, Derry and Atkinson are its New Hampshire neighbors."
+        }
+      ],
+      "schools": "Salem’s public schools are run by the Salem School District. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Canobie Lake Park",
+          "d": "A large amusement park on Canobie Lake."
+        },
+        {
+          "t": "America’s Stonehenge",
+          "d": "A stone site of disputed origins in the town."
+        },
+        {
+          "t": "Tuscan Village",
+          "d": "A mixed-use development on the site of the former Rockingham Park race track."
+        },
+        {
+          "t": "Incorporated in 1750",
+          "d": "The town was incorporated under colonial governor Benning Wentworth."
+        }
+      ],
+      "faq": [
+        [
+          "Does New Hampshire have a sales tax or income tax?",
+          "New Hampshire has no general sales tax and no state income tax on wages, and its interest-and-dividends tax was repealed for tax periods beginning in 2025. Property-tax rates are generally higher than in many nearby Massachusetts towns, so always compare the actual tax bill. If you work in Massachusetts, ask a tax professional how your wages are taxed."
+        ],
+        [
+          "Is there a train from Salem, NH, to Boston?",
+          "Not in Salem. The nearest commuter rail stations are in Massachusetts: Lawrence, Bradford and Haverhill on the MBTA Haverhill Line."
+        ],
+        [
+          "Can you help me sell in Massachusetts and buy in Salem?",
+          "Yes. I am licensed in both states, and I plan both closings together so you move once."
+        ]
+      ],
+      "neighbors": [
+        "windham-nh",
+        "pelham-nh",
+        "methuen",
+        "haverhill"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Salem,_New_Hampshire",
+        "https://www.sau57.org",
+        "https://www.mclane.com/insights/nh-interest-and-dividends-tax-repealed-as-of-january-1/",
+        "https://www.getsphere.com/blog/new-hampshire-sales-tax"
+      ],
+      "stock": "single",
+      "card_es": "La primera salida de la I-93 en New Hampshire"
+    },
+    {
+      "slug": "windham-nh",
+      "name": "Windham",
+      "state": "NH",
+      "county": "Rockingham County, NH",
+      "incorporated": "1742",
+      "rail": "No passenger rail",
+      "roads": "I-93 (Exit 3), NH Routes 28, 111, 111A and 128",
+      "district": {
+        "name": "Windham School District",
+        "url": "https://www.windhamsd.org"
+      },
+      "card": "Exit 3, Cobbetts Pond and Searles Castle",
+      "description": "Living in, buying or selling a home in Windham, NH: colonials on larger lots and lake homes, I-93 Exit 3, the Windham Rail Trail, New Hampshire taxes explained carefully, schools and live market data — from Eduardo Inoa, REALTOR®.",
+      "lede": "Just north of Salem on I-93 — ponds, rail trail and wooded lots.",
+      "intro": [
+        "Windham sits just north of Salem, with one I-93 interchange — Exit 3 — and NH Route 111 crossing the town. Cobbetts Pond and Canobie Lake are on its map, and the Windham Rail Trail runs north into Derry.",
+        "For buyers it is a town of single-family homes on larger lots, within a short drive of the Massachusetts line."
+      ],
+      "housing": [
+        "Windham is predominantly single-family: colonials on larger lots, newer subdivisions, homes on and near Cobbetts Pond and Canobie Lake, and some condominium and townhouse communities.",
+        "Private wells and septic systems are common, so we confirm both before an offer. On taxes: New Hampshire has no general sales tax and no state income tax on wages, but relies more on local property taxes — compare the actual tax bill on any home. If you work in Massachusetts, Massachusetts generally taxes the wages you earn there."
+      ],
+      "ways": [
+        {
+          "t": "By car",
+          "d": "I-93 has one interchange in town, Exit 3. NH Routes 28, 111, 111A and 128 also cross Windham."
+        },
+        {
+          "t": "By train",
+          "d": "There is no passenger rail in Windham. The nearest commuter rail stations are in Massachusetts."
+        },
+        {
+          "t": "On foot or bike",
+          "d": "The paved Windham Rail Trail runs from Windham into Derry."
+        }
+      ],
+      "schools": "Windham’s public schools are run by the Windham School District. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Searles Castle",
+          "d": "Built by Edward Francis Searles, it is one of Windham’s best-known landmarks, along with the Searles School and Chapel."
+        },
+        {
+          "t": "Cobbetts Pond",
+          "d": "Home to the town beach."
+        },
+        {
+          "t": "Windham Rail Trail",
+          "d": "A paved walking and biking path from Windham into Derry."
+        },
+        {
+          "t": "Incorporated in 1742",
+          "d": "Granted by colonial governor Benning Wentworth."
+        }
+      ],
+      "faq": [
+        [
+          "Does New Hampshire have a sales tax or income tax?",
+          "New Hampshire has no general sales tax and no state income tax on wages, and its interest-and-dividends tax was repealed for tax periods beginning in 2025. Property-tax rates are generally higher than in many nearby Massachusetts towns, so always compare the actual tax bill. If you work in Massachusetts, ask a tax professional how your wages are taxed."
+        ],
+        [
+          "How do I get to I-93 from Windham?",
+          "Exit 3 is in Windham, where NH Route 111 meets the interstate."
+        ],
+        [
+          "What kinds of homes are in Windham?",
+          "Mostly single-family colonials on larger lots, newer subdivisions, lake and pond homes, and some condominium and townhouse communities."
+        ]
+      ],
+      "neighbors": [
+        "salem-nh",
+        "pelham-nh"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Windham,_New_Hampshire",
+        "https://www.windhamsd.org",
+        "https://www.mclane.com/insights/nh-interest-and-dividends-tax-repealed-as-of-january-1/"
+      ],
+      "stock": "single",
+      "card_es": "La salida 3, Cobbetts Pond y Searles Castle"
+    },
+    {
+      "slug": "pelham-nh",
+      "name": "Pelham",
+      "state": "NH",
+      "county": "Hillsborough County, NH",
+      "incorporated": "1746",
+      "rail": "No passenger rail — Lowell and Lawrence stations in MA are closest",
+      "roads": "NH Routes 38, 111A and 128; I-93 about 6 miles away in Salem",
+      "district": {
+        "name": "Pelham School District",
+        "url": "https://www.pelhamsd.org"
+      },
+      "card": "Directly north of Dracut and Methuen",
+      "description": "Living in, buying or selling a home in Pelham, NH: single-families on larger lots, Routes 38 and 128, I-93 nearby, New Hampshire taxes explained carefully, schools and live market data — from Eduardo Inoa, REALTOR®.",
+      "lede": "Right over the line from Dracut and Methuen, in the south-east corner of Hillsborough County.",
+      "intro": [
+        "Pelham sits directly north of Dracut and Methuen, with Tyngsborough to the south-west, Hudson to the west and Windham and Salem to the east. There is no interstate in town: NH Route 38 along Bridge Street is its commercial hub, and I-93 is about six miles away in Salem.",
+        "For buyers it offers New Hampshire living within a few minutes of Massachusetts — Lowell and Methuen are just over the line."
+      ],
+      "housing": [
+        "Pelham is mostly single-family: colonials, capes and ranches, many on larger and often wooded lots, along with newer construction.",
+        "Private wells and septic systems are common, so we confirm both before an offer. On taxes: New Hampshire has no general sales tax and no state income tax on wages, but relies more on local property taxes — compare the actual tax bill on any home. If you work in Massachusetts, Massachusetts generally taxes the wages you earn there."
+      ],
+      "ways": [
+        {
+          "t": "By car",
+          "d": "NH Route 38 (Bridge Street), Route 111A and Route 128 — Mammoth Road, which runs from Lowell north toward Hooksett — cross the town. I-93 is about six miles away in Salem, and I-495 about nine miles south in Massachusetts."
+        },
+        {
+          "t": "By train",
+          "d": "There is no passenger rail in Pelham. The closest commuter rail stations are across the line in Massachusetts, in Lowell and Lawrence."
+        },
+        {
+          "t": "Across the line",
+          "d": "Dracut, Methuen and Tyngsborough, Massachusetts, border Pelham to the south."
+        }
+      ],
+      "schools": "Pelham’s public schools are run by the Pelham School District. For school assignments, enrollment and programs, go straight to the district — it is the only source I point clients to.",
+      "know": [
+        {
+          "t": "Beaver Brook",
+          "d": "Nearly all of the town drains into Beaver Brook, which flows south to the Merrimack in Lowell."
+        },
+        {
+          "t": "Route 38",
+          "d": "Bridge Street is the town’s commercial hub."
+        },
+        {
+          "t": "Incorporated in 1746",
+          "d": "Pelham was split from Old Dunstable in the 1740s and incorporated in 1746."
+        }
+      ],
+      "faq": [
+        [
+          "Does New Hampshire have a sales tax or income tax?",
+          "New Hampshire has no general sales tax and no state income tax on wages, and its interest-and-dividends tax was repealed for tax periods beginning in 2025. Property-tax rates are generally higher than in many nearby Massachusetts towns, so always compare the actual tax bill. If you work in Massachusetts, ask a tax professional how your wages are taxed."
+        ],
+        [
+          "How far is Pelham from I-93 and I-495?",
+          "I-93 is about six miles from the town center, in Salem, and I-495 is about nine miles south in Massachusetts."
+        ],
+        [
+          "What kinds of homes are in Pelham?",
+          "Mostly single-family colonials, capes and ranches, many on larger wooded lots, along with newer construction."
+        ]
+      ],
+      "neighbors": [
+        "windham-nh",
+        "salem-nh",
+        "dracut",
+        "methuen",
+        "tyngsborough"
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pelham,_New_Hampshire",
+        "https://www.pelhamsd.org",
+        "https://www.mclane.com/insights/nh-interest-and-dividends-tax-repealed-as-of-january-1/"
+      ],
+      "stock": "single",
+      "card_es": "Justo al norte de Dracut y Methuen"
+    }
+  ]
+}
