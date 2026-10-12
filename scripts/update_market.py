@@ -23,22 +23,28 @@ COUNTIES = {"Essex County, MA": ("25009", "MA"), "Middlesex County, MA": ("25017
 METRO = {"MA": "Boston, MA", "NH": "Manchester, NH"}
 # name, state, county, ZIPs (Zillow forecast is published per ZIP; the town forecast is the ZIP average)
 TOWNS = [
-    ("Lawrence", "MA", "Essex County, MA", ["01840", "01841", "01843"]),
+    # Service area, in the same order as the Google Business Profile (eduardoinoa.com brief section 2).
+    # The first 14 (through Pelham) are the priority towns that have town pages.
     ("Methuen", "MA", "Essex County, MA", ["01844"]),
+    ("Lawrence", "MA", "Essex County, MA", ["01840", "01841", "01843"]),
+    ("Haverhill", "MA", "Essex County, MA", ["01830", "01832", "01835"]),
     ("Andover", "MA", "Essex County, MA", ["01810"]),
     ("North Andover", "MA", "Essex County, MA", ["01845"]),
-    ("Haverhill", "MA", "Essex County, MA", ["01830", "01832", "01835"]),
-    ("Lowell", "MA", "Middlesex County, MA", ["01850", "01851", "01852", "01854"]),
     ("Dracut", "MA", "Middlesex County, MA", ["01826"]),
     ("Tewksbury", "MA", "Middlesex County, MA", ["01876"]),
+    ("Lowell", "MA", "Middlesex County, MA", ["01850", "01851", "01852", "01854"]),
+    ("Tyngsborough", "MA", "Middlesex County, MA", ["01879"]),
+    ("Chelmsford", "MA", "Middlesex County, MA", ["01824", "01863"]),
+    ("Westford", "MA", "Middlesex County, MA", ["01886"]),
     ("Salem", "NH", "Rockingham County, NH", ["03079"]),
+    ("Windham", "NH", "Rockingham County, NH", ["03087"]),
+    ("Pelham", "NH", "Hillsborough County, NH", ["03076"]),
     ("Nashua", "NH", "Hillsborough County, NH", ["03060", "03062", "03063", "03064"]),
-    ("Manchester", "NH", "Hillsborough County, NH", ["03101", "03102", "03103", "03104", "03109"]),
     ("Derry", "NH", "Rockingham County, NH", ["03038"]),
     ("Londonderry", "NH", "Rockingham County, NH", ["03053"]),
     ("Hudson", "NH", "Hillsborough County, NH", ["03051"]),
-    ("Pelham", "NH", "Hillsborough County, NH", ["03076"]),
-    ("Windham", "NH", "Rockingham County, NH", ["03087"]),
+    ("Atkinson", "NH", "Rockingham County, NH", ["03811"]),
+    ("Plaistow", "NH", "Rockingham County, NH", ["03865"]),
 ]
 TOWN_KEYS = {(n.lower(), s) for n, s, _, _ in TOWNS}
 ALL_ZIPS = {z for _, _, _, zs in TOWNS for z in zs}

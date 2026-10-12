@@ -1,0 +1,14 @@
+{
+  "name": "eduardoinoa-site-tools",
+  "private": true,
+  "type": "module",
+  "description": "Local generators for the static site. Not used by Vercel (no build step); run `npm run gen` and commit the output.",
+  "scripts": {
+    "gen": "node generate.mjs",
+    "qa": "node qa.mjs"
+  },
+  "devDependencies": {
+    "node-html-parser": "^7.0.1",
+    "sharp": "^0.35.5"
+  }
+}
