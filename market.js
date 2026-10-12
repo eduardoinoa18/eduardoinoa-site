@@ -35,9 +35,9 @@
       '<div class="mp-big"><span class="mp-lbl">', T("Typical home value","Valor típico de vivienda"), '</span><b>', money(z && z.value), '</b><span class="mp-sub"><i class="', cls(z && z.yoy), '">', sgn(z && z.yoy), '</i> ', T("year over year","año a año"), ' · ', mon(z && z.asOf), '</span></div>',
       '<div class="mp-grid">',
         f && f.y1 ? '<div><span class="mp-lbl">' + T("12-month forecast","Pronóstico 12 meses") + '</span><b class="' + cls(f.y1.pct) + '">' + sgn(f.y1.pct) + '</b><span class="mp-sub">Zillow · ' + esc(S.zillow.forecastRegion || "") + '</span></div>' : "",
-        r.medianList ? '<div><span class="mp-lbl">' + T("Median list price","Precio de lista mediano") + '</span><b>' + kmoney(r.medianList.v) + '</b><span class="mp-sub"><i class="' + cls(r.medianList.yoy) + '">' + sgn(r.medianList.yoy) + '</i> YoY · ' + mon(r.medianList.asOf) + '</span></div>' : "",
+        r.medianList ? '<div><span class="mp-lbl">' + T("Median list price","Precio de lista mediano") + '</span><b>' + kmoney(r.medianList.v) + '</b><span class="mp-sub"><i class="' + cls(r.medianList.yoy) + '">' + sgn(r.medianList.yoy) + '</i> ' + T("YoY","anual") + ' · ' + mon(r.medianList.asOf) + '</span></div>' : "",
         r.dom ? '<div><span class="mp-lbl">' + T("Days on market","Días en el mercado") + '</span><b>' + r.dom.v + '</b><span class="mp-sub">' + T("was ","antes ") + r.dom.yearAgo + T(" a year ago"," hace un año") + '</span></div>' : "",
-        r.activeListings ? '<div><span class="mp-lbl">' + T("Active listings","Listados activos") + '</span><b>' + r.activeListings.v.toLocaleString("en-US") + '</b><span class="mp-sub"><i class="' + cls(r.activeListings.yoy) + '">' + sgn(r.activeListings.yoy) + '</i> YoY</span></div>' : "",
+        r.activeListings ? '<div><span class="mp-lbl">' + T("Active listings","Listados activos") + '</span><b>' + r.activeListings.v.toLocaleString("en-US") + '</b><span class="mp-sub"><i class="' + cls(r.activeListings.yoy) + '">' + sgn(r.activeListings.yoy) + '</i> ' + T("YoY","anual") + '</span></div>' : "",
         rf && rf.saleToList ? '<div><span class="mp-lbl">' + T("Sale-to-list","Venta vs. lista") + '</span><b>' + rf.saleToList.toFixed(1) + '%</b><span class="mp-sub">' + (rf.soldAboveList != null ? Math.round(rf.soldAboveList) + T("% sold above asking","% vendidas sobre el precio") : "") + ' · ' + mon(rf.periodEnd) + '</span></div>' : "",
         rf && rf.monthsSupply != null ? '<div><span class="mp-lbl">' + T("Months of supply","Meses de inventario") + '</span><b>' + rf.monthsSupply + '</b><span class="mp-sub">' + (rf.monthsSupply < 3 ? T("seller's market","mercado de vendedor") : rf.monthsSupply <= 6 ? T("balanced","balanceado") : T("buyer's market","mercado de comprador")) + '</span></div>' : "",
       '</div></div>']);
@@ -47,10 +47,10 @@
     return M.towns.filter(function(t){ return t.state === st; }).map(function(t){
       var z = t.zillow && t.zillow.zhvi, f = t.zillow && t.zillow.forecast, r = t.redfin, c = M.counties && M.counties[t.county];
       var cr = c && c.realtor && c.realtor.dom;
-      return '<tr><th scope="row"><b>' + esc(t.name) + '</b><span>' + esc(t.county.replace(/ County.*/, " County")) + '</span></th>' +
-        '<td><b>' + money(z && z.value) + '</b><i class="' + cls(z && z.yoy) + '">' + sgn(z && z.yoy) + ' YoY</i></td>' +
+      return '<tr><th scope="row"><b>' + esc(t.name) + '</b><span>' + esc(T(t.county.replace(/ County.*/, " County"), "Condado de " + t.county.replace(/ County.*/, ""))) + '</span></th>' +
+        '<td><b>' + money(z && z.value) + '</b><i class="' + cls(z && z.yoy) + '">' + sgn(z && z.yoy) + ' ' + T("YoY","anual") + '</i></td>' +
         '<td><b class="' + cls(f && f.y1 && f.y1.pct) + '">' + sgn(f && f.y1 && f.y1.pct) + '</b><i>' + T("12 mo · Zillow","12 m · Zillow") + '</i></td>' +
-        '<td>' + (r ? '<b>' + money(r.medianSale) + '</b><i class="' + cls(r.medianSaleYoY) + '">' + sgn(r.medianSaleYoY) + ' YoY · ' + mon(r.periodEnd) + '</i>' : '<b>—</b><i>' + T("county: ","condado: ") + (c && c.redfin ? money(c.redfin.medianSale) : "—") + '</i>') + '</td>' +
+        '<td>' + (r ? '<b>' + money(r.medianSale) + '</b><i class="' + cls(r.medianSaleYoY) + '">' + sgn(r.medianSaleYoY) + ' ' + T("YoY","anual") + ' · ' + mon(r.periodEnd) + '</i>' : '<b>—</b><i>' + T("county: ","condado: ") + (c && c.redfin ? money(c.redfin.medianSale) : "—") + '</i>') + '</td>' +
         '<td>' + (r ? '<b>' + r.dom + '</b><i>' + T("days · ","días · ") + r.saleToList.toFixed(1) + '% ' + T("of asking","del precio") + '</i>' : '<b>' + (cr ? cr.v : "—") + '</b><i>' + T("days · county","días · condado") + '</i>') + '</td></tr>';
     }).join("");
   }
@@ -58,7 +58,7 @@
   function towns(M){
     var id = "mp" + Math.random().toString(36).slice(2,7);
     return h(['<div class="mp-towns" id="', id, '">',
-      '<div class="mp-seg" role="tablist"><button class="on" data-st="MA">Massachusetts</button><button data-st="NH">New Hampshire</button></div>',
+      '<div class="mp-seg" role="group" aria-label="' + T("State","Estado") + '"><button type="button" class="on" aria-pressed="true" data-st="MA">Massachusetts</button><button type="button" aria-pressed="false" data-st="NH">New Hampshire</button></div>',
       '<div class="mp-tw"><table class="mp-table"><thead><tr><th>', T("Town","Pueblo"), '</th><th>', T("Typical value","Valor típico"), '</th><th>', T("Forecast","Pronóstico"), '</th><th>', T("Median sale","Venta mediana"), '</th><th>', T("Days on market","Días en el mercado"), '</th></tr></thead>',
       '<tbody data-st="MA">', townRows(M, "MA"), '</tbody><tbody data-st="NH" hidden>', townRows(M, "NH"), '</tbody></table></div></div>']);
   }
@@ -83,12 +83,12 @@
     var z = t.zillow && t.zillow.zhvi, f = t.zillow && t.zillow.forecast, r = t.redfin, c = M.counties[t.county], S = M.states[t.state];
     var cr = c && c.realtor || {};
     return h(['<div class="mp-grid mp-grid-town">',
-      '<div><span class="mp-lbl">', T("Typical value","Valor típico"), '</span><b>', money(z && z.value), '</b><span class="mp-sub"><i class="', cls(z && z.yoy), '">', sgn(z && z.yoy), '</i> YoY · <i class="', cls(z && z.fiveYear), '">', sgn(z && z.fiveYear), '</i> ', T("5 yr","5 años"), '</span></div>',
+      '<div><span class="mp-lbl">', T("Typical value","Valor típico"), '</span><b>', money(z && z.value), '</b><span class="mp-sub"><i class="', cls(z && z.yoy), '">', sgn(z && z.yoy), '</i> ' + T("YoY","anual") + ' · <i class="', cls(z && z.fiveYear), '">', sgn(z && z.fiveYear), '</i> ', T("5 yr","5 años"), '</span></div>',
       f && f.y1 ? '<div><span class="mp-lbl">' + T("Zillow forecast","Pronóstico Zillow") + '</span><b class="' + cls(f.y1.pct) + '">' + sgn(f.y1.pct) + '</b><span class="mp-sub">' + T("next 12 months · ZIP ","próximos 12 meses · ZIP ") + (f.zips||[]).join(", ") + '</span></div>' : "",
-      r ? '<div><span class="mp-lbl">' + T("Median sale price","Precio de venta mediano") + '</span><b>' + money(r.medianSale) + '</b><span class="mp-sub"><i class="' + cls(r.medianSaleYoY) + '">' + sgn(r.medianSaleYoY) + '</i> YoY · ' + mon(r.periodEnd) + '</span></div>' : (c && c.redfin ? '<div><span class="mp-lbl">' + T("Median sale · county","Venta mediana · condado") + '</span><b>' + money(c.redfin.medianSale) + '</b><span class="mp-sub">' + esc(t.county) + ' · ' + mon(c.redfin.periodEnd) + '</span></div>' : ""),
+      r ? '<div><span class="mp-lbl">' + T("Median sale price","Precio de venta mediano") + '</span><b>' + money(r.medianSale) + '</b><span class="mp-sub"><i class="' + cls(r.medianSaleYoY) + '">' + sgn(r.medianSaleYoY) + '</i> ' + T("YoY","anual") + ' · ' + mon(r.periodEnd) + '</span></div>' : (c && c.redfin ? '<div><span class="mp-lbl">' + T("Median sale · county","Venta mediana · condado") + '</span><b>' + money(c.redfin.medianSale) + '</b><span class="mp-sub">' + esc(t.county) + ' · ' + mon(c.redfin.periodEnd) + '</span></div>' : ""),
       r ? '<div><span class="mp-lbl">' + T("Days on market","Días en el mercado") + '</span><b>' + r.dom + '</b><span class="mp-sub">' + r.saleToList.toFixed(1) + '% ' + T("sale-to-list · ","venta vs. lista · ") + Math.round(r.soldAboveList) + T("% above asking","% sobre el precio") + '</span></div>' : (cr.dom ? '<div><span class="mp-lbl">' + T("Days on market · county","Días en el mercado · condado") + '</span><b>' + cr.dom.v + '</b><span class="mp-sub">' + T("was ","antes ") + cr.dom.yearAgo + T(" a year ago"," hace un año") + '</span></div>' : ""),
-      cr.medianList ? '<div><span class="mp-lbl">' + T("County median list","Lista mediana · condado") + '</span><b>' + kmoney(cr.medianList.v) + '</b><span class="mp-sub"><i class="' + cls(cr.medianList.yoy) + '">' + sgn(cr.medianList.yoy) + '</i> YoY · ' + mon(cr.medianList.asOf) + '</span></div>' : "",
-      cr.activeListings ? '<div><span class="mp-lbl">' + T("County active listings","Listados activos · condado") + '</span><b>' + cr.activeListings.v.toLocaleString("en-US") + '</b><span class="mp-sub"><i class="' + cls(cr.activeListings.yoy) + '">' + sgn(cr.activeListings.yoy) + '</i> YoY</span></div>' : "",
+      cr.medianList ? '<div><span class="mp-lbl">' + T("County median list","Lista mediana · condado") + '</span><b>' + kmoney(cr.medianList.v) + '</b><span class="mp-sub"><i class="' + cls(cr.medianList.yoy) + '">' + sgn(cr.medianList.yoy) + '</i> ' + T("YoY","anual") + ' · ' + mon(cr.medianList.asOf) + '</span></div>' : "",
+      cr.activeListings ? '<div><span class="mp-lbl">' + T("County active listings","Listados activos · condado") + '</span><b>' + cr.activeListings.v.toLocaleString("en-US") + '</b><span class="mp-sub"><i class="' + cls(cr.activeListings.yoy) + '">' + sgn(cr.activeListings.yoy) + '</i> ' + T("YoY","anual") + '</span></div>' : "",
       '</div>']);
   }
   /* Find a town; when the snapshot has no row for it (or no Zillow value), fall back to its county.
@@ -111,11 +111,11 @@
     var c = r.county || {}, z = c.zillow && c.zillow.zhvi, rf = c.redfin, cr = c.realtor || {};
     var note = '<p class="mp-foot mp-fallback">' + T("The public sources don't publish a separate series for ","Las fuentes públicas no publican una serie separada para ") + esc(name) + T(", so these are " + esc(r.countyName) + " figures. Ask me for the comparables on your street.",", así que estos son datos de " + esc(r.countyName) + ". Pídame los comparables de su calle.") + '</p>';
     return rates(M) + h(['<div class="mp-grid mp-grid-town">',
-      '<div><span class="mp-lbl">', T("Typical value · county","Valor típico · condado"), '</span><b>', money(z && z.value), '</b><span class="mp-sub"><i class="', cls(z && z.yoy), '">', sgn(z && z.yoy), '</i> YoY · ', mon(z && z.asOf), '</span></div>',
-      rf ? '<div><span class="mp-lbl">' + T("Median sale · county","Venta mediana · condado") + '</span><b>' + money(rf.medianSale) + '</b><span class="mp-sub"><i class="' + cls(rf.medianSaleYoY) + '">' + sgn(rf.medianSaleYoY) + '</i> YoY · ' + mon(rf.periodEnd) + '</span></div>' : "",
+      '<div><span class="mp-lbl">', T("Typical value · county","Valor típico · condado"), '</span><b>', money(z && z.value), '</b><span class="mp-sub"><i class="', cls(z && z.yoy), '">', sgn(z && z.yoy), '</i> ' + T("YoY","anual") + ' · ', mon(z && z.asOf), '</span></div>',
+      rf ? '<div><span class="mp-lbl">' + T("Median sale · county","Venta mediana · condado") + '</span><b>' + money(rf.medianSale) + '</b><span class="mp-sub"><i class="' + cls(rf.medianSaleYoY) + '">' + sgn(rf.medianSaleYoY) + '</i> ' + T("YoY","anual") + ' · ' + mon(rf.periodEnd) + '</span></div>' : "",
       rf ? '<div><span class="mp-lbl">' + T("Sale-to-list · county","Venta vs. lista · condado") + '</span><b>' + rf.saleToList.toFixed(1) + '%</b><span class="mp-sub">' + rf.dom + T(" median days on market"," días medianos en el mercado") + '</span></div>' : "",
-      cr.medianList ? '<div><span class="mp-lbl">' + T("Median list · county","Lista mediana · condado") + '</span><b>' + kmoney(cr.medianList.v) + '</b><span class="mp-sub"><i class="' + cls(cr.medianList.yoy) + '">' + sgn(cr.medianList.yoy) + '</i> YoY · ' + mon(cr.medianList.asOf) + '</span></div>' : "",
-      cr.activeListings ? '<div><span class="mp-lbl">' + T("Active listings · county","Listados activos · condado") + '</span><b>' + cr.activeListings.v.toLocaleString("en-US") + '</b><span class="mp-sub"><i class="' + cls(cr.activeListings.yoy) + '">' + sgn(cr.activeListings.yoy) + '</i> YoY</span></div>' : "",
+      cr.medianList ? '<div><span class="mp-lbl">' + T("Median list · county","Lista mediana · condado") + '</span><b>' + kmoney(cr.medianList.v) + '</b><span class="mp-sub"><i class="' + cls(cr.medianList.yoy) + '">' + sgn(cr.medianList.yoy) + '</i> ' + T("YoY","anual") + ' · ' + mon(cr.medianList.asOf) + '</span></div>' : "",
+      cr.activeListings ? '<div><span class="mp-lbl">' + T("Active listings · county","Listados activos · condado") + '</span><b>' + cr.activeListings.v.toLocaleString("en-US") + '</b><span class="mp-sub"><i class="' + cls(cr.activeListings.yoy) + '">' + sgn(cr.activeListings.yoy) + '</i> ' + T("YoY","anual") + '</span></div>' : "",
       rf && rf.monthsSupply != null ? '<div><span class="mp-lbl">' + T("Months of supply · county","Meses de inventario · condado") + '</span><b>' + rf.monthsSupply + '</b><span class="mp-sub">' + (rf.monthsSupply < 3 ? T("seller's market","mercado de vendedor") : rf.monthsSupply <= 6 ? T("balanced","balanceado") : T("buyer's market","mercado de comprador")) + '</span></div>' : "",
       '</div>']) + note + foot(M);
   }
@@ -130,7 +130,7 @@
     var mode = el.getAttribute("data-market") || "full";
     el.innerHTML = mode === "mini" ? mini(M) : mode === "compact" ? compact(M, el) : mode === "town" ? town(M, el) : full(M);
     el.querySelectorAll(".mp-seg button").forEach(function(b){ b.addEventListener("click", function(){
-      el.querySelectorAll(".mp-seg button").forEach(function(x){ x.classList.toggle("on", x === b); });
+      el.querySelectorAll(".mp-seg button").forEach(function(x){ x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", String(x === b)); });
       el.querySelectorAll("tbody[data-st]").forEach(function(tb){ tb.hidden = tb.getAttribute("data-st") !== b.getAttribute("data-st"); }); postHeight(); }); });
     var sel = el.querySelector(".mp-select"); if (sel) { var det = el.querySelector(".mp-town-detail"); var upd = function(){ det.innerHTML = townDetail(M, sel.value); postHeight(); }; sel.addEventListener("change", upd); upd(); }
     el.classList.add("mp-ready");
