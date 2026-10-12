@@ -1,0 +1,103 @@
+{
+  "_note": "Journal metadata used by tools/pages/journal.mjs (indexes, related reading, town chips). Titles and summaries are copied from the posts themselves; edit both together. Order = newest first. cover = a slug from img/photos/manifest.json.",
+  "en": [
+    {
+      "slug": "how-to-read-the-market-pulse",
+      "path": "/posts/how-to-read-the-market-pulse",
+      "date": "2026-10-12",
+      "category": "Market",
+      "title": "How to read the Market Pulse — and what it means for you",
+      "crumb": "Reading the Market Pulse",
+      "summary": "Typical value, forecast, sale-to-list, days on market, months of supply and rates: what each number is telling a buyer, a seller and an investor.",
+      "summaryEs": "Valor típico, pronóstico, precio de venta frente al de lista, días en el mercado, meses de inventario y tasas: qué le dice cada número a quien compra, vende o invierte.",
+      "cover": "north-andover-old-center-aerial",
+      "towns": ["dracut", "tewksbury", "salem-nh"],
+      "related": ["first-time-buyer-programs-ma-nh", "what-selling-costs-ma-nh", "sell-and-buy-at-the-same-time"]
+    },
+    {
+      "slug": "first-time-buyer-programs-ma-nh",
+      "path": "/posts/first-time-buyer-programs-ma-nh",
+      "esPath": "/es/blog/programas-primer-comprador-ma-nh",
+      "date": "2026-10-12",
+      "category": "Buyers",
+      "title": "First-time buyer programs in Massachusetts and New Hampshire, explained",
+      "crumb": "First-time buyer programs",
+      "summary": "MassHousing, the ONE Mortgage, New Hampshire Housing, FHA and 3–5% conventional: the four doors, what assistance really means, and the order to do things in.",
+      "cover": "keys-new-home",
+      "towns": ["salem-nh"],
+      "related": ["first-multi-family-merrimack-valley", "how-to-read-the-market-pulse"]
+    },
+    {
+      "slug": "first-multi-family-merrimack-valley",
+      "path": "/posts/first-multi-family-merrimack-valley",
+      "date": "2026-10-11",
+      "category": "Investing",
+      "title": "Your first multi-family in the Merrimack Valley: the five numbers that decide it",
+      "crumb": "Your first multi-family",
+      "summary": "House hacking a two- or three-family in Lawrence, Lowell or Haverhill still works — with real rents, the lender's tests, DSCR and three local cautions.",
+      "summaryEs": "Comprar una casa de dos o tres familias en Lawrence, Lowell o Haverhill y vivir en una unidad todavía funciona — con rentas reales, las pruebas del prestamista, DSCR y tres precauciones locales.",
+      "cover": "multifamily-triple-decker",
+      "towns": ["lawrence", "lowell", "haverhill", "methuen"],
+      "related": ["first-time-buyer-programs-ma-nh", "how-to-read-the-market-pulse"]
+    },
+    {
+      "slug": "sell-and-buy-at-the-same-time",
+      "path": "/posts/sell-and-buy-at-the-same-time",
+      "date": "2026-10-11",
+      "category": "Sellers",
+      "title": "Selling and buying at the same time: four ways to move once",
+      "crumb": "Selling and buying at once",
+      "summary": "Sell first with a cushion, buy first, go contingent, or bridge — how each works in this market and how we pick the one that fits your equity and income.",
+      "summaryEs": "Vender primero con margen, comprar primero, una oferta contingente o un préstamo puente — cómo funciona cada opción en este mercado y cómo escogemos la que se ajusta a su equidad y sus ingresos.",
+      "cover": "porch-rocking-chairs",
+      "towns": ["methuen", "dracut"],
+      "related": ["what-selling-costs-ma-nh", "how-to-read-the-market-pulse"]
+    },
+    {
+      "slug": "what-selling-costs-ma-nh",
+      "path": "/posts/what-selling-costs-ma-nh",
+      "esPath": "/es/blog/cuanto-cuesta-vender-ma-nh",
+      "date": "2026-10-10",
+      "category": "Sellers",
+      "title": "What selling your home actually costs in Massachusetts and New Hampshire",
+      "crumb": "What selling costs",
+      "summary": "Price is what the market says; net is what you keep. The short list of costs between the two, with real numbers.",
+      "cover": "home-colonial-black-shutters",
+      "towns": [],
+      "related": ["sell-and-buy-at-the-same-time", "how-to-read-the-market-pulse"]
+    }
+  ],
+  "es": [
+    {
+      "slug": "programas-primer-comprador-ma-nh",
+      "path": "/es/blog/programas-primer-comprador-ma-nh",
+      "enSlug": "first-time-buyer-programs-ma-nh",
+      "date": "2026-10-12",
+      "category": "Compradores",
+      "title": "Programas para comprar su primera casa en Massachusetts y New Hampshire, explicados",
+      "crumb": "Programas para primeros compradores",
+      "summary": "MassHousing, ONE Mortgage, New Hampshire Housing, FHA y el préstamo convencional con 3–5% de pago inicial: las cuatro puertas, lo que de verdad significa la asistencia y el orden en que conviene hacer las cosas.",
+      "cover": "keys-new-home",
+      "towns": ["salem-nh"],
+      "related": ["cuanto-cuesta-vender-ma-nh", "first-multi-family-merrimack-valley", "how-to-read-the-market-pulse"]
+    },
+    {
+      "slug": "cuanto-cuesta-vender-ma-nh",
+      "path": "/es/blog/cuanto-cuesta-vender-ma-nh",
+      "enSlug": "what-selling-costs-ma-nh",
+      "date": "2026-10-12",
+      "category": "Vendedores",
+      "title": "Lo que realmente cuesta vender su casa en Massachusetts y New Hampshire",
+      "crumb": "Lo que cuesta vender",
+      "summary": "El precio lo dice el mercado; la ganancia neta es lo que usted se queda. La lista corta de costos entre uno y otro, con números reales.",
+      "cover": "home-colonial-black-shutters",
+      "towns": [],
+      "related": ["programas-primer-comprador-ma-nh", "sell-and-buy-at-the-same-time", "how-to-read-the-market-pulse"]
+    }
+  ],
+  "towns": {
+    "methuen": "Methuen", "lawrence": "Lawrence", "haverhill": "Haverhill", "andover": "Andover", "north-andover": "North Andover",
+    "dracut": "Dracut", "tewksbury": "Tewksbury", "lowell": "Lowell", "tyngsborough": "Tyngsborough", "chelmsford": "Chelmsford",
+    "westford": "Westford", "salem-nh": "Salem, NH", "windham-nh": "Windham, NH", "pelham-nh": "Pelham, NH"
+  }
+}
