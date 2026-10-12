@@ -49,8 +49,8 @@ export default function esHome(ctx) {
   /* ---- head ---- */
   $("title").set_content(ES_TITLE);
   $('meta[name="description"]').setAttribute("content", esDescription(CONFIG.stats || {}));
-  $('link[rel="canonical"]').setAttribute("href", "https://eduardoinoa.com/es/");
-  $('meta[property="og:url"]').setAttribute("content", "https://eduardoinoa.com/es/");
+  $('link[rel="canonical"]').setAttribute("href", "https://eduardoinoa.com/es");
+  $('meta[property="og:url"]').setAttribute("content", "https://eduardoinoa.com/es");
   $('meta[property="og:title"]').setAttribute("content", ES_OG_TITLE);
   $('meta[property="og:description"]').setAttribute("content", ES_OG_DESC);
   $('meta[property="og:locale"]').setAttribute("content", "es_US");
@@ -81,12 +81,12 @@ export default function esHome(ctx) {
   /* ---- JSON-LD: Spanish WebPage + FAQPage (built from the visible Spanish FAQ) ---- */
   const faqEs = faqOf();
   graph["@graph"] = graph["@graph"].map((n) => {
-    if (n["@type"] === "WebPage") return { ...n, "@id": "https://eduardoinoa.com/es/#page", url: "https://eduardoinoa.com/es/", name: "Eduardo Inoa — REALTOR® bilingüe en Merrimack Valley y el sur de NH", description: "Compre, venda o invierta con números claros y un plan claro.", inLanguage: "es-US" };
-    if (n["@type"] === "FAQPage") return { "@type": "FAQPage", "@id": "https://eduardoinoa.com/es/#faq", inLanguage: "es-US", mainEntity: faqEs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
+    if (n["@type"] === "WebPage") return { ...n, "@id": "https://eduardoinoa.com/es#page", url: "https://eduardoinoa.com/es", name: "Eduardo Inoa — REALTOR® bilingüe en Merrimack Valley y el sur de NH", description: "Compre, venda o invierta con números claros y un plan claro.", inLanguage: "es-US" };
+    if (n["@type"] === "FAQPage") return { "@type": "FAQPage", "@id": "https://eduardoinoa.com/es#faq", inLanguage: "es-US", mainEntity: faqEs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
     return n;
   });
   ldEl.set_content(JSON.stringify(graph).replace(/</g, "\\u003c"));
 
   const html = (doctype + root.toString()).replace(/<!--\s*Editing notes[\s\S]*?-->\n?/, "");
-  return [{ path: "/es/", altPath: "/", lang: "es", html, sitemap: { priority: "0.9", changefreq: "weekly" } }];
+  return [{ path: "/es", altPath: "/", lang: "es", html, sitemap: { priority: "0.9", changefreq: "weekly" } }];
 }

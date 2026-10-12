@@ -8,7 +8,7 @@
 <meta name="description" content="Buy, sell or invest with clear numbers and a clear plan. Eduardo Inoa is a bilingual REALTOR® with The Fermin Group at Century 21 North East, licensed in MA and NH since 2021 — 35+ transactions, $20M+ in sales.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://eduardoinoa.com/">
-<link rel="alternate" hreflang="en" href="https://eduardoinoa.com/"><link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/"><link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/">
+<link rel="alternate" hreflang="en" href="https://eduardoinoa.com/"><link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es"><link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/">
 <meta name="author" content="Eduardo Inoa">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Eduardo Inoa, REALTOR®">
 <meta property="og:url" content="https://eduardoinoa.com/">
@@ -410,7 +410,7 @@ section{position:relative}
       <a href="#about" data-es="Sobre mí">About</a>
       <a href="/journal" data-es="Blog">Journal</a>
     </div>
-    <a class="lang-link" id="langLink" href="/es/" hreflang="es" lang="es">Español</a>
+    <a class="lang-link" id="langLink" href="/es" hreflang="es" lang="es">Español</a>
     <a class="btn btn-primary navcta" href="https://marketora.me/book/eduardoinoa" target="_blank" rel="noopener" data-es="Reservar llamada">Book a call</a>
     <button class="burger" id="burger" type="button" aria-controls="links" aria-expanded="false" aria-label="Menu" data-es-aria-label="Menú"><span></span></button>
   </div>
@@ -698,7 +698,7 @@ section{position:relative}
   </div>
 </footer>
 <nav class="dock" id="dock" aria-label="Quick contact" data-es-aria-label="Contacto rápido"><a href="tel:+19783909619" data-es="Llamar">Call</a><a href="sms:+19783909619" data-es="Texto">Text</a><a href="https://marketora.me/book/eduardoinoa" target="_blank" rel="noopener" data-es="Reservar">Book</a></nav>
-<div class="esn" id="esn" lang="es" hidden><p>¿Prefiere español? <a href="/es/" hreflang="es">Vea esta página en español</a></p><button type="button" aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+<div class="esn" id="esn" lang="es" hidden><p>¿Prefiere español? <a href="/es" hreflang="es">Vea esta página en español</a></p><button type="button" aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
 
 <script src="/market.js" defer></script>
 <script>
@@ -709,7 +709,7 @@ window.DECK_ID = "eduardo-inoa-site";
   var W = window, D = document;
   function $(s, r){ return (r||D).querySelector(s); }
   function $$(s, r){ return Array.prototype.slice.call((r||D).querySelectorAll(s)); }
-  /* The page language comes from <html lang>: "/" is English, "/es/" is the generated Spanish copy. */
+  /* The page language comes from <html lang>: "/" is English, "/es" is the generated Spanish copy. */
   var LANG = (D.documentElement.lang||"en").slice(0,2) === "es" ? "es" : "en", GOAL = "buyer";
   W.__lang = function(){ return LANG; };
   function T(en, es){ return LANG === "es" ? es : en; }

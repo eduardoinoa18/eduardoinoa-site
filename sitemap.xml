@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://eduardoinoa.com/</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/"/>
   </url>
   <url><loc>https://eduardoinoa.com/buyers</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
@@ -41,9 +41,9 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/vendedores"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/sellers"/>
   </url>
-  <url><loc>https://eduardoinoa.com/es/</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+  <url><loc>https://eduardoinoa.com/es</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/"/>
   </url>
   <url><loc>https://eduardoinoa.com/journal</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>

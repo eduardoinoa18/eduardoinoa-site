@@ -44,7 +44,7 @@ export const credit = (slug) => photo(slug).credit_html;
 /* ---------------- copy ---------------- */
 const NAV = {
   en: [["/buyers", "Buy"], ["/sellers", "Sell"], ["/home-value", "Home value"], ["/cash-offer", "Cash offer"], ["/towns", "Towns"], ["/#market", "Market"], ["/journal", "Journal"]],
-  es: [["/es/compradores", "Comprar"], ["/es/vendedores", "Vender"], ["/es/valor-de-mi-casa", "Valor de su casa"], ["/es/oferta-en-efectivo", "Oferta en efectivo"], ["/es/pueblos", "Pueblos"], ["/es/#market", "Mercado"], ["/es/blog", "Blog"]],
+  es: [["/es/compradores", "Comprar"], ["/es/vendedores", "Vender"], ["/es/valor-de-mi-casa", "Valor de su casa"], ["/es/oferta-en-efectivo", "Oferta en efectivo"], ["/es/pueblos", "Pueblos"], ["/es#market", "Mercado"], ["/es/blog", "Blog"]],
 };
 const UI = {
   en: { skip: "Skip to content", menu: "Menu", book: "Book a call", call: "Call", text: "Text", other: "Español", explore: "Explore", connect: "Connect", review: "Leave a Google review", card: "Digital card", hub: "All my links", credits: "Photo credits" },
@@ -56,7 +56,7 @@ const EHO_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke=
 export function header(lang, current, altHref) {
   const u = UI[lang];
   const links = NAV[lang].map(([h, t]) => `<a href="${h}"${h === current ? ' aria-current="page"' : ""}>${t}</a>`).join("");
-  const home = lang === "es" ? "/es/" : "/";
+  const home = lang === "es" ? "/es" : "/";
   return `<a class="skip" href="#main">${u.skip}</a>
 <header class="site-head"><div class="wrap">
   <a class="brand" href="${home}" aria-label="Eduardo Inoa, REALTOR® — ${lang === "es" ? "inicio" : "home"}"><img src="/img/logo-fermin-c21.webp" alt="The Fermin Group, Century 21 North East" width="400" height="144"></a>

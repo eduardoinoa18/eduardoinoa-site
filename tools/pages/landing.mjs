@@ -122,7 +122,7 @@ export default function landing(ctx) {
 
   const crumbs = (lang, here) => {
     const es = lang === "es";
-    return `<nav class="crumbs" aria-label="${es ? "Ruta de navegación" : "Breadcrumb"}"><ol><li><a href="${es ? "/es/" : "/"}">${es ? "Inicio" : "Home"}</a></li><li aria-current="page">${esc(here)}</li></ol></nav>`;
+    return `<nav class="crumbs" aria-label="${es ? "Ruta de navegación" : "Breadcrumb"}"><ol><li><a href="${es ? "/es" : "/"}">${es ? "Inicio" : "Home"}</a></li><li aria-current="page">${esc(here)}</li></ol></nav>`;
   };
 
   const faqHtml = (qas) => `<div class="faq">${qas.map(([q, a]) => `<details><summary>${esc(q)}</summary><div class="a"><p>${a}</p></div></details>`).join("")}</div>`;
@@ -388,7 +388,7 @@ ${hero}
       head: PAGE_CSS, body,
       foot: { disclaimer: DISCLAIMER, credits: credits(P.cashHero, P.cashSide) },
       schema: [
-        breadcrumb([[es ? "Inicio" : "Home", es ? "/es/" : "/"], [here, pathNow]]),
+        breadcrumb([[es ? "Inicio" : "Home", es ? "/es" : "/"], [here, pathNow]]),
         {
           "@type": "Service", "@id": abs(pathNow) + "#service",
           name: es ? "Comparación de oferta en efectivo y mercado abierto" : "Cash offer and open-market comparison",
@@ -613,7 +613,7 @@ if(f&&!f._mk){f._mk=1;f.addEventListener("change",function(){var p=f.value.split
       head: `<link rel="stylesheet" href="/market.css">${PAGE_CSS}`, body, scripts: script,
       foot: { disclaimer: DISCLAIMER, credits: credits(P.valueBg, P.valueSide) },
       schema: [
-        breadcrumb([[es ? "Inicio" : "Home", es ? "/es/" : "/"], [here, pathNow]]),
+        breadcrumb([[es ? "Inicio" : "Home", es ? "/es" : "/"], [here, pathNow]]),
         {
           "@type": "Service", "@id": abs(pathNow) + "#service",
           name: es ? "Análisis comparativo de mercado gratis" : "Free comparative market analysis",

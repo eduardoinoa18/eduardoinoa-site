@@ -228,7 +228,7 @@ ${posts.map((p, i) => card(p, "en", { lead: i === 0 })).join("\n")}
     const enOnly = EN.filter((p) => !p.esPath);
     const visible = [...ES, ...enOnly];
     pages.push({
-      lang: "es", path: "/es/blog", altPath: "/journal", navCurrent: "/es/#journal",
+      lang: "es", path: "/es/blog", altPath: "/journal", navCurrent: "/es#journal",
       title: "Blog — comprar, vender e invertir, explicado | Eduardo Inoa, REALTOR®",
       description: "Notas claras de Eduardo Inoa, REALTOR® bilingüe, sobre comprar, vender e invertir en Merrimack Valley y el sur de New Hampshire: programas, costos, datos del mercado y estrategia.",
       ogImage: `/img/photos/${ES[0].cover}-1600.webp`,
@@ -237,11 +237,11 @@ ${posts.map((p, i) => card(p, "en", { lead: i === 0 })).join("\n")}
       schema: [
         blogNode("es", ES),
         itemList(`${BASE}/es/blog#posts`, "Notas del blog", visible, "es"),
-        breadcrumb([["Inicio", "/es/"], ["Blog", "/es/blog"]]),
+        breadcrumb([["Inicio", "/es"], ["Blog", "/es/blog"]]),
       ],
       foot: { credits: [...new Set(visible.map((p) => p.cover))].filter((s) => ph(s)) },
       body: `<section class="jhead"><div class="wrap">
-  ${crumbs([["Inicio", "/es/"], ["Blog", "/es/blog"]], "Ruta de navegación")}
+  ${crumbs([["Inicio", "/es"], ["Blog", "/es/blog"]], "Ruta de navegación")}
   <span class="label">Blog</span>
   <h1>Lo que vale la pena saber, <em>explicado con claridad.</em></h1>
   <p class="lede">Notas cortas sobre comprar, vender e invertir en Merrimack Valley y el sur de New Hampshire — en español y en inglés.</p>
@@ -325,7 +325,7 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
       ? `<div class="area"><span class="label">Pueblos en esta nota</span><div class="chips">${post.towns.map((t) => `<a href="${esTownHref(t)}">${esc(TOWNS[t])}</a>`).join("")}<a href="/es/pueblos">Todos los pueblos</a></div></div>`
       : `<div class="area"><span class="label">Conozca la zona</span><div class="chips"><a href="/es/pueblos">Todos los pueblos donde trabajo en Massachusetts y New Hampshire</a></div></div>`;
     pages.push({
-      lang: "es", path: post.path, altPath: en.path, navCurrent: "/es/#journal",
+      lang: "es", path: post.path, altPath: en.path, navCurrent: "/es#journal",
       title: body.metaTitle, description: post.summary,
       ogImage: p ? `/img/photos/${p.slug}-1600.webp` : undefined,
       head: STYLE + `<meta property="article:published_time" content="${post.date}"><meta name="author" content="Eduardo Inoa"><style>.en-hint{font-size:.7em;color:var(--muted);font-family:var(--bf)}</style>`,
@@ -339,11 +339,11 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
           translationOfWork: { "@id": `${BASE}${en.path}#post` },
           ...(post.towns.length ? { about: post.towns.map((t) => ({ "@type": "City", name: TOWNS[t].includes(",") ? TOWNS[t] : `${TOWNS[t]}, MA` })) } : {}),
         },
-        breadcrumb([["Inicio", "/es/"], ["Blog", "/es/blog"], [post.crumb, post.path]]),
+        breadcrumb([["Inicio", "/es"], ["Blog", "/es/blog"], [post.crumb, post.path]]),
       ],
       foot: { credits: [...new Set([post.cover, ...related.map((r) => r.cover)])].filter((s) => ph(s)) },
       body: `<header class="post-hero"><div class="wrap narrow">
-  ${crumbs([["Inicio", "/es/"], ["Blog", "/es/blog"], [post.crumb, post.path]], "Ruta de navegación")}
+  ${crumbs([["Inicio", "/es"], ["Blog", "/es/blog"], [post.crumb, post.path]], "Ruta de navegación")}
   <span class="label">${esc(post.category)} · <time datetime="${post.date}">${fmt(post.date, "es")}</time></span>
   <h1>${body.h1}</h1>
   <p class="lede">${esc(post.summary)}</p>
@@ -409,7 +409,7 @@ ${related.map((r) => card(r, "es", { heading: "h3" })).join("\n")}
     const disclaimer = T(
       `The live home search is provided by RealScout; listing information comes from the MLS and is deemed reliable but not guaranteed. Photos on this page show New England homes and interiors in general — they are not listings for sale.`,
       `La búsqueda en vivo la ofrece RealScout; la información de las propiedades proviene del MLS y se considera confiable, pero no está garantizada. Las fotos de esta página muestran casas e interiores de Nueva Inglaterra en general — no son propiedades a la venta.`);
-    const crumbItems = es ? [["Inicio", "/es/"], ["Propiedades", "/es/propiedades"]] : [["Home", "/"], ["Listings", "/listings"]];
+    const crumbItems = es ? [["Inicio", "/es"], ["Propiedades", "/es/propiedades"]] : [["Home", "/"], ["Listings", "/listings"]];
 
     const budget = es
       ? [["", "Elija un rango"], ["Menos de $400,000", "Menos de $400,000"], ["$400,000–$600,000", "$400,000–$600,000"], ["$600,000–$800,000", "$600,000–$800,000"], ["Más de $800,000", "Más de $800,000"], ["Todavía no sé", "Todavía no sé"]]

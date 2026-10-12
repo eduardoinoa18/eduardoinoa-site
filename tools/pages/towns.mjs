@@ -251,7 +251,7 @@ export default function towns(ctx) {
     const name = t.name, st = t.state, stateName = STATE[lang][st];
     const pathSelf = es ? esPath(t.slug) : enPath(t.slug);
     const alt = es ? enPath(t.slug) : hasEs(t) ? esPath(t.slug) : undefined;
-    const home = es ? "/es/" : "/", townsIx = es ? "/es/pueblos" : "/towns";
+    const home = es ? "/es" : "/", townsIx = es ? "/es/pueblos" : "/towns";
     const credits = [];
 
     // photos
@@ -429,7 +429,7 @@ export default function towns(ctx) {
       : "";
 
     const ma = area.filter((a) => a.state === "MA"), nh = area.filter((a) => a.state === "NH");
-    const crumbItems = es ? [["Inicio", "/es/"], ["Pueblos", pathSelf]] : [["Home", "/"], ["Towns", pathSelf]];
+    const crumbItems = es ? [["Inicio", "/es"], ["Pueblos", pathSelf]] : [["Home", "/"], ["Towns", pathSelf]];
     const url = abs(pathSelf);
 
     const body = `<section class="tp-ix-hero on-dark"><div class="wrap">

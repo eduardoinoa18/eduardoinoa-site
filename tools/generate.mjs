@@ -70,7 +70,7 @@ for (const f of handWritten) {
 const postsData = fs.existsSync(path.join(ROOT, "tools/data/posts.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8")) : { en: [] };
 const postEsPath = Object.fromEntries((postsData.en || []).filter((p) => p.esPath).map((p) => [p.path, p.esPath]));
 const STATIC = [
-  { path: "/", altPath: "/es/", priority: "1.0", changefreq: "weekly" },
+  { path: "/", altPath: "/es", priority: "1.0", changefreq: "weekly" },
   { path: "/buyers", altPath: "/es/compradores", priority: "0.9", changefreq: "monthly" },
   { path: "/sellers", altPath: "/es/vendedores", priority: "0.9", changefreq: "monthly" },
   ...fs.readdirSync(path.join(ROOT, "posts")).filter((f) => f.endsWith(".html")).map((f) => {
@@ -88,7 +88,7 @@ for (const s of specs) {
 const exists = (p) => p && (fs.existsSync(fileFor(p)) || fs.existsSync(path.join(ROOT, p.replace(/^\//, "") + ".html"))
   || (p === "/" && fs.existsSync(path.join(ROOT, "index.html"))));
 const urls = [...entries.values()].filter((e) => exists(e.path)).map((e) => {
-  const enP = e.path.startsWith("/es/") ? e.altPath : e.path, esP = e.path.startsWith("/es/") ? e.path : e.altPath;
+  const enP = e.path.startsWith("/es") ? e.altPath : e.path, esP = e.path.startsWith("/es") ? e.path : e.altPath;
   const alts = e.altPath && exists(e.altPath)
     ? `\n    <xhtml:link rel="alternate" hreflang="en" href="${BASE}${enP}"/>\n    <xhtml:link rel="alternate" hreflang="es" href="${BASE}${esP}"/>\n    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE}${enP}"/>`
     : "";
