@@ -1,35 +1,66 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.eduardoinoa.com" }],
+      "destination": "https://eduardoinoa.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(?:www\\.)?merrimackvalleycashoffer\\.com" }],
+      "destination": "https://eduardoinoa.com/cash-offer?utm_source=merrimackvalleycashoffer.com&utm_medium=vanity_domain&utm_campaign=cash_offer",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "(?:www\\.)?merrimackvalleyhomevalue\\.com" }],
+      "destination": "https://eduardoinoa.com/home-value?utm_source=merrimackvalleyhomevalue.com&utm_medium=vanity_domain&utm_campaign=home_value",
+      "permanent": false
+    },
+    { "source": "/es/towns/:slug", "destination": "/es/pueblos/:slug", "permanent": true },
+    { "source": "/es/cash-offer", "destination": "/es/oferta-en-efectivo", "permanent": true },
+    { "source": "/es/home-value", "destination": "/es/valor-de-mi-casa", "permanent": true },
+    { "source": "/es/buyers", "destination": "/es/compradores", "permanent": true },
+    { "source": "/es/sellers", "destination": "/es/vendedores", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/market.json",
       "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=3600"
-        }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+      ]
+    },
+    {
+      "source": "/(market\\.js|market\\.css)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
+      ]
+    },
+    {
+      "source": "/(landing\\.js|landing\\.css)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=604800, s-maxage=2592000, stale-while-revalidate=86400" }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
       ]
     }
   ]

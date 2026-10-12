@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://eduardoinoa.vercel.app/sitemap.xml
+Sitemap: https://eduardoinoa.com/sitemap.xml

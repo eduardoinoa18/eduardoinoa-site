@@ -1,0 +1,35 @@
+{
+  "base": "https://eduardoinoa.com",
+  "ga4Id": "",
+  "googleSiteVerification": "",
+  "bingSiteVerification": "",
+  "stats": {
+    "transactions": "35+",
+    "sales": "$20M+",
+    "salesNote": "PENDING confirmation from the MLS production report. If under $20M, set sales to \"nearly $20M\" and run `npm run gen` (generated pages) + update index.html, buyers/, sellers/ by hand."
+  },
+  "nap": {
+    "name": "Eduardo Inoa",
+    "brokerage": "The Fermin Group at Century 21 North East",
+    "street": "130 Parker St, Suite 14",
+    "city": "Lawrence",
+    "region": "MA",
+    "zip": "01843",
+    "phone": "(978) 390-9619",
+    "tel": "+19783909619",
+    "email": "inoaserv@gmail.com",
+    "licenses": "MA Lic. 9573019 · NH Lic. 078562"
+  },
+  "links": {
+    "book": "https://marketora.me/book/eduardoinoa",
+    "card": "https://marketora.me/card/eduardo-inoa",
+    "hub": "https://eduardoinoa-links.netlify.app",
+    "review": "https://g.page/r/CeaqDfjfEAy_EBM/review",
+    "instagram": "https://www.instagram.com/eduardoinoa_/"
+  },
+  "sameAs": [
+    "https://www.instagram.com/eduardoinoa_/",
+    "https://marketora.me/card/eduardo-inoa",
+    "https://eduardoinoa-links.netlify.app"
+  ]
+}
