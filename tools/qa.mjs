@@ -92,7 +92,7 @@ for (const f of pages) {
   const isDeck = r === "buyers/index.html" || r.startsWith("es/compradores");
   if (kb > 200 && !isDeck) warn(f, `HTML is ${kb.toFixed(0)} KB (target < 200 KB)`);
   // Allowed text symbols: ★/☆ review stars (U+2605/2606), ✓/✕ calculator marks (U+2713/2715).
-  if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{2604}\u{2607}-\u{27BF}]/u.test(doc.querySelector("body")?.text || "")) warn(f, "emoji-range character in page text (check it's not chrome)");
+  if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{2604}\u{2607}-\u{2712}\u{2714}\u{2716}-\u{27BF}]/u.test(doc.querySelector("body")?.text || "")) warn(f, "emoji-range character in page text (check it's not chrome)");
 }
 
 // Sitemap entries resolve.
