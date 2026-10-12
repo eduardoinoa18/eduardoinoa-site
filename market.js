@@ -131,8 +131,8 @@
     el.innerHTML = mode === "mini" ? mini(M) : mode === "compact" ? compact(M, el) : mode === "town" ? town(M, el) : full(M);
     el.querySelectorAll(".mp-seg button").forEach(function(b){ b.addEventListener("click", function(){
       el.querySelectorAll(".mp-seg button").forEach(function(x){ x.classList.toggle("on", x === b); });
-      el.querySelectorAll("tbody[data-st]").forEach(function(tb){ tb.hidden = tb.getAttribute("data-st") !== b.getAttribute("data-st"); }); }); });
-    var sel = el.querySelector(".mp-select"); if (sel) { var det = el.querySelector(".mp-town-detail"); var upd = function(){ det.innerHTML = townDetail(M, sel.value); }; sel.addEventListener("change", upd); upd(); }
+      el.querySelectorAll("tbody[data-st]").forEach(function(tb){ tb.hidden = tb.getAttribute("data-st") !== b.getAttribute("data-st"); }); postHeight(); }); });
+    var sel = el.querySelector(".mp-select"); if (sel) { var det = el.querySelector(".mp-town-detail"); var upd = function(){ det.innerHTML = townDetail(M, sel.value); postHeight(); }; sel.addEventListener("change", upd); upd(); }
     el.classList.add("mp-ready");
     if (W.MARKET_ONREADY) try { W.MARKET_ONREADY(M); } catch(_){}
     postHeight();
@@ -141,7 +141,11 @@
   /* Embedded in a sandboxed iframe (Marketora custom_html): report our height so the host can size the frame. */
   function postHeight(){
     if (W.parent === W) return;
-    try { W.parent.postMessage({ type: "mk-embed-height", height: Math.ceil(D.documentElement.scrollHeight) }, "*"); } catch(_){}
+    /* Measure the blocks themselves: documentElement.scrollHeight never shrinks below the frame's current height. */
+    var bottom = 0;
+    D.querySelectorAll("[data-market]").forEach(function(el){ bottom = Math.max(bottom, el.getBoundingClientRect().bottom + (W.scrollY || 0)); });
+    var mb = parseFloat(getComputedStyle(D.body).marginBottom) || 0;
+    try { W.parent.postMessage({ type: "mk-embed-height", height: Math.ceil(bottom + mb) }, "*"); } catch(_){}
   }
   if (W.parent !== W) W.addEventListener("resize", postHeight);
 
