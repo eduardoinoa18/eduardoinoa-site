@@ -16,7 +16,7 @@ const esDescription = (stats) =>
   `Compre, venda o invierta con números claros y un plan claro. Eduardo Inoa es REALTOR® bilingüe con The Fermin Group en Century 21 North East, licenciado en MA y NH desde 2021 — más de ${String(stats.transactions || "35+").replace(/\+$/, "")} transacciones y ${stats.sales || "$20M+"} en ventas.`;
 
 // English path -> Spanish twin. Town pages map only when the Spanish twin exists (or is one of the four being built).
-const TWINS = { "/buyers": "/es/compradores", "/sellers": "/es/vendedores", "/home-value": "/es/valor-de-mi-casa", "/cash-offer": "/es/oferta-en-efectivo", "/towns": "/es/pueblos", "/journal": "/es/blog" };
+const TWINS = { "/buyers": "/es/compradores", "/sellers": "/es/vendedores", "/home-value": "/es/valor-de-mi-casa", "/cash-offer": "/es/oferta-en-efectivo", "/towns": "/es/pueblos", "/journal": "/es/blog", "/toolkit": "/es/herramientas", "/listings": "/es/propiedades", "/site-map": "/es/mapa-del-sitio" };
 const ES_TOWNS = ["lawrence", "methuen", "haverhill", "lowell"];
 const POST_TWINS = { "/posts/first-time-buyer-programs-ma-nh": "/es/blog/programas-primer-comprador-ma-nh", "/posts/what-selling-costs-ma-nh": "/es/blog/cuanto-cuesta-vender-ma-nh" };
 

@@ -96,6 +96,26 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/valor-de-mi-casa"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/home-value"/>
   </url>
+  <url><loc>https://eduardoinoa.com/toolkit</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/toolkit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/herramientas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/toolkit"/>
+  </url>
+  <url><loc>https://eduardoinoa.com/es/herramientas</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/toolkit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/herramientas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/toolkit"/>
+  </url>
+  <url><loc>https://eduardoinoa.com/site-map</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/site-map"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/mapa-del-sitio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/site-map"/>
+  </url>
+  <url><loc>https://eduardoinoa.com/es/mapa-del-sitio</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/site-map"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/mapa-del-sitio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eduardoinoa.com/site-map"/>
+  </url>
   <url><loc>https://eduardoinoa.com/towns</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://eduardoinoa.com/towns"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eduardoinoa.com/es/pueblos"/>

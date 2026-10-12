@@ -100,6 +100,39 @@ const sm = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 for (const m of sm.matchAll(/<loc>https:\/\/eduardoinoa\.com([^<]*)<\/loc>/g)) if (!resolves(m[1] || "/")) fails.push(`sitemap.xml: ${m[1]} does not exist`);
 if (sm.includes("vercel.app")) fails.push("sitemap.xml: vercel.app");
 
+// Crawl from "/" like a search engine: every sitemap URL must be reachable through links, ideally within 3 clicks.
+function fileOf(urlPath) {
+  const p = decodeURIComponent(urlPath.split(/[?#]/)[0]).replace(/\/$/, "") || "/";
+  if (p === "/") return path.join(ROOT, "index.html");
+  const base = path.join(ROOT, p.replace(/^\//, ""));
+  for (const c of [base + ".html", path.join(base, "index.html")]) if (fs.existsSync(c)) return c;
+  return null;
+}
+const norm = (h) => (h.split(/[?#]/)[0].replace(/\/$/, "") || "/");
+const depth = new Map([["/", 0]]), inbound = new Map(), queue = ["/"];
+while (queue.length) {
+  const u = queue.shift(), f = fileOf(u);
+  if (!f) continue;
+  const doc = parse(fs.readFileSync(f, "utf8"));
+  for (const a of doc.querySelectorAll("a[href]")) {
+    let h = a.getAttribute("href");
+    if (h.startsWith("https://eduardoinoa.com")) h = h.slice("https://eduardoinoa.com".length) || "/";
+    if (!h.startsWith("/") || h.startsWith("//") || /\.(webp|png|jpg|json|xml|pdf)(\?|$)/.test(h)) continue;
+    const t = norm(h);
+    if (!fileOf(t)) continue;
+    if (t !== u) { if (!inbound.has(t)) inbound.set(t, new Set()); inbound.get(t).add(u); }
+    if (!depth.has(t)) { depth.set(t, depth.get(u) + 1); queue.push(t); }
+  }
+}
+for (const m of sm.matchAll(/<loc>https:\/\/eduardoinoa\.com([^<]*)<\/loc>/g)) {
+  const p = norm(m[1] || "/");
+  if (!depth.has(p)) fails.push(`orphan: ${p} is in the sitemap but no link reaches it from the home page`);
+  else if (depth.get(p) > 3) warns.push(`${p} is ${depth.get(p)} clicks from the home page`);
+  else if (p !== "/" && (inbound.get(p)?.size || 0) < 2) warns.push(`${p} has only ${inbound.get(p)?.size || 0} page(s) linking to it`);
+}
+const maxDepth = Math.max(...depth.values());
+console.log(`Crawl: ${depth.size} pages reachable from "/", deepest is ${maxDepth} clicks.`);
+
 console.log(`QA checked ${pages.length} pages.`);
 if (warns.length) console.log(`\nWarnings (${warns.length}):\n  ` + warns.join("\n  "));
 if (fails.length) { console.log(`\nFAILURES (${fails.length}):\n  ` + fails.join("\n  ")); process.exit(1); }
