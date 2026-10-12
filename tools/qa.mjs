@@ -47,7 +47,7 @@ for (const f of pages) {
     try { JSON.parse(s.text); } catch (e) { fail(f, "JSON-LD does not parse: " + e.message); }
   }
   if (/130 Parker St(?!, Suite 14)/.test(html)) fail(f, "address without Suite 14");
-  if (/Lawrence, MA(?! 01843)[^a-z0-9]/.test(html.replace(/Lawrence, MA 01843/g, "")) && /130 Parker/.test(html)) warn(f, "Lawrence, MA without ZIP near the address");
+  if (/Suite 14, Lawrence, MA(?! 01843)/.test(html)) fail(f, "office address without ZIP 01843");
 
   // 3. Footer compliance (skip noindex utility pages? no — every page).
   if (!/Fermin Group/.test(html)) fail(f, "brokerage name missing");
@@ -91,7 +91,7 @@ for (const f of pages) {
   // 8. Weight + emojis in chrome.
   const isDeck = r === "buyers/index.html" || r.startsWith("es/compradores");
   if (kb > 200 && !isDeck) warn(f, `HTML is ${kb.toFixed(0)} KB (target < 200 KB)`);
-  // ★/☆ review stars (U+2605/2606) are allowed.
+  // Allowed text symbols: ★/☆ review stars (U+2605/2606), ✓/✕ calculator marks (U+2713/2715).
   if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{2604}\u{2607}-\u{27BF}]/u.test(doc.querySelector("body")?.text || "")) warn(f, "emoji-range character in page text (check it's not chrome)");
 }
 

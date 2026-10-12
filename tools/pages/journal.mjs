@@ -12,6 +12,11 @@
 // Never invent listings, sales, prices or reviews. Fair Housing: describe places and homes, never people.
 import fs from "node:fs";
 import path from "node:path";
+import { ROOT as SITE_ROOT } from "../lib/layout.mjs";
+
+// Spanish town pages exist only for towns with an "es" block in tools/data/towns.json; others link to English.
+const ES_TOWN_PAGES = new Set(JSON.parse(fs.readFileSync(path.join(SITE_ROOT, "tools/data/towns.json"), "utf8")).towns.filter((t) => t.es).map((t) => t.slug));
+const esTownHref = (t) => (ES_TOWN_PAGES.has(t) ? `/es/pueblos/${t}` : `/towns/${t}`);
 
 const REALSCOUT_URL = "https://eduardoinoa.realscout.me";
 const TOWN_SLUGS = ["methuen", "lawrence", "haverhill", "andover", "north-andover", "dracut", "tewksbury", "lowell",
@@ -317,7 +322,7 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
     const url = `${BASE}${post.path}`;
     const related = post.related.map((s) => esBySlug[s] || enBySlug[s]).filter(Boolean);
     const chips = post.towns.length
-      ? `<div class="area"><span class="label">Pueblos en esta nota</span><div class="chips">${post.towns.map((t) => `<a href="/es/pueblos/${t}">${esc(TOWNS[t])}</a>`).join("")}<a href="/es/pueblos">Todos los pueblos</a></div></div>`
+      ? `<div class="area"><span class="label">Pueblos en esta nota</span><div class="chips">${post.towns.map((t) => `<a href="${esTownHref(t)}">${esc(TOWNS[t])}</a>`).join("")}<a href="/es/pueblos">Todos los pueblos</a></div></div>`
       : `<div class="area"><span class="label">Conozca la zona</span><div class="chips"><a href="/es/pueblos">Todos los pueblos donde trabajo en Massachusetts y New Hampshire</a></div></div>`;
     pages.push({
       lang: "es", path: post.path, altPath: en.path, navCurrent: "/es/#journal",
@@ -384,7 +389,7 @@ ${related.map((r) => card(r, "es", { heading: "h3" })).join("\n")}
     const kitchen = ph("interior-kitchen-classic-white", ["interior"]);
     const foyer = ph("interior-foyer-staircase", ["interior"]);
     const used = [hero, room, kitchen, foyer].filter(Boolean);
-    const townHref = (t) => (es ? `/es/pueblos/${t}` : `/towns/${t}`);
+    const townHref = (t) => (es ? esTownHref(t) : `/towns/${t}`);
     const money = (n) => "$" + Math.round(Number(n)).toLocaleString("en-US");
     const side = { seller: T("Represented the seller", "Representé al vendedor"), buyer: T("Represented the buyer", "Representé al comprador"), both: T("Represented the seller and the buyer", "Representé al vendedor y al comprador") };
 
