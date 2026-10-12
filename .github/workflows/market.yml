@@ -22,7 +22,7 @@ jobs:
           MARKET_OUT: market.json
       - name: Commit if changed
         run: |
-          git config user.name "market-bot"
-          git config user.email "market-bot@users.noreply.github.com"
+          git config user.name "${{ github.repository_owner }}"
+          git config user.email "${{ github.repository_owner }}@users.noreply.github.com"  # owner identity so Vercel (Hobby) deploys the commit
           git add market.json
           git diff --cached --quiet && echo "no change" || git commit -m "market: weekly snapshot $(date -u +%F)" && git push
