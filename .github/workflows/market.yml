@@ -1,5 +1,5 @@
 # Weekly market snapshot — runs every Monday 11:00 UTC (7 AM Eastern), or by hand from the Actions tab.
-# Writes market.json at the site root and commits it; Netlify (or any host watching this repo) redeploys.
+# Writes market.json at the site root and commits it; Vercel redeploys on the push.
 name: Update market data
 on:
   schedule:

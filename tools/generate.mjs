@@ -33,7 +33,10 @@ function creditsPage() {
 /* ---------- collect ---------- */
 const modulesDir = path.join(ROOT, "tools/pages");
 const specs = [];
-for (const f of fs.readdirSync(modulesDir).filter((x) => x.endsWith(".mjs")).sort()) {
+// ONLY=towns.mjs,landing.mjs builds just those modules (useful while other modules are mid-edit).
+// A partial run still rewrites sitemap.xml, so always finish with a full `npm run gen`.
+const ONLY = (process.env.ONLY || "").split(",").map((s) => s.trim()).filter(Boolean);
+for (const f of fs.readdirSync(modulesDir).filter((x) => x.endsWith(".mjs") && (!ONLY.length || ONLY.includes(x))).sort()) {
   const mod = await import(pathToFileURL(path.join(modulesDir, f)).href);
   const out = await mod.default(ctx);
   for (const s of out) specs.push({ ...s, _from: f });
