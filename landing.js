@@ -106,11 +106,13 @@
         box.hidden = false;
         $("[data-tv-town]", box).textContent = i.county ? i.county : i.name + ", " + i.st;
         out.textContent = money(i.value);
-        var y = i.yoy == null ? "" : (i.yoy > 0 ? "+" : "") + (Math.round(i.yoy * 10) / 10) + "%";
+        var y = i.yoy == null ? "" : (i.yoy > 0 ? "+" : "") + (Math.round(i.yoy * 10) / 10).toLocaleString(LANG === "es" ? "es-US" : "en-US") + "%";
+        var when = "";
+        if (i.asOf) { var d = i.asOf.split("-"); when = new Date(+d[0], (+d[1] || 1) - 1, 1).toLocaleDateString(LANG === "es" ? "es-US" : "en-US", { month: "long", year: "numeric" }); }
         $("[data-tv-note]", box).textContent = (i.county
           ? T("No separate town series is published for " + i.name + ", so this is the county figure. ", "No se publica una serie separada para " + i.name + ", así que es la cifra del condado. ")
-          : "") + T("Zillow typical home value (ZHVI), " + (i.asOf || "") + (y ? ", " + y + " over 12 months" : "") + ". An area figure, not your home's value.",
-                   "Valor típico de Zillow (ZHVI), " + (i.asOf || "") + (y ? ", " + y + " en 12 meses" : "") + ". Una cifra del área, no el valor de su casa.");
+          : "") + T("Zillow typical home value (ZHVI), " + when + (y ? ", " + y + " over 12 months" : "") + ". An area figure, not your home's value.",
+                   "Valor típico de Zillow (ZHVI), " + when + (y ? ", " + y + " en 12 meses" : "") + ". Una cifra del área, no el valor de su casa.");
       });
     }
     sel.addEventListener("change", show); if (sel.value && sel.value !== "Other") show(); else box.hidden = true;

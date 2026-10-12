@@ -1,4 +1,4 @@
-/* Market Pulse — renders market.json into any page. Modes: full (website), compact (decks), mini (hub).
+/* Market Pulse — renders market.json into any page. Modes: full (website), compact (decks), town (town pages), mini (hub).
    Usage: <div data-market="full" data-market-src="market.json"></div>  + window.MARKET_FALLBACK (baked at build).
    Bilingual via window.__lang() if present (returns "en"|"es"), otherwise document.documentElement.lang. */
 (function(){
@@ -75,7 +75,8 @@
   function compact(M, el){
     var pref = (el.getAttribute("data-market-town") || "").toLowerCase(), prefSt = el.getAttribute("data-market-state") || "MA";
     var opts = M.towns.map(function(t){ return '<option value="' + esc(t.name) + '|' + t.state + '"' + (t.name.toLowerCase() === pref && t.state === prefSt ? ' selected' : '') + '>' + esc(t.name) + ', ' + t.state + '</option>'; }).join("");
-    return rates(M) + '<div class="mp-pick"><label class="mp-lbl">' + T("Pick a town","Elija un pueblo") + '</label><select class="mp-select">' + opts + '</select></div><div class="mp-town-detail"></div>' + foot(M);
+    var sid = "mpsel" + Math.random().toString(36).slice(2,7);
+    return rates(M) + '<div class="mp-pick"><label class="mp-lbl" for="' + sid + '">' + T("Pick a town","Elija un pueblo") + '</label><select class="mp-select" id="' + sid + '">' + opts + '</select></div><div class="mp-town-detail"></div>' + foot(M);
   }
   function townDetail(M, key){
     var p = key.split("|"), t = M.towns.filter(function(x){ return x.name === p[0] && x.state === p[1]; })[0]; if (!t) return "";
@@ -148,8 +149,7 @@
   function boot(){
     var els = D.querySelectorAll("[data-market]"); if (!els.length) return;
     var src = els[0].getAttribute("data-market-src") || "market.json";
-    load(src, function(M){ cache = M; W.MARKET = M; els.forEach(function(el){ render(el, M); }); });
-  }
+    load(src, function(M){ cache = M; W.MARKET = M; els.forEach(function(el){ render(el, M); }); });  }
   W.marketRerender = function(){ if (cache) D.querySelectorAll("[data-market]").forEach(function(el){ render(el, cache); }); };
   if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", boot); else boot();
 })();
