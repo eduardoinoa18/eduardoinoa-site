@@ -25,4 +25,8 @@ jobs:
           git config user.name "${{ github.repository_owner }}"
           git config user.email "${{ github.repository_owner }}@users.noreply.github.com"  # owner identity so Vercel (Hobby) deploys the commit
           git add market.json
-          git diff --cached --quiet && echo "no change" || git commit -m "market: weekly snapshot $(date -u +%F)" && git push
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "market: weekly snapshot $(date -u +%F)"
+          # main may have moved while the snapshot was building; replay on top of it before pushing.
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
