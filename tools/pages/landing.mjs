@@ -91,7 +91,7 @@ export default function landing(ctx) {
 .seg span{font-size:14.5px;line-height:1.25}
 .form fieldset{border:0;margin-top:16px;min-width:0}
 .form legend{display:block;font:500 14px/1.3 var(--bf);color:var(--muted);margin-bottom:6px;padding:0}
-.form .opt{font-weight:400;opacity:.8}
+.form .opt{font-weight:400}
 .form .fine{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.55}
 .form .disclaimer{margin-top:22px}
 .tv-hint{display:none;border:1px dashed var(--line-dark);border-radius:20px;padding:20px 24px;margin-top:28px;color:#9FB2C5;font-size:15px;line-height:1.6}
