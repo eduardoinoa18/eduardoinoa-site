@@ -8,6 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import * as layout from "./lib/layout.mjs";
+import { ogCard, photoFile } from "./lib/og.mjs";
 
 const { ROOT, CONFIG, BASE, esc } = layout;
 const today = new Date().toISOString().slice(0, 10);
@@ -42,6 +43,28 @@ for (const f of fs.readdirSync(modulesDir).filter((x) => x.endsWith(".mjs") && (
   for (const s of out) specs.push({ ...s, _from: f });
 }
 specs.push(...creditsPage());
+
+// Branded share card per indexable page: its first credited photo + its headline.
+for (const s of specs) {
+  if (s.html || s.noindex || s.ogKeep) continue;
+  const key = s.path.replace(/^\//, "").replace(/[^a-z0-9]+/gi, "-").toLowerCase() || "home";
+  const photo = s.ogPhoto || (s.foot && s.foot.credits || []).filter(Boolean)[0] || null;
+  s.ogImage = await ogCard(key, {
+    title: s.ogTitle || s.title.split(" | ")[0],
+    kicker: s.lang === "es" ? "Merrimack Valley y el sur de New Hampshire" : "Merrimack Valley & Southern New Hampshire",
+    photo: photoFile(photo),
+  });
+}
+// Hand-written posts: card from the cover + title in tools/data/posts.json.
+const postsMeta = JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8"));
+for (const p of postsMeta.en || []) {
+  const file = path.join(ROOT, p.path.replace(/^\//, "") + ".html");
+  if (!fs.existsSync(file)) continue;
+  const url = BASE + await ogCard("posts-" + p.slug, { title: p.title, kicker: "Journal · Merrimack Valley & Southern New Hampshire", photo: photoFile(p.cover) });
+  let h = fs.readFileSync(file, "utf8");
+  h = h.replace(/(<meta property="og:image" content=")[^"]*(")/, "$1" + url + "$2").replace(/(<meta name="twitter:image" content=")[^"]*(")/, "$1" + url + "$2");
+  fs.writeFileSync(file, h);
+}
 
 const seen = new Set();
 for (const s of specs) {
