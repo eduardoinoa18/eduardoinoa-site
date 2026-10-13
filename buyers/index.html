@@ -1995,6 +1995,13 @@ function sendLead(data, onOk, onFail){
   if (!payload.email && !payload.phone) { onFail(payload); return; }
   var url = leadEndpoint();
   if (!url) { onFail(payload); return; }
+  /* On eduardoinoa.com, the same-origin relay confirms Marketora stored the lead; on any failure (or any other host) send directly as before. */
+  if (url.charAt(0) !== "/" && /(^|\.)eduardoinoa\.com$|^eduardoinoa[a-z0-9-]*\.vercel\.app$/.test(location.hostname)) {
+    var jb = JSON.stringify(payload);
+    var directSend = function(){ fetch(url, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=UTF-8"}, body: jb, keepalive: true}).then(function(){ leadEvent(src); onOk(); }).catch(function(){ onFail(payload); }); };
+    try { fetch("/api/lead", {method:"POST", headers:{"Content-Type":"application/json"}, body: jb}).then(function(r){ return r.json().then(function(j){ if (!(r.ok && j.ok)) throw 0; leadEvent(src); onOk(); }); }).catch(directSend); } catch(_){ directSend(); }
+    return;
+  }
   var same = url.charAt(0) === "/" || url.indexOf(location.origin + "/") === 0;
   var opts = same ? {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload), keepalive: true}
                   : {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=UTF-8"}, body: JSON.stringify(payload), keepalive: true};

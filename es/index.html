@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://eduardoinoa.com/og-site.jpg">
 <meta name="theme-color" content="#061A30">
 <meta name="geo.region" content="US-MA"><meta name="geo.placename" content="Lawrence, Massachusetts">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preload" as="image" href="/img/photos/haverhill-riverfront-dusk-1600.webp" imagesrcset="/img/photos/haverhill-riverfront-dusk-800.webp 800w, /img/photos/haverhill-riverfront-dusk-1600.webp 1600w" imagesizes="(max-width:900px) 78vw, 440px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>/* Web fonts load right after the first paint (keeps them off the critical path; text starts in Georgia/system and swaps). */
@@ -758,7 +758,11 @@ window.DECK_ID = "eduardo-inoa-site";
   setGoal(qg);
   if (qg === "seller") choose($("#tab-sell")); if (qg === "investor") choose($("#tab-invest"));
 
-  function sendLead(payload){ return fetch(W.AGENT.leadInbox, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=UTF-8"}, body:JSON.stringify(payload), keepalive:true}); }
+  /* Same-origin relay on eduardoinoa.com confirms Marketora stored the lead; otherwise (or on failure) the direct no-cors send. */
+  function sendLead(payload){ var b = JSON.stringify(payload);
+    function direct(){ return fetch(W.AGENT.leadInbox, {method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=UTF-8"}, body:b, keepalive:true}); }
+    if (!/(^|\.)eduardoinoa\.com$|^eduardoinoa[a-z0-9-]*\.vercel\.app$/.test(location.hostname)) return direct();
+    return fetch("/api/lead", {method:"POST", headers:{"Content-Type":"application/json"}, body:b}).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!(r.ok && j.ok)) return direct(); }); }, direct); }
   function mailFallback(p){
     var lines = [["name","Name"],["email","Email"],["phone","Phone"],["address","Address / areas"],["message","Details"]].filter(function(k){ return p[k[0]]; }).map(function(k){ return k[1] + ": " + p[k[0]]; });
     location.href = "mailto:" + W.AGENT.email + "?subject=" + encodeURIComponent("Website — " + p.type + " — " + p.name) + "&cc=" + encodeURIComponent(W.AGENT.leadMail) + "&body=" + encodeURIComponent(lines.join("\n"));

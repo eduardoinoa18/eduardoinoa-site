@@ -167,7 +167,7 @@ export function page(o) {
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${og}">
 <meta name="theme-color" content="#061A30">
 <meta name="ga4-id" content="${esc(CONFIG.ga4Id)}">${verify}
-<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Barlow:wght@300;400;500;600&display=swap">
 <link rel="stylesheet" href="/landing.css">${o.head || ""}

@@ -119,8 +119,15 @@
   });
 
   /* ---------- lead forms ---------- */
+  // On eduardoinoa.com the same-origin relay (/api/lead) confirms Marketora stored the lead; anywhere else,
+  // or if the relay fails, fall back to the direct no-cors send (which can't confirm), then mailto.
+  var RELAY_HOST = /(^|\.)eduardoinoa\.com$|^eduardoinoa[a-z0-9-]*\.vercel\.app$/;
   function sendLead(payload) {
-    return fetch(SITE.leadInbox, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=UTF-8" }, body: JSON.stringify(payload), keepalive: true });
+    var body = JSON.stringify(payload);
+    function direct() { return fetch(SITE.leadInbox, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=UTF-8" }, body: body, keepalive: true }); }
+    if (!RELAY_HOST.test(location.hostname)) return direct();
+    return fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: body })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!(r.ok && j.ok)) return direct(); }); }, direct);
   }
   function mailFallback(p) {
     var lines = [["name", "Name"], ["email", "Email"], ["phone", "Phone"], ["address", "Address / areas"], ["message", "Details"]]

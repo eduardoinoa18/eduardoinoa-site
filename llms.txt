@@ -1,0 +1,48 @@
+# Eduardo Inoa, REALTOR®
+
+> Bilingual (English/Spanish) real-estate agent with The Fermin Group at Century 21 North East, 130 Parker St, Suite 14, Lawrence, MA 01843. Licensed in Massachusetts (9573019) and New Hampshire (078562) since 2021. Serves buyers, sellers and investors in the Merrimack Valley (MA) and Southern New Hampshire. Phone (978) 390-9619, email inoaserv@gmail.com.
+
+Facts stated on this site: 35+ transactions; MA Notary Public; Associate degree, Northern Essex Community College. Each office is independently owned and operated. Equal Housing Opportunity.
+
+## Main pages
+- [Home](https://eduardoinoa.com/): overview, weekly Market Pulse for 20 towns, reviews, FAQ, contact
+- [Buyer & investor presentation](https://eduardoinoa.com/buyers): buying roadmap, offer strategy, full calculator toolkit
+- [Seller presentation](https://eduardoinoa.com/sellers): pricing, net proceeds, marketing plan
+- [Home value](https://eduardoinoa.com/home-value): free comparative market analysis request
+- [Cash offer vs. open market](https://eduardoinoa.com/cash-offer): compare a third-party cash offer with an open-market estimate (Eduardo is not the buyer)
+- [Toolkit](https://eduardoinoa.com/toolkit): free calculators — buying power, payment, cash to close, net proceeds, rental analysis, flips, wholesale
+- [Search homes](https://eduardoinoa.com/listings)
+- [Market data (JSON)](https://eduardoinoa.com/market.json): weekly snapshot from Zillow Research, Redfin Data Center, Realtor.com via FRED and Freddie Mac
+
+## Town guides
+- [Methuen, MA](https://eduardoinoa.com/towns/methuen)
+- [Lawrence, MA](https://eduardoinoa.com/towns/lawrence)
+- [Haverhill, MA](https://eduardoinoa.com/towns/haverhill)
+- [Andover, MA](https://eduardoinoa.com/towns/andover)
+- [North Andover, MA](https://eduardoinoa.com/towns/north-andover)
+- [Dracut, MA](https://eduardoinoa.com/towns/dracut)
+- [Tewksbury, MA](https://eduardoinoa.com/towns/tewksbury)
+- [Lowell, MA](https://eduardoinoa.com/towns/lowell)
+- [Tyngsborough, MA](https://eduardoinoa.com/towns/tyngsborough)
+- [Chelmsford, MA](https://eduardoinoa.com/towns/chelmsford)
+- [Westford, MA](https://eduardoinoa.com/towns/westford)
+- [Salem, NH](https://eduardoinoa.com/towns/salem-nh)
+- [Windham, NH](https://eduardoinoa.com/towns/windham-nh)
+- [Pelham, NH](https://eduardoinoa.com/towns/pelham-nh)
+
+## Journal
+- [How to read the Market Pulse — and what it means for you](https://eduardoinoa.com/posts/how-to-read-the-market-pulse): Typical value, forecast, sale-to-list, days on market, months of supply and rates: what each number is telling a buyer, a seller and an investor.
+- [First-time buyer programs in Massachusetts and New Hampshire, explained](https://eduardoinoa.com/posts/first-time-buyer-programs-ma-nh): MassHousing, the ONE Mortgage, New Hampshire Housing, FHA and 3–5% conventional: the four doors, what assistance really means, and the order to do things in.
+- [Your first multi-family in the Merrimack Valley: the five numbers that decide it](https://eduardoinoa.com/posts/first-multi-family-merrimack-valley): House hacking a two- or three-family in Lawrence, Lowell or Haverhill still works — with real rents, the lender's tests, DSCR and three local cautions.
+- [Selling and buying at the same time: four ways to move once](https://eduardoinoa.com/posts/sell-and-buy-at-the-same-time): Sell first with a cushion, buy first, go contingent, or bridge — how each works in this market and how we pick the one that fits your equity and income.
+- [What selling your home actually costs in Massachusetts and New Hampshire](https://eduardoinoa.com/posts/what-selling-costs-ma-nh): Price is what the market says; net is what you keep. The short list of costs between the two, with real numbers.
+
+## Spanish
+- [Inicio en español](https://eduardoinoa.com/es)
+- [Herramientas](https://eduardoinoa.com/es/herramientas)
+- [Pueblos](https://eduardoinoa.com/es/pueblos)
+- [Blog](https://eduardoinoa.com/es/blog)
+
+## Contact
+- Book a call: https://marketora.me/book/eduardoinoa
+- Digital card: https://marketora.me/card/eduardo-inoa

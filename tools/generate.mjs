@@ -48,8 +48,10 @@ for (const s of specs) {
   if (seen.has(s.path)) throw new Error(`duplicate page path ${s.path} (from ${s._from})`);
   seen.add(s.path);
   const html = s.html ?? layout.page(s);
-  fs.mkdirSync(path.dirname(fileFor(s.path)), { recursive: true });
-  fs.writeFileSync(fileFor(s.path), html);
+  // `file` writes to an exact path (404.html, llms.txt) instead of <path>/index.html.
+  const out = s.file ? path.join(ROOT, s.file) : fileFor(s.path);
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, html);
 }
 
 /* ---------- inject analytics + verification into hand-written pages ---------- */
