@@ -100,6 +100,39 @@ const sm = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 for (const m of sm.matchAll(/<loc>https:\/\/eduardoinoa\.com([^<]*)<\/loc>/g)) if (!resolves(m[1] || "/")) fails.push(`sitemap.xml: ${m[1]} does not exist`);
 if (sm.includes("vercel.app")) fails.push("sitemap.xml: vercel.app");
 
+// SEO hygiene across indexable pages: unique titles/descriptions, one H1, self canonical, reciprocal hreflang,
+// alt text, share image present.
+const seo = new Map(); // urlPath -> {title, desc, alts:{lang:url}}
+const urlOf = (f) => { const r = rel(f); return "/" + r.replace(/(^|\/)index\.html$/, "").replace(/\.html$/, ""); };
+for (const f of pages) {
+  const html = fs.readFileSync(f, "utf8"), doc = parse(html), u = urlOf(f).replace(/\/$/, "") || "/";
+  if (/noindex/.test(doc.querySelector('meta[name="robots"]')?.getAttribute("content") || "")) continue;
+  const title = doc.querySelector("title")?.text.trim() || "", desc = doc.querySelector('meta[name="description"]')?.getAttribute("content") || "";
+  if (!title) fail(f, "no <title>"); else if (title.length > 110) warn(f, `title is ${title.length} chars`);
+  if (!desc) fail(f, "no meta description"); else if (desc.length < 70 || desc.length > 200) warn(f, `meta description is ${desc.length} chars`);
+  const h1 = doc.querySelectorAll("h1").length;
+  if (h1 !== 1) (h1 === 0 ? fail : warn)(f, `${h1} <h1> elements`);
+  const canon = (doc.querySelector('link[rel="canonical"]')?.getAttribute("href") || "").replace("https://eduardoinoa.com", "").replace(/\/$/, "") || "/";
+  if (canon !== u) fail(f, `canonical ${canon} is not this page (${u})`);
+  for (const im of doc.querySelectorAll("img")) if (!im.hasAttribute("alt")) fail(f, `img without alt: ${(im.getAttribute("src") || "").slice(0, 60)}`);
+  const og = doc.querySelector('meta[property="og:image"]')?.getAttribute("content") || "";
+  if (!og) warn(f, "no og:image"); else if (og.startsWith("https://eduardoinoa.com/") && !fs.existsSync(path.join(ROOT, og.slice(24).split("?")[0]))) fail(f, `og:image missing: ${og}`);
+  const alts = {};
+  for (const l of doc.querySelectorAll('link[rel="alternate"][hreflang]')) alts[l.getAttribute("hreflang")] = l.getAttribute("href").replace("https://eduardoinoa.com", "").replace(/\/$/, "") || "/";
+  seo.set(u, { f, title, desc, alts });
+}
+const dup = (key) => { const m = new Map(); for (const [u, s] of seo) { if (!s[key]) continue; m.set(s[key], [...(m.get(s[key]) || []), u]); } return [...m.values()].filter((v) => v.length > 1); };
+for (const g of dup("title")) fails.push(`duplicate <title> on ${g.join(", ")}`);
+for (const g of dup("desc")) fails.push(`duplicate meta description on ${g.join(", ")}`);
+for (const [u, s] of seo) {
+  for (const [lang, target] of Object.entries(s.alts)) {
+    if (lang === "x-default" || target === u) continue;
+    const back = seo.get(target);
+    if (!back) { fails.push(`${u}: hreflang ${lang} -> ${target} is not an indexable page`); continue; }
+    if (!Object.values(back.alts).includes(u)) fails.push(`${u}: hreflang ${lang} -> ${target}, but ${target} does not link back`);
+  }
+}
+
 // Crawl from "/" like a search engine: every sitemap URL must be reachable through links, ideally within 3 clicks.
 function fileOf(urlPath) {
   const p = decodeURIComponent(urlPath.split(/[?#]/)[0]).replace(/\/$/, "") || "/";

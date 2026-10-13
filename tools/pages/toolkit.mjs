@@ -98,8 +98,8 @@ ${bandPhoto ? `<section class="section stone"><div class="wrap split"><div class
 ${faq}`;
     return {
       lang, path: p, altPath: es ? "/toolkit" : "/es/herramientas",
-      title: T("Free real-estate calculators for MA & NH: buying power, payment, net proceeds, investing | Eduardo Inoa", "Calculadoras de bienes raíces gratis para MA y NH: poder de compra, pago, ganancia neta, inversión | Eduardo Inoa"),
-      description: T("Free calculators for buyers, sellers and investors in the Merrimack Valley and Southern NH — buying power, monthly payment, cash to close, net proceeds, rental analysis, flips and wholesale. English or Spanish.", "Calculadoras gratis para compradores, vendedores e inversionistas en Merrimack Valley y el sur de NH — poder de compra, pago mensual, efectivo para cerrar, ganancia neta, alquileres, flips y wholesale. En inglés o español."),
+      title: T("Free real-estate calculators for MA & NH | Eduardo Inoa, REALTOR®", "Calculadoras de bienes raíces gratis para MA y NH | Eduardo Inoa"),
+      description: T("Free calculators for Merrimack Valley and Southern NH buyers, sellers and investors: buying power, payment, cash to close, net proceeds, rentals and flips.", "Calculadoras gratis para comprar, vender e invertir en Merrimack Valley y el sur de NH: poder de compra, pago, efectivo para cerrar, ganancia neta y más."),
       head: style, navCurrent: p,
       schema: [
         breadcrumb([[T("Home", "Inicio"), es ? "/es" : "/"], [T("Toolkit", "Herramientas"), p]]),
