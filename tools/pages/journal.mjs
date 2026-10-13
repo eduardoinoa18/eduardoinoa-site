@@ -13,6 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ROOT as SITE_ROOT } from "../lib/layout.mjs";
+import { loadFeed, httpsUrl, listingCards, saleCards, MK_STYLE } from "../lib/marketora.mjs";
 
 // Spanish town pages exist only for towns with an "es" block in tools/data/towns.json; others link to English.
 const ES_TOWN_PAGES = new Set(JSON.parse(fs.readFileSync(path.join(SITE_ROOT, "tools/data/towns.json"), "utf8")).towns.filter((t) => t.es).map((t) => t.slug));
@@ -27,6 +28,14 @@ export default function journal(ctx) {
   const LINKS = CONFIG.links, NAP = CONFIG.nap;
   const DATA = JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8"));
   const EN = DATA.en, ES = DATA.es, TOWNS = DATA.towns;
+  // Posts Eduardo publishes in Marketora (tools/data/marketora.json) join the indexes, newest first.
+  // Their pages come from pages/marketora-posts.mjs; a hand-written post with the same slug wins.
+  const FEED = loadFeed();
+  const FEED_POSTS = FEED.posts.filter((p) => !EN.some((e) => e.slug === p.slug)).map((p) => ({
+    slug: p.slug, path: `/posts/${p.slug}`, date: String(p.publishedAt || "").slice(0, 10), category: "Journal",
+    title: p.title, summary: p.excerpt || "", heroUrl: httpsUrl(p.heroUrl), towns: [], related: [],
+  }));
+  const EN_INDEX = [...FEED_POSTS, ...EN].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   const enBySlug = Object.fromEntries(EN.map((p) => [p.slug, p]));
   const esBySlug = Object.fromEntries(ES.map((p) => [p.slug, p]));
 
@@ -159,12 +168,12 @@ realscout-simple-search{display:block;width:100%}
   /** Card for an index grid. post = EN or ES entry; view = language of the page showing it. */
   function card(post, view, { lead = false, heading = "h2" } = {}) {
     const isEs = !!post.enSlug, foreign = view === "es" && !isEs;
-    const p = ph(post.cover, ["home", "interior", "lifestyle"]);
+    const p = post.heroUrl ? null : ph(post.cover, ["home", "interior", "lifestyle"]);
     const cat = view === "es" && !isEs ? CAT_ES[post.category] || post.category : post.category;
     const summary = foreign ? (post.summaryEs || post.summary) : post.summary;
     const tag = view === "en" && post.esPath ? `<span class="tag" lang="es">También en español</span>` : "";
     return `<a class="jcard${lead ? " lead" : ""}" href="${post.path}"${foreign ? ' hreflang="en"' : ""}>
-  <div class="frame">${pimg(p, { alt: "", sizes: lead ? "(max-width:700px) 100vw, 640px" : "(max-width:700px) 100vw, (max-width:1000px) 50vw, 380px", eager: lead })}</div>
+  <div class="frame">${post.heroUrl ? `<img src="${esc(post.heroUrl)}" alt="" loading="${lead ? "eager" : "lazy"}" decoding="async" width="1600" height="900">` : pimg(p, { alt: "", sizes: lead ? "(max-width:700px) 100vw, 640px" : "(max-width:700px) 100vw, (max-width:1000px) 50vw, 380px", eager: lead })}</div>
   <div class="tx">
     <span class="meta">${esc(cat)} · <time datetime="${post.date}">${fmt(post.date, view)}</time></span>
     <${heading}${foreign ? ' lang="en"' : ""}>${esc(post.title)}${foreign ? ` <span lang="es" class="en-hint">(en inglés)</span>` : ""}</${heading}>
@@ -190,7 +199,7 @@ realscout-simple-search{display:block;width:100%}
 
   /* ================= /journal ================= */
   {
-    const posts = EN;
+    const posts = EN_INDEX;
     pages.push({
       lang: "en", path: "/journal", altPath: "/es/blog", navCurrent: "/#journal",
       title: "Journal — notes on buying, selling and investing | Eduardo Inoa, REALTOR®",
@@ -225,7 +234,7 @@ ${posts.map((p, i) => card(p, "en", { lead: i === 0 })).join("\n")}
 
   /* ================= /es/blog ================= */
   {
-    const enOnly = EN.filter((p) => !p.esPath);
+    const enOnly = EN_INDEX.filter((p) => !p.esPath);
     const visible = [...ES, ...enOnly];
     pages.push({
       lang: "es", path: "/es/blog", altPath: "/journal", navCurrent: "/es#journal",
@@ -393,10 +402,17 @@ ${related.map((r) => card(r, "es", { heading: "h3" })).join("\n")}
     const money = (n) => "$" + Math.round(Number(n)).toLocaleString("en-US");
     const side = { seller: T("Represented the seller", "Representé al vendedor"), buyer: T("Represented the buyer", "Representé al comprador"), both: T("Represented the seller and the buyer", "Representé al vendedor y al comprador") };
 
-    const salesSection = sales.length ? `<section class="section paper" id="recent-sales"><div class="wrap">
+    const myListings = listingCards(FEED.listings, lang);
+    const listingsSection = myListings ? `<section class="section" id="my-listings"><div class="wrap">
+  <div class="head"><div><span class="label">${T("My listings", "Mis propiedades")}</span><h2>${T("On the market <em>with me.</em>", "En el mercado <em>conmigo.</em>")}</h2></div>
+  <p class="lede">${T("Each one opens its own property page with photos, details and a payment estimate.", "Cada una abre su propia página con fotos, detalles y un estimado del pago.")}</p></div>
+  ${myListings}
+</div></section>` : "";
+    const showcased = saleCards(FEED.portfolio, lang);
+    const salesSection = sales.length || showcased ? `<section class="section paper" id="recent-sales"><div class="wrap">
   <div class="head"><div><span class="label">${T("Recent sales", "Ventas recientes")}</span><h2>${T("Closed, <em>recently.</em>", "Cerradas <em>recientemente.</em>")}</h2></div>
-  <p class="lede">${T("Prices and closing dates are taken from MLS records. Street addresses appear only with the client's permission.", "Los precios y las fechas de cierre provienen de los registros del MLS. Las direcciones aparecen solo con el permiso del cliente.")}</p></div>
-  <div class="sales">${sales.map((s) => {
+  <p class="lede">${T("Closings I can share. Street addresses and prices appear only with the client's permission; MLS-listed details come from MLS records.", "Cierres que puedo compartir. Las direcciones y los precios aparecen solo con el permiso del cliente; los datos del MLS provienen de sus registros.")}</p></div>
+  ${showcased}<div class="sales">${sales.map((s) => {
     const sp = s.photo && !s.photo.startsWith("/") ? ph(s.photo) : null;
     const pic = sp ? `<div class="frame">${pimg(sp, { lang, alt: "", sizes: "(max-width:700px) 100vw, 380px" })}</div>`
       : s.photo && s.photo.startsWith("/img/") ? `<div class="frame"><img src="${esc(s.photo)}" alt="" loading="lazy" decoding="async"></div>` : "";
@@ -425,7 +441,7 @@ ${related.map((r) => card(r, "es", { heading: "h3" })).join("\n")}
       description: T("Browse homes for sale on Eduardo Inoa's live home search, then get bilingual help touring, comparing and writing the offer in the Merrimack Valley and Southern New Hampshire.",
         "Vea casas a la venta en la búsqueda en vivo de Eduardo Inoa y reciba ayuda en español para visitarlas, compararlas y hacer la oferta en Merrimack Valley y el sur de New Hampshire."),
       ogImage: hero ? `/img/photos/${hero.slug}-1600.webp` : undefined,
-      head: STYLE + (agentId ? `<script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>` : ""),
+      head: STYLE + MK_STYLE + (agentId ? `<script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>` : ""),
       sitemap: { priority: "0.8", changefreq: "weekly" },
       schema: [
         breadcrumb(crumbItems),
@@ -474,6 +490,7 @@ ${related.map((r) => card(r, "es", { heading: "h3" })).join("\n")}
   </div>
   <p class="credit">${T("Photos show New England homes in general, not homes for sale.", "Las fotos muestran casas de Nueva Inglaterra en general, no propiedades a la venta.")}</p>
 </div></section>
+${listingsSection}
 ${salesSection}
 <section class="section dark" id="search-help"><div class="wrap split form-split">
   <div class="on-dark">

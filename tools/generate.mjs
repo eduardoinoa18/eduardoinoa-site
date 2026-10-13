@@ -31,6 +31,28 @@ function creditsPage() {
   }];
 }
 
+/* ---------- home: live Marketora listings between <!--mk:live--> markers ----------
+   Runs BEFORE the page modules so es-home.mjs (which renders /es from index.html) sees the same block;
+   the Spanish version rides in a data-es attribute like the rest of the home page. No listings = empty. */
+{
+  const { loadFeed, listingCards, MK_STYLE } = await import("./lib/marketora.mjs");
+  const feed = loadFeed();
+  const en = listingCards(feed.listings, "en", { limit: 6 }), es = listingCards(feed.listings, "es", { limit: 6 });
+  const attr = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+  const block = en ? `${MK_STYLE}
+<section id="listings" class="sec">
+  <div class="wrap">
+    <div class="head"><div><span class="label" data-es="Mis propiedades">My listings</span><h2 data-es="En el mercado <em>conmigo.</em>">On the market <em>with me.</em></h2></div><p class="lede" data-es="Propiedades que represento ahora mismo. Cada una abre su propia página con fotos y detalles.">Homes I'm representing right now. Each one opens its own page with photos and details.</p></div>
+    <div data-es="${attr(es)}">${en}</div>
+    <p style="margin-top:22px"><a class="more" href="/listings" data-es="Ver todas las propiedades">See every listing</a></p>
+  </div>
+</section>` : "";
+  const homeFile = path.join(ROOT, "index.html");
+  const home = fs.readFileSync(homeFile, "utf8");
+  const next = home.replace(/<!--mk:live-->[\s\S]*?<!--\/mk:live-->/, `<!--mk:live-->${block}<!--/mk:live-->`);
+  if (next !== home) fs.writeFileSync(homeFile, next);
+}
+
 /* ---------- collect ---------- */
 const modulesDir = path.join(ROOT, "tools/pages");
 const specs = [];
@@ -64,6 +86,18 @@ for (const p of postsMeta.en || []) {
   let h = fs.readFileSync(file, "utf8");
   h = h.replace(/(<meta property="og:image" content=")[^"]*(")/, "$1" + url + "$2").replace(/(<meta name="twitter:image" content=")[^"]*(")/, "$1" + url + "$2");
   fs.writeFileSync(file, h);
+}
+
+// Share cards no page uses any more (a post removed in Marketora, a renamed page) are deleted, so
+// img/og/ only holds live cards. Hand-written posts' cards are referenced from their own HTML.
+{
+  const ogDir = path.join(ROOT, "img/og");
+  const live = new Set(specs.map((s) => s.ogImage).filter((u) => typeof u === "string" && u.startsWith("/img/og/")).map((u) => u.slice(8)));
+  for (const f of fs.readdirSync(path.join(ROOT, "posts")).filter((x) => x.endsWith(".html"))) {
+    const m = fs.readFileSync(path.join(ROOT, "posts", f), "utf8").match(/\/img\/og\/([a-z0-9-]+\.jpg)/);
+    if (m) live.add(m[1]);
+  }
+  if (fs.existsSync(ogDir)) for (const f of fs.readdirSync(ogDir)) if (/^[a-z0-9-]+-[0-9a-f]{8}\.jpg$/.test(f) && !live.has(f)) fs.unlinkSync(path.join(ogDir, f));
 }
 
 const seen = new Set();

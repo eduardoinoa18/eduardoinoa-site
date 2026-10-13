@@ -109,6 +109,17 @@ realscout-simple-search{display:block;width:100%}
 .checks{list-style:none;margin-top:24px;border-top:1px solid var(--line-dark)}
 .checks li{padding:12px 0 12px 26px;border-bottom:1px solid var(--line-dark);position:relative}
 .checks li:before{content:"";position:absolute;left:2px;top:23px;width:10px;height:1px;background:var(--champagne)}
+</style><style>
+.mk-listings{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.mk-card{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .3s,transform .3s var(--ease)}
+.mk-card:hover{border-color:var(--champagne);transform:translateY(-2px)}
+.mk-photo{position:relative;aspect-ratio:4/3;background:var(--stone)}
+.mk-photo img{width:100%;height:100%;object-fit:cover}
+.mk-badge{position:absolute;left:12px;top:12px;background:var(--night);color:#fff;font:500 13px var(--bf);padding:6px 10px;border-radius:999px}
+.mk-tx{padding:16px 18px 18px;display:grid;gap:3px}
+.mk-tx b{font:600 21px/1.2 var(--hf);color:var(--harbor)}
+.mk-tx span{font-size:14.5px;color:var(--muted)}
+.mk-tx .mk-price{font-weight:600;color:var(--ink);font-size:16px}
 </style><script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://eduardoinoa.com/es/propiedades#page","url":"https://eduardoinoa.com/es/propiedades","name":"Casas a la venta — búsqueda en vivo, ayuda bilingüe | Eduardo Inoa, REALTOR®","description":"Vea casas a la venta en la búsqueda en vivo de Eduardo Inoa y reciba ayuda en español para visitarlas, compararlas y hacer la oferta en Merrimack Valley y el sur de New Hampshire.","inLanguage":"es-US","isPartOf":{"@id":"https://eduardoinoa.com/#website"},"about":{"@id":"https://marketora.me/card/eduardo-inoa#agent"},"primaryImageOfPage":"https://eduardoinoa.com/img/og/es-propiedades-1ad4dfc6.jpg"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://eduardoinoa.com/es"},{"@type":"ListItem","position":2,"name":"Propiedades","item":"https://eduardoinoa.com/es/propiedades"}]},{"@type":"Service","@id":"https://eduardoinoa.com/es/propiedades#service","serviceType":"Búsqueda de casas y representación de compradores","provider":{"@id":"https://marketora.me/card/eduardo-inoa#agent"},"areaServed":[{"@type":"Place","name":"Merrimack Valley, Massachusetts"},{"@type":"Place","name":"Southern New Hampshire"}],"availableLanguage":["English","Spanish"],"url":"https://eduardoinoa.com/es/propiedades"}]}</script>
 </head>
@@ -161,6 +172,7 @@ realscout-simple-search{display:block;width:100%}
   </div>
   <p class="credit">Las fotos muestran casas de Nueva Inglaterra en general, no propiedades a la venta.</p>
 </div></section>
+
 
 <section class="section dark" id="search-help"><div class="wrap split form-split">
   <div class="on-dark">

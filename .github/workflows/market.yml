@@ -1,5 +1,6 @@
 # Weekly market snapshot — runs every Monday 11:00 UTC (7 AM Eastern), or by hand from the Actions tab.
-# Writes market.json at the site root and commits it; Vercel redeploys on the push.
+# Writes market.json, copies it into the decks' fallback (sync-decks), regenerates the pages that embed
+# snapshot data (town pages, home value), runs QA, and commits; Vercel redeploys on the push.
 name: Update market data
 on:
   schedule:
@@ -7,24 +8,34 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: site-regenerate
+  cancel-in-progress: false
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Build market.json
         run: python3 scripts/update_market.py
         env:
           MARKET_OUT: market.json
+      - name: Regenerate pages that embed the snapshot (only when it changed)
+        run: |
+          if git diff --quiet -- market.json; then echo "no change"; exit 0; fi
+          cd tools && npm ci && node sync-decks.mjs && node generate.mjs && node qa.mjs
       - name: Commit if changed
         run: |
           git config user.name "${{ github.repository_owner }}"
           git config user.email "${{ github.repository_owner }}@users.noreply.github.com"  # owner identity so Vercel (Hobby) deploys the commit
-          git add market.json
+          git add -A
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "market: weekly snapshot $(date -u +%F)"
           # main may have moved while the snapshot was building; replay on top of it before pushing.
