@@ -65,24 +65,21 @@ function openTagEnd(src, s) {
 function prerenderSpanish(src) {
   const root = parse(src, { comment: true });
   const edits = [];
-  for (const el of root.querySelectorAll("[data-es]")) {
-    if (el.hasAttribute("data-en")) continue;
-    const [s, e] = el.range;
+  const addAttr = (open, name, val) => open.replace(/\s*\/?>$/, (m) => ` ${name}="${attr(val)}"${m}`);
+  const setAttr = (open, name, val) => new RegExp(`\\s${name}="[^"]*"`).test(open)
+    ? open.replace(new RegExp(`(\\s${name}=)"[^"]*"`), `$1"${attr(val)}"`) : addAttr(open, name, val);
+  for (const el of root.querySelectorAll("[data-es], [data-ph-es], [data-es-href]")) {
+    const [s, e] = el.range, oe = openTagEnd(src, s);
+    let open = src.slice(s, oe);
+    // site links: the Spanish URL (data-es-href) replaces href; data-en-href keeps the English one
+    if (el.hasAttribute("data-es-href")) open = addAttr(setAttr(open, "href", el.getAttribute("data-es-href")), "data-en-href", el.getAttribute("href") || "");
+    if (el.hasAttribute("data-ph-es")) open = addAttr(setAttr(open, "placeholder", el.getAttribute("data-ph-es")), "data-ph-en", el.getAttribute("placeholder") || "");
     const close = `</${el.rawTagName}>`;
-    if (src.slice(e - close.length, e).toLowerCase() !== close.toLowerCase()) continue; // void / unclosed: nothing to render
-    const oe = openTagEnd(src, s), open = src.slice(s, oe), inner = src.slice(oe, e - close.length);
-    const newOpen = open.replace(/\s*\/?>$/, (m) => ` data-en="${attr(inner)}"${m}`);
-    edits.push([s, e, newOpen + fixAmp(el.getAttribute("data-es")) + src.slice(e - close.length, e)]);
-  }
-  for (const el of root.querySelectorAll("[data-ph-es]")) {
-    if (el.hasAttribute("data-es")) throw new Error("es-decks: element has both data-es and data-ph-es");
-    const [s] = el.range, oe = openTagEnd(src, s), open = src.slice(s, oe);
-    const en = el.getAttribute("placeholder") || "", es = el.getAttribute("data-ph-es");
-    let newOpen = /\splaceholder="[^"]*"/.test(open)
-      ? open.replace(/(\splaceholder=)"[^"]*"/, `$1"${attr(es)}"`)
-      : open.replace(/\s*\/?>$/, (m) => ` placeholder="${attr(es)}"${m}`);
-    newOpen = newOpen.replace(/\s*\/?>$/, (m) => ` data-ph-en="${attr(en)}"${m}`);
-    edits.push([s, oe, newOpen]);
+    const closed = src.slice(e - close.length, e).toLowerCase() === close.toLowerCase();
+    if (el.hasAttribute("data-es") && !el.hasAttribute("data-en") && closed) {
+      const inner = src.slice(oe, e - close.length);
+      edits.push([s, e, addAttr(open, "data-en", inner) + fixAmp(el.getAttribute("data-es")) + src.slice(e - close.length, e)]);
+    } else if (open !== src.slice(s, oe)) edits.push([s, oe, open]);
   }
   edits.sort((a, b) => b[0] - a[0]);
   for (let i = 1; i < edits.length; i++) if (edits[i][1] > edits[i - 1][0]) throw new Error("es-decks: overlapping data-es elements");
