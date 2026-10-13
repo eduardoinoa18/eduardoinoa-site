@@ -2,9 +2,17 @@
    The home page and decks carry their own inline CSS; tokens here match them so everything reads as one site.
    Signature: the arched photo frame (from the hero portrait) with a champagne inner hairline. Spend boldness there; keep the rest quiet. */
 
+/* Self-hosted fonts (SIL OFL 1.1, see /fonts/README.txt). swap = text shows immediately in the fallback. */
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500 600;font-display:swap;src:url(/fonts/cormorant-garamond.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url(/fonts/cormorant-garamond-italic.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/barlow-300.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/barlow-400.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/barlow-500.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/barlow-600.woff2) format("woff2")}
+
 :root{
   --night:#061A30; --harbor:#0B2A4A; --ink:#14202E; --muted:#5A6774; --ivory:#F7F5F0; --paper:#FFFFFF; --stone:#ECE8E0;
-  --champagne:#C9AE7C; --champagne-ink:#8A6A34; --teal:#00B4D8; --ok:#2E7D5B; --bad:#B4483A;
+  --champagne:#C9AE7C; --champagne-ink:#755623; --teal:#00B4D8; --ok:#2E7D5B; --bad:#B4483A;
   --line:rgba(20,32,46,.12); --hair:rgba(20,32,46,.07); --line-dark:rgba(255,255,255,.14);
   --hf:'Cormorant Garamond',Georgia,'Times New Roman',serif; --bf:'Barlow',-apple-system,'Segoe UI',Roboto,sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1); --wrap:1200px; --gut:clamp(16px,4vw,48px);
@@ -220,11 +228,12 @@ figcaption a,.credit a{color:inherit}
 .site-foot{background:var(--night);color:#93A7BC;padding:56px 0 calc(96px + env(safe-area-inset-bottom));font-size:14px;line-height:1.7}
 .site-foot .cols{display:grid;grid-template-columns:1.25fr .8fr 1.3fr .9fr;gap:32px}
 .site-foot .foot-towns{columns:2;column-gap:18px}.site-foot .foot-towns li{break-inside:avoid}
-.site-foot h4{font:600 20px var(--hf);color:#fff;margin-bottom:10px}
+.site-foot h4,.site-foot .foot-h{font:600 20px var(--hf);color:#fff;margin-bottom:10px;letter-spacing:0;line-height:1.2}
 .site-foot a{color:#C9D6E3;text-decoration:none}.site-foot a:hover{color:#fff;text-decoration:underline}
 .site-foot ul{list-style:none}.site-foot li{padding:3px 0}
 .site-foot .logos{display:flex;align-items:center;gap:18px;margin-bottom:18px}
 .site-foot .logos img{height:34px;width:auto}
+.site-foot .legal a{text-decoration:underline;text-underline-offset:3px}
 .site-foot .legal{border-top:1px solid var(--line-dark);margin-top:36px;padding-top:22px;font-size:13px;color:#7F94AA}
 .site-foot .legal p+p{margin-top:8px}
 .eho{display:inline-flex;align-items:center;gap:8px}

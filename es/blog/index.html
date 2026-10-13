@@ -14,8 +14,7 @@
 <meta name="theme-color" content="#061A30">
 <meta name="ga4-id" content="">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Barlow:wght@300;400;500;600&display=swap">
+<link rel="preload" href="/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" as="image" href="/img/photos/keys-new-home-1600.webp" imagesrcset="/img/photos/keys-new-home-800.webp 800w, /img/photos/keys-new-home-1600.webp 1600w" imagesizes="(max-width:700px) 100vw, 640px" fetchpriority="high">
 <link rel="stylesheet" href="/landing.css"><style>
 .jhead{padding:clamp(8px,2vw,16px) 0 clamp(40px,6vw,72px);border-bottom:1px solid var(--line)}
 .jhead .crumbs{margin-bottom:clamp(36px,6vw,72px)}
@@ -116,7 +115,7 @@ realscout-simple-search{display:block;width:100%}
 <body>
 <a class="skip" href="#main">Ir al contenido</a>
 <header class="site-head"><div class="wrap">
-  <a class="brand" href="/es" aria-label="Eduardo Inoa, REALTOR® — inicio"><img src="/img/logo-fermin-c21.webp" alt="The Fermin Group, Century 21 North East" width="400" height="144"></a>
+  <a class="brand" href="/es" aria-label="Eduardo Inoa, REALTOR® — inicio"><img src="/img/logo-fermin-c21-300.webp" alt="The Fermin Group, Century 21 North East" width="300" height="108"></a>
   <nav class="site-nav" id="site-nav" aria-label="Principal"><a href="/es/compradores">Comprar</a><a href="/es/vendedores">Vender</a><a href="/es/valor-de-mi-casa">Valor de su casa</a><a href="/es/oferta-en-efectivo">Oferta en efectivo</a><a href="/es/pueblos">Pueblos</a><a href="/es/herramientas">Herramientas</a><a href="/es/blog">Blog</a></nav>
   <a class="lang-link" href="/journal" hreflang="en" lang="en">English</a>
   <a class="btn btn-primary head-cta" href="https://marketora.me/book/eduardoinoa" target="_blank" rel="noopener">Reservar llamada</a>
@@ -188,9 +187,9 @@ realscout-simple-search{display:block;width:100%}
       <p><strong style="color:#fff">Eduardo Inoa, REALTOR®</strong><br>The Fermin Group at Century 21 North East<br>130 Parker St, Suite 14, Lawrence, MA 01843<br>
       <a href="tel:+19783909619">(978) 390-9619</a> · <a href="mailto:inoaserv@gmail.com">inoaserv@gmail.com</a><br>MA Lic. 9573019 · NH Lic. 078562 · Notario Público de MA</p>
     </div>
-    <div><h4>Explore</h4><ul><li><a href="/es/compradores">Comprar</a></li><li><a href="/es/vendedores">Vender</a></li><li><a href="/es/valor-de-mi-casa">Valor de su casa</a></li><li><a href="/es/oferta-en-efectivo">Oferta en efectivo</a></li><li><a href="/es/pueblos">Pueblos</a></li><li><a href="/es/herramientas">Herramientas</a></li><li><a href="/es/blog">Blog</a></li><li><a href="/es/propiedades">Buscar propiedades</a></li><li><a href="/es#market">Pulso del mercado</a></li><li><a href="/es/mapa-del-sitio">Mapa del sitio</a></li></ul></div>
-    <div><h4>Guías de pueblos</h4><ul class="foot-towns"><li><a href="/es/pueblos/methuen">Methuen, MA</a></li><li><a href="/es/pueblos/lawrence">Lawrence, MA</a></li><li><a href="/es/pueblos/haverhill">Haverhill, MA</a></li><li><a href="/towns/andover">Andover, MA</a></li><li><a href="/towns/north-andover">North Andover, MA</a></li><li><a href="/towns/dracut">Dracut, MA</a></li><li><a href="/towns/tewksbury">Tewksbury, MA</a></li><li><a href="/es/pueblos/lowell">Lowell, MA</a></li><li><a href="/towns/tyngsborough">Tyngsborough, MA</a></li><li><a href="/towns/chelmsford">Chelmsford, MA</a></li><li><a href="/towns/westford">Westford, MA</a></li><li><a href="/towns/salem-nh">Salem, NH</a></li><li><a href="/towns/windham-nh">Windham, NH</a></li><li><a href="/towns/pelham-nh">Pelham, NH</a></li></ul></div>
-    <div><h4>Contacto</h4><ul>
+    <div><h2 class="foot-h">Explore</h2><ul><li><a href="/es/compradores">Comprar</a></li><li><a href="/es/vendedores">Vender</a></li><li><a href="/es/valor-de-mi-casa">Valor de su casa</a></li><li><a href="/es/oferta-en-efectivo">Oferta en efectivo</a></li><li><a href="/es/pueblos">Pueblos</a></li><li><a href="/es/herramientas">Herramientas</a></li><li><a href="/es/blog">Blog</a></li><li><a href="/es/propiedades">Buscar propiedades</a></li><li><a href="/es#market">Pulso del mercado</a></li><li><a href="/es/mapa-del-sitio">Mapa del sitio</a></li></ul></div>
+    <div><h2 class="foot-h">Guías de pueblos</h2><ul class="foot-towns"><li><a href="/es/pueblos/methuen">Methuen, MA</a></li><li><a href="/es/pueblos/lawrence">Lawrence, MA</a></li><li><a href="/es/pueblos/haverhill">Haverhill, MA</a></li><li><a href="/towns/andover">Andover, MA</a></li><li><a href="/towns/north-andover">North Andover, MA</a></li><li><a href="/towns/dracut">Dracut, MA</a></li><li><a href="/towns/tewksbury">Tewksbury, MA</a></li><li><a href="/es/pueblos/lowell">Lowell, MA</a></li><li><a href="/towns/tyngsborough">Tyngsborough, MA</a></li><li><a href="/towns/chelmsford">Chelmsford, MA</a></li><li><a href="/towns/westford">Westford, MA</a></li><li><a href="/towns/salem-nh">Salem, NH</a></li><li><a href="/towns/windham-nh">Windham, NH</a></li><li><a href="/towns/pelham-nh">Pelham, NH</a></li></ul></div>
+    <div><h2 class="foot-h">Contacto</h2><ul>
       <li><a href="https://marketora.me/book/eduardoinoa" target="_blank" rel="noopener">Reservar llamada</a></li>
       <li><a href="https://marketora.me/card/eduardo-inoa" target="_blank" rel="noopener">Tarjeta digital</a></li>
       <li><a href="https://www.instagram.com/eduardoinoa_/" target="_blank" rel="noopener">Instagram @eduardoinoa_</a></li>

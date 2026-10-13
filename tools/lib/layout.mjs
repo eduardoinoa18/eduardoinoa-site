@@ -62,7 +62,7 @@ export function header(lang, current, altHref) {
   const home = lang === "es" ? "/es" : "/";
   return `<a class="skip" href="#main">${u.skip}</a>
 <header class="site-head"><div class="wrap">
-  <a class="brand" href="${home}" aria-label="Eduardo Inoa, REALTOR® — ${lang === "es" ? "inicio" : "home"}"><img src="/img/logo-fermin-c21.webp" alt="The Fermin Group, Century 21 North East" width="400" height="144"></a>
+  <a class="brand" href="${home}" aria-label="Eduardo Inoa, REALTOR® — ${lang === "es" ? "inicio" : "home"}"><img src="/img/logo-fermin-c21-300.webp" alt="The Fermin Group, Century 21 North East" width="300" height="108"></a>
   <nav class="site-nav" id="site-nav" aria-label="${lang === "es" ? "Principal" : "Main"}">${links}</nav>
   ${altHref ? `<a class="lang-link" href="${altHref}" hreflang="${lang === "es" ? "en" : "es"}" lang="${lang === "es" ? "en" : "es"}">${u.other}</a>` : ""}
   <a class="btn btn-primary head-cta" href="${LINKS.book}" target="_blank" rel="noopener">${u.book}</a>
@@ -83,9 +83,9 @@ export function footer(lang, { disclaimer = "", credits = [] } = {}) {
       <p><strong style="color:#fff">${esc(NAP.name)}, REALTOR®</strong><br>${esc(NAP.brokerage)}<br>${esc(NAP.street)}, ${NAP.city}, ${NAP.region} ${NAP.zip}<br>
       <a href="tel:${NAP.tel}">${NAP.phone}</a> · <a href="mailto:${NAP.email}">${NAP.email}</a><br>${NAP.licenses} · ${es ? "Notario Público de MA" : "MA Notary Public"}</p>
     </div>
-    <div><h4>${u.explore}</h4><ul>${explore}</ul></div>
-    <div><h4>${es ? "Guías de pueblos" : "Town guides"}</h4><ul class="foot-towns">${townLinks}</ul></div>
-    <div><h4>${u.connect}</h4><ul>
+    <div><h2 class="foot-h">${u.explore}</h2><ul>${explore}</ul></div>
+    <div><h2 class="foot-h">${es ? "Guías de pueblos" : "Town guides"}</h2><ul class="foot-towns">${townLinks}</ul></div>
+    <div><h2 class="foot-h">${u.connect}</h2><ul>
       <li><a href="${LINKS.book}" target="_blank" rel="noopener">${u.book}</a></li>
       <li><a href="${LINKS.card}" target="_blank" rel="noopener">${u.card}</a></li>
       <li><a href="${LINKS.instagram}" target="_blank" rel="noopener">Instagram @eduardoinoa_</a></li>
@@ -137,6 +137,15 @@ export const honeypot = `<div class="hp" aria-hidden="true"><label>Company<input
  * @param {string} [o.head]      extra <head> HTML (e.g. market.css)
  * @param {string} [o.scripts]   extra scripts before </body>
  */
+/** Preload the page's LCP image: the first <img fetchpriority="high"> in the body. */
+function lcpPreload(body) {
+  const m = /<img\b[^>]*fetchpriority="high"[^>]*>/.exec(body || "");
+  if (!m) return "";
+  const attr = (n) => (new RegExp("\\s" + n + '="([^"]*)"').exec(m[0]) || [])[1];
+  const src = attr("src"), set = attr("srcset"), sizes = attr("sizes");
+  return src ? `<link rel="preload" as="image" href="${src}"${set ? ` imagesrcset="${set}"` : ""}${sizes ? ` imagesizes="${sizes}"` : ""} fetchpriority="high">` : "";
+}
+
 export function page(o) {
   const lang = o.lang || "en", url = abs(o.path);
   const enPath = lang === "en" ? o.path : o.altPath, esPath = lang === "es" ? o.path : o.altPath;
@@ -168,8 +177,7 @@ export function page(o) {
 <meta name="theme-color" content="#061A30">
 <meta name="ga4-id" content="${esc(CONFIG.ga4Id)}">${verify}
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Barlow:wght@300;400;500;600&display=swap">
+<link rel="preload" href="/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>${lcpPreload(o.body)}
 <link rel="stylesheet" href="/landing.css">${o.head || ""}
 <script type="application/ld+json">${JSON.stringify(graph).replace(/</g, "\\u003c")}</script>
 </head>
