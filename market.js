@@ -140,7 +140,8 @@
 
   /* Embedded in a sandboxed iframe (Marketora custom_html): report our height so the host can size the frame. */
   function postHeight(){
-    if (W.parent === W) return;
+    /* Pages where the block is not the whole document (the decks) set window.MARKET_POST_HEIGHT = false. */
+    if (W.parent === W || W.MARKET_POST_HEIGHT === false) return;
     /* Measure the blocks themselves: documentElement.scrollHeight never shrinks below the frame's current height. */
     var bottom = 0;
     D.querySelectorAll("[data-market]").forEach(function(el){ bottom = Math.max(bottom, el.getBoundingClientRect().bottom + (W.scrollY || 0)); });
