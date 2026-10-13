@@ -47,6 +47,8 @@ TOWNS = [
     ("Plaistow", "NH", "Rockingham County, NH", ["03865"]),
 ]
 TOWN_KEYS = {(n.lower(), s) for n, s, _, _ in TOWNS}
+# Zillow spells some towns differently from the town itself (Redfin uses the official name).
+ZILLOW_CITY_ALIASES = {("tyngsboro", "MA"): ("tyngsborough", "MA")}
 ALL_ZIPS = {z for _, _, _, zs in TOWNS for z in zs}
 
 Z = "https://files.zillowstatic.com/research/public_csvs/"
@@ -135,7 +137,11 @@ def avg_forecast(zf, zips):
 def zillow():
     st, sd = zillow_rows(ZHVI["State"], lambda r: r["RegionName"] if r["RegionName"] in STATES.values() else None)
     co, cd = zillow_rows(ZHVI["County"], lambda r: (r["RegionName"] + ", " + r["State"]) if (r["RegionName"] + ", " + r["State"]) in COUNTIES else None)
-    ci, cid = zillow_rows(ZHVI["City"], lambda r: (r["RegionName"].lower(), r["State"]) if (r["RegionName"].lower(), r["State"]) in TOWN_KEYS else None)
+    def city_key(r):
+        k = (r["RegionName"].lower(), r["State"])
+        k = ZILLOW_CITY_ALIASES.get(k, k)
+        return k if k in TOWN_KEYS else None
+    ci, cid = zillow_rows(ZHVI["City"], city_key)
     zf, zfd = zillow_rows(ZHVF["Zip"], lambda r: r["RegionName"] if r["RegionName"] in ALL_ZIPS else None)
     mf, mfd = zillow_rows(ZHVF["Metro"], lambda r: r["RegionName"] if r["RegionName"] in METRO.values() else None)
     zfp = {z: zhvf(r, zfd) for z, r in zf.items()}
