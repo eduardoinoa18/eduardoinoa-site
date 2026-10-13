@@ -33,6 +33,9 @@ npm run qa           # pre-deploy static checks (must pass)
 Then commit and push; Vercel deploys `main` automatically. The "Update market data" workflow also commits to `main` every Monday, so `git pull --rebase` before you push.
 
 - **After a market update** (or any change to `market.js` / `market.css`) — `node sync-decks.mjs` copies the Market Pulse code and snapshot into the decks (they are self-contained for Marketora), then `npm run gen`.
+- **Share images** — every generated page and post gets a branded 1200×630 card in `img/og/` (its own photo + headline), made by `npm run gen`.
+- **Leads relay** — `api/lead.js` (Vercel function) forwards form posts to the Marketora inbox and returns the real result; forms fall back to the direct send and then email if it fails. Test safely with an invalid email + short phone (the inbox answers 422 and stores nothing).
+- **One-off deck helpers** — `node perf-assets.mjs` (favicon.ico, small nav logo, non-blocking deck fonts) and `node a11y-decks.mjs` (tablist roles, reviews link); both are idempotent.
 - **Deck links** — `/buyers?town=lowell` (or `?town=salem-nh`) opens the presentation on that town's market; a Marketora `?c=` config with a property address wins. Toolkit deep links: `/buyers#toolkit/afford|payment|cash|offer|rentbuy|rental|valuation|strategy|flip|wholesale|reports`, `/sellers#tool-equity`.
 
 - **Change a stat, phone, address or link** — `tools/site.config.json`, then `npm run gen`. The home page, decks and posts are hand-edited: search them for the same text. The `$20M+` figure is pending MLS confirmation; if it's under $20M, change every occurrence to "nearly $20M".
