@@ -30,7 +30,10 @@ npm run gen          # regenerate generated pages + sitemap + analytics/verifica
 npm run qa           # pre-deploy static checks (must pass)
 ```
 
-Then commit and push; Vercel deploys `main` automatically.
+Then commit and push; Vercel deploys `main` automatically. The "Update market data" workflow also commits to `main` every Monday, so `git pull --rebase` before you push.
+
+- **After a market update** (or any change to `market.js` / `market.css`) — `node sync-decks.mjs` copies the Market Pulse code and snapshot into the decks (they are self-contained for Marketora), then `npm run gen`.
+- **Deck links** — `/buyers?town=lowell` (or `?town=salem-nh`) opens the presentation on that town's market; a Marketora `?c=` config with a property address wins. Toolkit deep links: `/buyers#toolkit/afford|payment|cash|offer|rentbuy|rental|valuation|strategy|flip|wholesale|reports`, `/sellers#tool-equity`.
 
 - **Change a stat, phone, address or link** — `tools/site.config.json`, then `npm run gen`. The home page, decks and posts are hand-edited: search them for the same text. The `$20M+` figure is pending MLS confirmation; if it's under $20M, change every occurrence to "nearly $20M".
 - **GA4 / Search Console / Bing** — put the IDs in `tools/site.config.json` (`ga4Id`, `googleSiteVerification`, `bingSiteVerification`) and run `npm run gen`. GA4 sends `generate_lead` with `lead_source` on every successful form.
