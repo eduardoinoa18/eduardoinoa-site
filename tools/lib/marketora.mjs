@@ -39,6 +39,11 @@ const STATUS = {
 };
 export const statusLabel = (s, lang) => (STATUS[String(s || "").toLowerCase()] || ["", ""])[lang === "es" ? 1 : 0];
 const SOLD = new Set(["sold", "complete"]);
+/** Marketora stores a bare number ("415000"); show it as money. Anything already formatted ("$625,000", "Call") is left as written. */
+export const money = (p) => {
+  const s = String(p ?? "").trim();
+  return /^\d+(\.\d+)?$/.test(s) ? "$" + Math.round(Number(s)).toLocaleString("en-US") : s;
+};
 
 /** Listing cards (first photo, address, price, beds/baths/sqft, status badge) linking to the property website. */
 export function listingCards(listings, lang, { limit = 9, includeSold = true } = {}) {
@@ -50,7 +55,7 @@ export function listingCards(listings, lang, { limit = 9, includeSold = true } =
     const facts = [l.beds && `${esc(l.beds)} ${es ? "hab." : "bd"}`, l.baths && `${esc(l.baths)} ${es ? "baños" : "ba"}`, l.sqft && `${esc(l.sqft)} ${es ? "pies²" : "sq ft"}`].filter(Boolean).join(" · ");
     const where = [l.city, l.state].filter(Boolean).map(esc).join(", ");
     const inner = `<div class="mk-photo">${img ? `<img src="${esc(img)}" alt="${esc(l.address)}" loading="lazy" decoding="async" width="800" height="600">` : ""}${badge ? `<span class="mk-badge">${badge}</span>` : ""}</div>
-    <div class="mk-tx"><b>${esc(l.address)}</b>${where ? `<span>${where}</span>` : ""}${l.price ? `<span class="mk-price">${esc(l.price)}</span>` : ""}${facts ? `<span>${facts}</span>` : ""}</div>`;
+    <div class="mk-tx"><b>${esc(l.address)}</b>${where ? `<span>${where}</span>` : ""}${l.price ? `<span class="mk-price">${esc(money(l.price))}</span>` : ""}${facts ? `<span>${facts}</span>` : ""}</div>`;
     return href ? `<a class="mk-card" href="${esc(href)}" target="_blank" rel="noopener">${inner}</a>` : `<div class="mk-card">${inner}</div>`;
   }).join("")}</div>`;
 }
@@ -61,7 +66,7 @@ export function saleCards(portfolio, lang) {
   if (!rows.length) return "";
   return `<div class="sales">${rows.map((d) => {
     const cover = httpsUrl(d.cover && d.cover.url);
-    return `<div class="sale">${cover ? `<div class="frame"><img src="${esc(cover)}" alt="" loading="lazy" decoding="async" width="800" height="600"></div>` : ""}<b>${esc(d.where || d.headline)}</b><span>${[d.outcome, d.when].filter(Boolean).map(esc).join(" · ")}${d.price ? " · " + esc(d.price) : ""}</span><span>${esc(d.role || "")}</span>${d.note ? `<span>${esc(d.note)}</span>` : ""}</div>`;
+    return `<div class="sale">${cover ? `<div class="frame"><img src="${esc(cover)}" alt="" loading="lazy" decoding="async" width="800" height="600"></div>` : ""}<b>${esc(d.where || d.headline)}</b><span>${[d.outcome, d.when].filter(Boolean).map(esc).join(" · ")}${d.price ? " · " + esc(money(d.price)) : ""}</span><span>${esc(d.role || "")}</span>${d.note ? `<span>${esc(d.note)}</span>` : ""}</div>`;
   }).join("")}</div>`;
 }
 

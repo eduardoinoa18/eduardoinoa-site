@@ -502,7 +502,31 @@ section{position:relative}
   </div>
 </section>
 
-<!--mk:live--><!--/mk:live-->
+<!--mk:live--><style>
+.mk-listings{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.mk-card{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .3s,transform .3s var(--ease)}
+.mk-card:hover{border-color:var(--champagne);transform:translateY(-2px)}
+.mk-photo{position:relative;aspect-ratio:4/3;background:var(--stone)}
+.mk-photo img{width:100%;height:100%;object-fit:cover}
+.mk-badge{position:absolute;left:12px;top:12px;background:var(--night);color:#fff;font:500 13px var(--bf);padding:6px 10px;border-radius:999px}
+.mk-tx{padding:16px 18px 18px;display:grid;gap:3px}
+.mk-tx b{font:600 21px/1.2 var(--hf);color:var(--harbor)}
+.mk-tx span{font-size:14.5px;color:var(--muted)}
+.mk-tx .mk-price{font-weight:600;color:var(--ink);font-size:16px}
+</style>
+<section id="listings" class="sec">
+  <div class="wrap">
+    <div class="head"><div><span class="label" data-es="Mis propiedades">My listings</span><h2 data-es="En el mercado <em>conmigo.</em>">On the market <em>with me.</em></h2></div><p class="lede" data-es="Propiedades que represento ahora mismo. Cada una abre su propia página con fotos y detalles.">Homes I'm representing right now. Each one opens its own page with photos and details.</p></div>
+    <div data-es="<div class=&quot;mk-listings&quot;><a class=&quot;mk-card&quot; href=&quot;https://www.marketora.me/home/14-pinedale-ave-methuen&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;><div class=&quot;mk-photo&quot;><img src=&quot;https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/181559-XsiBC7k92Xvq5PC6FYOZZg1dViN8wL.png&quot; alt=&quot;14 pinedale ave&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;800&quot; height=&quot;600&quot;><span class=&quot;mk-badge&quot;>Bajo contrato</span></div>
+    <div class=&quot;mk-tx&quot;><b>14 pinedale ave</b><span>Methuen, MA</span><span class=&quot;mk-price&quot;>$2,700</span><span>3 hab. · 1 baños · 1100 pies²</span></div></a><a class=&quot;mk-card&quot; href=&quot;https://www.marketora.me/home/58-ledgecrest-dr-worcester&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;><div class=&quot;mk-photo&quot;><img src=&quot;https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/6-web-or-mls-006_DJI_20260906135114_0555_D-OaxlCJUNzJiH42m9yaKuqhSAiLI9hk.jpg&quot; alt=&quot;58 Ledgecrest Dr&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;800&quot; height=&quot;600&quot;><span class=&quot;mk-badge&quot;>Bajo contrato</span></div>
+    <div class=&quot;mk-tx&quot;><b>58 Ledgecrest Dr</b><span>Worcester, MA</span><span class=&quot;mk-price&quot;>$415,000</span><span>2 hab. · 2.5 baños · 1286 pies²</span></div></a><a class=&quot;mk-card&quot; href=&quot;https://www.marketora.me/home/4-jeffrey-rd-billerica&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;><div class=&quot;mk-photo&quot;><img src=&quot;https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/9-web-or-mls-7O6A4013-nGoR08TCdGq1N1UBE2Yyzw9qfZi8pA.jpg&quot; alt=&quot;4 Jeffrey Rd&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;800&quot; height=&quot;600&quot;><span class=&quot;mk-badge&quot;>Recién vendida</span></div>
+    <div class=&quot;mk-tx&quot;><b>4 Jeffrey Rd</b><span>Billerica, MA</span><span class=&quot;mk-price&quot;>$660,000</span><span>3 hab. · 2 baños · 1,560 pies²</span></div></a></div>"><div class="mk-listings"><a class="mk-card" href="https://www.marketora.me/home/14-pinedale-ave-methuen" target="_blank" rel="noopener"><div class="mk-photo"><img src="https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/181559-XsiBC7k92Xvq5PC6FYOZZg1dViN8wL.png" alt="14 pinedale ave" loading="lazy" decoding="async" width="800" height="600"><span class="mk-badge">Under agreement</span></div>
+    <div class="mk-tx"><b>14 pinedale ave</b><span>Methuen, MA</span><span class="mk-price">$2,700</span><span>3 bd · 1 ba · 1100 sq ft</span></div></a><a class="mk-card" href="https://www.marketora.me/home/58-ledgecrest-dr-worcester" target="_blank" rel="noopener"><div class="mk-photo"><img src="https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/6-web-or-mls-006_DJI_20260906135114_0555_D-OaxlCJUNzJiH42m9yaKuqhSAiLI9hk.jpg" alt="58 Ledgecrest Dr" loading="lazy" decoding="async" width="800" height="600"><span class="mk-badge">Under agreement</span></div>
+    <div class="mk-tx"><b>58 Ledgecrest Dr</b><span>Worcester, MA</span><span class="mk-price">$415,000</span><span>2 bd · 2.5 ba · 1286 sq ft</span></div></a><a class="mk-card" href="https://www.marketora.me/home/4-jeffrey-rd-billerica" target="_blank" rel="noopener"><div class="mk-photo"><img src="https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/9-web-or-mls-7O6A4013-nGoR08TCdGq1N1UBE2Yyzw9qfZi8pA.jpg" alt="4 Jeffrey Rd" loading="lazy" decoding="async" width="800" height="600"><span class="mk-badge">Just sold</span></div>
+    <div class="mk-tx"><b>4 Jeffrey Rd</b><span>Billerica, MA</span><span class="mk-price">$660,000</span><span>3 bd · 2 ba · 1,560 sq ft</span></div></a></div></div>
+    <p style="margin-top:22px"><a class="more" href="/listings" data-es="Ver todas las propiedades">See every listing</a></p>
+  </div>
+</section><!--/mk:live-->
 
 <section id="about" class="sec">
   <div class="wrap">
