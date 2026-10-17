@@ -49,6 +49,9 @@ fact ("rates will fall"). Do not use automated value estimates of single homes.
 
 ## 3. Write
 
+Every post is **rich and search-optimized, always**. `npm run qa` enforces the minimums below and fails the
+run if one is missing, so a thin post cannot publish.
+
 - **Length and voice:** 700–1,100 words, plain and practical, first person as Eduardo. Match the existing posts
   in `posts/` and `tools/data/journal/`. No emojis. No hype.
 - **Shape:**
@@ -58,8 +61,36 @@ fact ("rates will fall"). Do not use automated value estimates of single homes.
   - one `<blockquote>`;
   - a closing line pointing to the Market Pulse or to him;
   - a `<div class="box"><span class="label">Sources</span>…</div>` naming every source with dates and links.
+- **Images (at least 2 inside the article, plus the cover):** put `<!--photo:<slug>-->` on its own line between
+  paragraphs, using a slug from `img/photos/manifest.json` only (licensed; the credit and alt text come with
+  it). Prefer the towns the post talks about, then season and home photos. Do not reuse last week's photos.
+- **Charts and tables (at least one):** `<!--chart:rates-->` (Freddie Mac 30-year, 26 weeks) and
+  `<!--chart:value:<town>-->` (a town's Zillow typical value, 24 months; `<town>` like `lawrence`,
+  `salem-nh`, `nashua`) are drawn from `market.json`, frozen at the post date. A `.tw` table works too, for
+  exact figures.
+- **"In short" box:** 3–5 `takeaways` in `posts.json` (plain sentences, each one fact plus its meaning).
+  Rendered at the top of the post.
+- **Questions:** 3–6 `faqs` in `posts.json` (`{"q", "a"}`, plain text). These are the questions people
+  actually type into Google about this topic ("Are mortgage rates going to come down?", "Is it a good time to
+  buy in <town>?"). Answers in 2–4 sentences, same numbers rule, no predictions. Rendered as a section with
+  FAQPage structured data.
+- **Internal links (at least 2):** the town pages (`/towns/<slug>`, Spanish `/es/pueblos/<slug>` where it
+  exists), the toolkit (`/buyers#toolkit/payment`, `/buyers#toolkit/afford`, `/sellers#tool-equity`), the
+  Market Pulse (`/#market`) and earlier posts.
 - **Allowed HTML:** `p h2 h3 ul ol li strong em a blockquote`, `.tw` tables (`<div class="tw"><table>…</table></div>`)
   and `.box` callouts. External links get `target="_blank" rel="noopener"`.
+
+**SEO, every post:**
+- **The search phrase.** Pick the phrase a local buyer or seller would search, e.g. "mortgage rates
+  Massachusetts", "Methuen home prices", "first-time buyer New Hampshire". Use it in the title, the h1, the
+  slug, the summary, the first paragraph and one `<h2>`. Natural, never stuffed.
+- **`metaTitle`:** at most 65 characters before " | Eduardo Inoa, REALTOR®". Lead with the phrase.
+- **`summary`** (the meta description): 110–165 characters, with the phrase and a reason to click.
+- **`keywords`:** 3–8 phrases (used in structured data). Include at least one with a town or state name.
+- **Spanish:** its own phrase in Spanish ("tasas hipotecarias Massachusetts"), not a literal translation.
+- **Structure:** at least 3 `<h2>` sections. 700–1,600 words in English (650+ in Spanish).
+- **Handled by the generator:** canonical, hreflang, Open Graph `article`, the share card, BlogPosting with
+  `wordCount`, `keywords` and `articleSection`, FAQPage, breadcrumbs and the sitemap.
 - **Spanish edition:** the same facts and numbers, nothing added. Natural Spanish (usted), not a word-for-word
   translation. Keep US number formats ($400,000, 7.40%).
 
@@ -70,7 +101,7 @@ fact ("rates will fall"). Do not use automated value estimates of single homes.
 2. `tools/data/journal/<slug-es>.html`: Spanish body.
 3. `tools/data/posts.json`: add the English entry at the **top** of `en` and the Spanish entry at the top of
    `es`. Copy the shape of the newest entries:
-   - **English:** `slug, path (/posts/<slug>), esPath, date (YYYY-MM-DD, today), category (Market | Buyers | Sellers | Investing), title, h1 (one <em>…</em> at the end), metaTitle (ends " | Eduardo Inoa, REALTOR®"), crumb, summary (≤ 200 chars), cover, towns, related`.
+   - **English:** `slug, path (/posts/<slug>), esPath, date (YYYY-MM-DD, today), category (Market | Buyers | Sellers | Investing), title, h1 (one <em>…</em> at the end), metaTitle (ends " | Eduardo Inoa, REALTOR®"), crumb, summary (110-165 chars), cover, towns, related, keywords, takeaways, faqs`.
    - **Spanish:** the same, plus `enSlug` instead of `esPath`, path `/es/blog/<slug-es>`, and a Spanish category (Mercado | Compradores | Vendedores | Inversión).
    - **`cover`:** a slug from `img/photos/manifest.json`. Never add a photo we have no rights to. Prefer one
      that fits the season or the town in the post, and not the cover used last week.
@@ -95,6 +126,8 @@ fact ("rates will fall"). Do not use automated value estimates of single homes.
 ```bash
 cd tools && npm run qa        # must end with "All static checks passed."
 ```
+
+QA also enforces the richness and SEO minimums from step 3.
 
 Also confirm:
 - the new pages contain no emojis;

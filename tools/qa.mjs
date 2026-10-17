@@ -166,6 +166,32 @@ for (const m of sm.matchAll(/<loc>https:\/\/eduardoinoa\.com([^<]*)<\/loc>/g)) {
 const maxDepth = Math.max(...depth.values());
 console.log(`Crawl: ${depth.size} pages reachable from "/", deepest is ${maxDepth} clicks.`);
 
+// Weekly journal posts (data posts: a posts.json entry with h1 + a body in tools/data/journal/). Every one must
+// carry the same richness and search basics, so a scheduled run cannot publish a thin post (tools/WEEKLY-JOURNAL.md).
+{
+  const posts = JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8"));
+  for (const post of [...posts.en, ...posts.es].filter((x) => x.h1)) {
+    const f = path.join(ROOT, "tools/data/journal", `${post.slug}.html`), at = `post ${post.slug}`;
+    if (!fs.existsSync(f)) { fails.push(`${at}: body tools/data/journal/${post.slug}.html is missing`); continue; }
+    const body = fs.readFileSync(f, "utf8"), es = !!post.enSlug;
+    const words = body.replace(/<!--[\s\S]*?-->/g, " ").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+    const need = (ok, msg) => { if (!ok) fails.push(`${at}: ${msg}`); };
+    need(post.summary.length >= 110 && post.summary.length <= 165, `summary (meta description) is ${post.summary.length} chars; keep it 110-165`);
+    need(post.metaTitle.split(" | ")[0].length <= 65, `metaTitle before " | " is ${post.metaTitle.split(" | ")[0].length} chars; keep it <= 65`);
+    need(/^[a-z0-9]+(-[a-z0-9]+)*$/.test(post.slug) && post.slug.length <= 70, "slug must be lowercase-hyphenated and <= 70 chars");
+    need(words >= (es ? 650 : 700) && words <= 1600, `body is ${words} words; keep it ${es ? 650 : 700}-1600`);
+    need((body.match(/<h2[\s>]/g) || []).length >= 3, "needs at least 3 <h2> sections");
+    need((body.match(/<!--photo:[a-z0-9-]+-->/g) || []).length >= 2, "needs at least 2 inline photos (<!--photo:slug-->)");
+    need(/<!--chart:/.test(body) || /class="tw"/.test(body), "needs a chart (<!--chart:...-->) or a table");
+    need((body.match(/href="\/(?!\/)/g) || []).length >= 2, "needs at least 2 internal links (towns, toolkit, other posts)");
+    need(/class="box"><span class="label">(Sources|Fuentes)</.test(body), "needs the Sources / Fuentes box");
+    need(Array.isArray(post.takeaways) && post.takeaways.length >= 3 && post.takeaways.length <= 5, "needs 3-5 takeaways");
+    need(Array.isArray(post.faqs) && post.faqs.length >= 3 && post.faqs.length <= 6 && post.faqs.every((q) => q.q && q.a), "needs 3-6 faqs with q and a");
+    need(Array.isArray(post.keywords) && post.keywords.length >= 3 && post.keywords.length <= 8, "needs 3-8 keywords");
+    need(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(body + JSON.stringify(post)) === false, "contains an emoji");
+  }
+}
+
 console.log(`QA checked ${pages.length} pages.`);
 if (warns.length) console.log(`\nWarnings (${warns.length}):\n  ` + warns.join("\n  "));
 if (fails.length) { console.log(`\nFAILURES (${fails.length}):\n  ` + fails.join("\n  ")); process.exit(1); }

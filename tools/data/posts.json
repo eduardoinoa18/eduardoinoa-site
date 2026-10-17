@@ -11,10 +11,18 @@
       "h1": "Rates at 7.4%: what it means for buying and selling <em>this fall.</em>",
       "metaTitle": "Mortgage rates at 7.4%: what it means this fall in MA and NH | Eduardo Inoa, REALTOR®",
       "crumb": "Rates at 7.4% this fall",
-      "summary": "Freddie Mac's 30-year rate held at 7.40% this week, up from 6.27% a year ago. What it does to a payment, why the market is moving two ways, and what buyers and sellers can do.",
+      "summary": "The 30-year rate held at 7.40% this week, up from 6.27% a year ago. What it does to a payment in MA and NH, and what buyers and sellers can do now.",
       "cover": "aerial-neighborhood-autumn",
       "towns": ["lawrence", "methuen", "salem-nh"],
-      "related": ["how-to-read-the-market-pulse", "sell-and-buy-at-the-same-time", "first-time-buyer-programs-ma-nh"]
+      "related": ["how-to-read-the-market-pulse", "sell-and-buy-at-the-same-time", "first-time-buyer-programs-ma-nh"],
+      "keywords": ["mortgage rates Massachusetts", "mortgage rates New Hampshire", "Merrimack Valley housing market", "Southern New Hampshire real estate", "Massachusetts home sales September 2026", "buying a home at 7% mortgage rates"],
+      "takeaways": ["Freddie Mac's 30-year fixed rate held at 7.40% on October 15, up from 6.27% a year earlier.", "On a $400,000 loan that is about $301 more a month in principal and interest.", "Massachusetts single-family sales rose 4.8% in September while condo sales fell 6.4%.", "More listings and longer market times give buyers more room to negotiate; prices are still edging up."],
+      "faqs": [
+        {"q": "Are mortgage rates going to come down soon?", "a": "No one can say for certain. Freddie Mac's 30-year average rose every week from late August to 7.40% on October 8 and held there on October 15. Decide on the payment that works for you today; refinancing later is possible if rates fall, but it is not guaranteed and it has costs."},
+        {"q": "How much more is a mortgage payment at 7.4% than a year ago?", "a": "On a $400,000 loan, principal and interest is about $2,770 a month at 7.40%, compared with about $2,468 at last year's 6.27%: roughly $301 more, before taxes and insurance."},
+        {"q": "Is now a good time to buy in the Merrimack Valley or Southern New Hampshire?", "a": "It depends on your payment and your plans. Massachusetts had 18.1% more active listings in September than a year earlier, and homes are taking longer to sell in both states, which gives buyers more room to negotiate. Prices are still edging up, so waiting for a lower price is not a sure thing either."},
+        {"q": "As a seller, should I cut my price or offer a credit?", "a": "Often a credit toward the buyer's closing costs or a rate buydown helps their monthly payment more than a price cut of the same size, and your list price stays the same. The right answer depends on your home and your buyer, so we run both before deciding."}
+      ]
     },
     {
       "slug": "how-to-read-the-market-pulse",
@@ -94,12 +102,20 @@
       "category": "Mercado",
       "title": "Tasas hipotecarias al 7.4%: lo que significa para comprar y vender este otoño",
       "h1": "Tasas al 7.4%: lo que significa para comprar y vender <em>este otoño.</em>",
-      "metaTitle": "Tasas hipotecarias al 7.4%: lo que significa este otoño en MA y NH | Eduardo Inoa, REALTOR®",
+      "metaTitle": "Tasas hipotecarias al 7.4%: qué significa este otoño en MA y NH | Eduardo Inoa, REALTOR®",
       "crumb": "Tasas al 7.4% este otoño",
-      "summary": "La tasa a 30 años de Freddie Mac se mantuvo en 7.40%, frente a 6.27% hace un año. Qué le hace al pago, por qué el mercado va en dos direcciones y qué pueden hacer compradores y vendedores.",
+      "summary": "La tasa a 30 años se mantuvo en 7.40%, frente a 6.27% hace un año. Qué le hace al pago en MA y NH y qué pueden hacer hoy quienes compran y venden.",
       "cover": "aerial-neighborhood-autumn",
       "towns": ["lawrence", "methuen", "salem-nh"],
-      "related": ["programas-primer-comprador-ma-nh", "cuanto-cuesta-vender-ma-nh", "how-to-read-the-market-pulse"]
+      "related": ["programas-primer-comprador-ma-nh", "cuanto-cuesta-vender-ma-nh", "how-to-read-the-market-pulse"],
+      "keywords": ["tasas hipotecarias Massachusetts", "tasas hipotecarias New Hampshire", "mercado de vivienda Merrimack Valley", "bienes raíces sur de New Hampshire", "comprar casa con tasas del 7%"],
+      "takeaways": ["La tasa fija a 30 años de Freddie Mac se mantuvo en 7.40% el 15 de octubre, frente a 6.27% un año antes.", "En un préstamo de $400,000 son unos $301 más al mes en capital e intereses.", "En septiembre, las ventas de casas unifamiliares en Massachusetts subieron 4.8% y las de condominios bajaron 6.4%.", "Más propiedades en venta y más tiempo en el mercado dan a quien compra más margen para negociar; los precios todavía suben un poco."],
+      "faqs": [
+        {"q": "¿Van a bajar pronto las tasas hipotecarias?", "a": "Nadie lo puede asegurar. El promedio a 30 años de Freddie Mac subió todas las semanas desde finales de agosto hasta 7.40% el 8 de octubre y se mantuvo ahí el 15 de octubre. Decida según el pago que le funciona hoy; refinanciar más adelante es posible si las tasas bajan, pero no está garantizado y tiene costos."},
+        {"q": "¿Cuánto más es el pago de una hipoteca al 7.4% que hace un año?", "a": "En un préstamo de $400,000, el capital y los intereses son unos $2,770 al mes al 7.40%, frente a unos $2,468 con el 6.27% del año pasado: aproximadamente $301 más, sin contar impuestos ni seguro."},
+        {"q": "¿Es buen momento para comprar en Merrimack Valley o el sur de New Hampshire?", "a": "Depende de su pago y de sus planes. En septiembre, Massachusetts tenía 18.1% más propiedades activas que un año antes, y las casas tardan más en venderse en ambos estados, lo que da más margen para negociar. Los precios todavía suben un poco, así que esperar un precio más bajo tampoco es seguro."},
+        {"q": "Si vendo, ¿bajo el precio u ofrezco un crédito?", "a": "Muchas veces un crédito para los costos de cierre o para bajar la tasa del comprador ayuda más a su pago mensual que una rebaja del mismo tamaño, y su precio de lista se mantiene. La respuesta depende de su casa y de su comprador, así que comparamos las dos opciones antes de decidir."}
+      ]
     },
     {
       "slug": "programas-primer-comprador-ma-nh",

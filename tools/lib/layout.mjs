@@ -134,6 +134,7 @@ export const honeypot = `<div class="hp" aria-hidden="true"><label>Company<input
  * @param {string} o.body        inner HTML of <main>
  * @param {string} [o.navCurrent]
  * @param {object} [o.foot]      {disclaimer, credits:[slug]}
+ * @param {string} [o.ogType]    "article" for journal posts (default "website")
  * @param {string} [o.head]      extra <head> HTML (e.g. market.css)
  * @param {string} [o.scripts]   extra scripts before </body>
  */
@@ -170,7 +171,7 @@ export function page(o) {
 <meta name="description" content="${esc(o.description)}">
 <meta name="robots" content="${o.noindex ? "noindex,follow" : "index,follow,max-image-preview:large"}">
 <link rel="canonical" href="${url}">${alt}
-<meta property="og:type" content="website"><meta property="og:site_name" content="Eduardo Inoa, REALTOR®"><meta property="og:url" content="${url}">
+<meta property="og:type" content="${o.ogType || "website"}"><meta property="og:site_name" content="Eduardo Inoa, REALTOR®"><meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(o.title)}"><meta property="og:description" content="${esc(o.description)}">
 <meta property="og:image" content="${og}"><meta property="og:locale" content="${lang === "es" ? "es_US" : "en_US"}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${og}">

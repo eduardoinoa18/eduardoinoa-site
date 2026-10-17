@@ -59,6 +59,68 @@ export function homeJournalCards(esc) {
   }).join("\n");
 }
 
+/* ---------------- rich blocks for data posts ----------------
+   A body in tools/data/journal/ may use these markers; the generator expands them at build time:
+     <!--photo:<slug>-->          a licensed photo from img/photos/manifest.json, with its credit
+     <!--chart:rates-->           Freddie Mac 30-year fixed, the 26 survey weeks up to the post date
+     <!--chart:value:<town>-->    a town's Zillow typical home value, the 24 months up to the post date
+   Charts read market.json but stop at the post's own date, so an old post keeps showing what was true
+   when it was written (a chart with fewer than 6 points is dropped rather than drawn thin). */
+const MARKET = JSON.parse(fs.readFileSync(path.join(SITE_ROOT, "market.json"), "utf8"));
+const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const MES_CORTO = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** Points [{label, v}] for a chart marker, or null when the data is missing. */
+function chartSeries(kind, arg, date, lang) {
+  const short = (y, m, d) => (lang === "es" ? (d ? `${d} ${MES_CORTO[m - 1]}` : `${MES_CORTO[m - 1]} ${y}`) : (d ? `${MON[m - 1]} ${d}` : `${MON[m - 1]} ${y}`));
+  if (kind === "rates") {
+    const pts = (MARKET.rates?.fixed30?.history || []).filter((h) => h.d <= date).slice(-26);
+    return { pts: pts.map((h) => { const [y, m, d] = h.d.split("-").map(Number); return { label: short(y, m, d), v: h.v }; }), fmt: (v) => `${v.toFixed(2)}%`, tick: (v) => `${+v.toFixed(2)}%`,
+      title: lang === "es" ? "Tasa fija a 30 años, promedio semanal" : "30-year fixed rate, weekly average",
+      source: lang === "es" ? "Fuente: Freddie Mac Primary Mortgage Market Survey vía FRED." : "Source: Freddie Mac Primary Mortgage Market Survey via FRED." };
+  }
+  if (kind === "value") {
+    const town = (MARKET.towns || []).find((t) => slugify(t.name) === arg || `${slugify(t.name)}-${String(t.state).toLowerCase()}` === arg);
+    if (!town) throw new Error(`journal.mjs: chart:value:${arg} matches no town in market.json`);
+    const pts = (town.zillow?.zhvi?.history || []).filter((h) => h.m <= date.slice(0, 7)).slice(-24);
+    const name = `${town.name}, ${town.state}`;
+    return { pts: pts.map((h) => { const [y, m] = h.m.split("-").map(Number); return { label: short(y, m), v: h.v }; }), fmt: (v) => `$${Math.round(v).toLocaleString("en-US")}`, tick: (v) => `$${+(v / 1000).toFixed(1)}K`,
+      title: lang === "es" ? `Valor típico de una casa en ${name}` : `Typical home value in ${name}`,
+      source: lang === "es" ? "Fuente: Zillow Home Value Index (ZHVI), Zillow Research." : "Source: Zillow Home Value Index (ZHVI), Zillow Research." };
+  }
+  throw new Error(`journal.mjs: unknown chart marker chart:${kind}`);
+}
+
+/** An accessible inline SVG line chart (site palette, no script). */
+function chartSvg(series, id, esc) {
+  const { pts, fmt, tick, title, source } = series;
+  const W = 720, H = 320, L = 110, R = 24, T = 40, B = 52;
+  const vs = pts.map((p) => p.v), lo = Math.min(...vs), hi = Math.max(...vs);
+  // Round axis steps (1, 2, 2.5 or 5 x 10^k) giving 3-5 gridlines across the data.
+  const raw = (hi - lo || hi * 0.02) / 3, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map((k) => k * mag).find((k) => k >= raw);
+  const y0 = Math.floor(lo / step) * step, y1 = Math.ceil(hi / step) * step;
+  const x = (i) => L + (i * (W - L - R)) / (pts.length - 1), y = (v) => T + ((y1 - v) * (H - T - B)) / (y1 - y0);
+  const line = pts.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join("");
+  const area = `${line}L${x(pts.length - 1).toFixed(1)},${H - B}L${L},${H - B}Z`;
+  const ticks = [];
+  for (let t = y0; t <= y1 + step / 2; t += step) ticks.push(t);
+  const xi = [0, Math.floor((pts.length - 1) / 2), pts.length - 1];
+  const last = pts[pts.length - 1], first = pts[0];
+  return `<figure class="chart" role="group" aria-labelledby="${id}-t">
+<figcaption id="${id}-t" class="chart-t">${esc(title)}</figcaption>
+<div class="chart-box"><svg viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="${id}-t ${id}-d" preserveAspectRatio="xMidYMid meet">
+<desc id="${id}-d">${esc(`${first.label}: ${fmt(first.v)}. ${last.label}: ${fmt(last.v)}.`)}</desc>
+${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${y(t).toFixed(1)}" y2="${y(t).toFixed(1)}" class="g"/><text x="${L - 10}" y="${(y(t) + 4).toFixed(1)}" text-anchor="end">${esc(tick(t))}</text>`).join("")}
+<path d="${area}" class="a"/><path d="${line}" class="l"/>
+${xi.map((i) => `<text x="${x(i).toFixed(1)}" y="${H - 12}" text-anchor="${i === 0 ? "start" : i === pts.length - 1 ? "end" : "middle"}">${esc(pts[i].label)}</text>`).join("")}
+<circle cx="${x(pts.length - 1).toFixed(1)}" cy="${y(last.v).toFixed(1)}" r="5" class="d"/><text x="${(x(pts.length - 1) - 10).toFixed(1)}" y="${(y(last.v) - 12).toFixed(1)}" text-anchor="end" class="v">${esc(fmt(last.v))}</text>
+</svg></div>
+<p class="chart-s">${esc(source)}</p>
+</figure>`;
+}
+
 const REALSCOUT_URL = "https://eduardoinoa.realscout.me";
 const TOWN_SLUGS = ["methuen", "lawrence", "haverhill", "andover", "north-andover", "dracut", "tewksbury", "lowell",
   "tyngsborough", "chelmsford", "westford", "salem-nh", "windham-nh", "pelham-nh"];
@@ -170,6 +232,24 @@ export default function journal(ctx) {
 .post .disclaimer{margin-top:28px}
 .related{background:var(--stone)}
 @media(max-width:600px){.cover{margin-top:-48px}.post{font-size:17px}.post blockquote{padding-left:20px}.post .box{padding:24px 22px}.by a{margin-left:0}.by{flex-wrap:wrap}}
+/* data posts: inline photos, charts, takeaways, questions */
+.post figure.inline{margin:40px 0}
+.post figure.inline .frame img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.post figure.inline figcaption{text-align:right;margin-top:10px}
+.post .chart{margin:40px 0;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 22px 16px}
+.post .chart-t{font:600 clamp(20px,2vw,24px)/1.2 var(--hf);color:var(--harbor)}
+.post .chart-box{margin-top:12px}
+.post .chart svg{display:block;width:100%;height:auto}
+.post .chart text{font:500 15px var(--bf);fill:var(--muted)}
+.post .chart text.v{font-weight:600;fill:var(--harbor)}
+.post .chart .g{stroke:var(--hair);stroke-width:1}
+.post .chart .l{fill:none;stroke:var(--harbor);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.post .chart .a{fill:rgba(201,174,124,.18);stroke:none}
+.post .chart .d{fill:var(--champagne);stroke:var(--harbor);stroke-width:2}
+.post .chart-s{font-size:13px;color:var(--muted);margin:8px 0 0}
+.post .takeaways ul{margin:0;padding-left:1.2em}.post .takeaways li{margin-bottom:8px}
+.post .faq h3{font-size:clamp(21px,2vw,24px)}
+@media(max-width:600px){.post .chart{padding:16px 12px 12px}.post .chart text{font-size:27px}}
 /* listings */
 .ls-hero .wrap{padding-top:clamp(96px,14vw,160px)}
 .ls-hero h1{max-width:15ch}
@@ -365,6 +445,7 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
       book: "Book 20 minutes", toolkit: "Open the toolkit", text: "Text me",
       disclaimer: "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours.",
       relLabel: "Related reading", relH: "Keep reading", relAll: "All journal notes",
+      takeaways: "In short", faqH: "Questions people are asking",
     },
     es: {
       home: "Inicio", homePath: "/es", blog: "Blog", blogPath: "/es/blog", crumbs: "Ruta de navegación", nav: "/es#journal", inLanguage: "es-US",
@@ -374,6 +455,7 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
       book: "Reservar 20 minutos", toolkit: "Abrir el toolkit", text: "Enviarme un texto",
       disclaimer: "Esta nota es información general, no asesoría legal, fiscal ni financiera, y no es una tasación ni una aprobación de préstamo. Cada situación es diferente — hablemos de la suya.",
       relLabel: "Lecturas relacionadas", relH: "Siga leyendo", relAll: "Todas las notas del blog",
+      takeaways: "En resumen", faqH: "Preguntas que me hacen",
     },
   };
 
@@ -381,6 +463,26 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
   function postPage(post, lang, body, twin) {
     const T = POST_T[lang];
     const p = ph(post.cover, ["home", "interior", "lifestyle"]);
+    // Rich blocks (see the markers above): photos inside the article, charts frozen at the post date.
+    const inline = [];
+    let n = 0;
+    const html = body.html
+      .replace(/<!--photo:([a-z0-9-]+)-->/g, (_, slug) => {
+        const ip = all.find((x) => x.slug === slug);
+        if (!ip) throw new Error(`journal.mjs: ${post.slug} uses photo "${slug}", which is not in img/photos/manifest.json`);
+        inline.push(slug);
+        return `<figure class="inline"><div class="frame">${pimg(ip, { lang, sizes: "(max-width:760px) 100vw, 760px" })}</div><figcaption class="credit">${ip.credit_html}</figcaption></figure>`;
+      })
+      .replace(/<!--chart:([a-z]+)(?::([a-z0-9-]+))?-->/g, (_, kind, arg) => {
+        const series = chartSeries(kind, arg, post.date, lang);
+        return series.pts.length >= 6 ? chartSvg(series, `chart-${++n}`, esc) : "";
+      });
+    const takeaways = (post.takeaways || []).length
+      ? `<div class="box takeaways"><span class="label">${T.takeaways}</span><ul>${post.takeaways.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>\n` : "";
+    const faqs = post.faqs || [];
+    const faqHtml = faqs.length
+      ? `\n<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">${T.faqH}</h2>${faqs.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join("")}</section>` : "";
+    const words = (html + " " + (post.takeaways || []).join(" ") + " " + faqs.map((f) => f.q + " " + f.a).join(" ")).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
     const url = `${BASE}${post.path}`;
     const related = post.related.map((s) => (lang === "es" ? esBySlug[s] || enBySlug[s] : enBySlug[s])).filter(Boolean);
     const trail = [[T.home, T.homePath], [T.blog, T.blogPath], [post.crumb, post.path]];
@@ -389,7 +491,7 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
       : `<div class="area"><span class="label">${T.areaLabel}</span><div class="chips"><a href="${T.townsPath}">${T.areaAll}</a></div></div>`;
     const otherLang = lang === "es" ? "en" : "es";
     return {
-      lang, path: post.path, altPath: twin ? twin.path : undefined, navCurrent: T.nav,
+      lang, path: post.path, altPath: twin ? twin.path : undefined, navCurrent: T.nav, ogType: "article",
       title: body.metaTitle, description: post.summary,
       ogImage: p ? `/img/photos/${p.slug}-1600.webp` : undefined,
       head: STYLE + `<meta property="article:published_time" content="${post.date}"><meta name="author" content="Eduardo Inoa"><style>.en-hint{font-size:.7em;color:var(--muted);font-family:var(--bf)}</style>`,
@@ -397,15 +499,17 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
       schema: [
         {
           "@type": "BlogPosting", "@id": `${url}#post`, mainEntityOfPage: url, url,
-          headline: post.title, description: post.summary, datePublished: post.date, dateModified: post.date, inLanguage: T.inLanguage,
+          headline: post.title, description: post.summary, datePublished: post.date, dateModified: post.updated || post.date, inLanguage: T.inLanguage,
+          articleSection: post.category, wordCount: words, ...(post.keywords ? { keywords: post.keywords.join(", ") } : {}),
           image: imgObj(p), author: { "@id": IDS.person }, publisher: { "@id": IDS.agent },
           isPartOf: { "@type": "Blog", "@id": `${BASE}${T.blogPath}#blog`, name: T.blogName, url: `${BASE}${T.blogPath}` },
           ...(lang === "es" ? { translationOfWork: { "@id": `${BASE}${twin.path}#post` } } : {}),
           ...(post.towns.length ? { about: post.towns.map((t) => ({ "@type": "City", name: TOWNS[t].includes(",") ? TOWNS[t] : `${TOWNS[t]}, MA` })) } : {}),
         },
         breadcrumb(trail),
+        ...(faqs.length ? [{ "@type": "FAQPage", "@id": `${url}#faq`, inLanguage: T.inLanguage, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),
       ],
-      foot: { credits: [...new Set([post.cover, ...related.map((r) => r.cover)])].filter((s) => ph(s)) },
+      foot: { credits: [...new Set([post.cover, ...inline, ...related.map((r) => r.cover)])].filter((s) => ph(s)) },
       body: `<header class="post-hero"><div class="wrap narrow">
   ${crumbs(trail, T.crumbs)}
   <span class="label">${esc(post.category)} · <time datetime="${post.date}">${fmt(post.date, lang)}</time></span>
@@ -415,7 +519,7 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
 </div></header>
 ${p ? `<figure class="cover"><div class="frame">${pimg(p, { lang, eager: true, sizes: "(max-width:1000px) 100vw, 1000px" })}</div><figcaption class="credit">${p.credit_html}</figcaption></figure>` : ""}
 <article class="post wrap narrow">
-${body.html}
+${takeaways}${html}${faqHtml}
 ${chips}
 <div class="post-cta">
   <h2>${T.ctaH}</h2>
