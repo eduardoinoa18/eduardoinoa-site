@@ -1,10 +1,13 @@
-# Weekly market snapshot — runs every Monday 11:00 UTC (7 AM Eastern), or by hand from the Actions tab.
+# Market snapshot — runs Monday and Friday 11:00 UTC (7 AM Eastern in summer, 6 AM in winter), or by hand from the
+# Actions tab. The Friday run picks up Thursday's Freddie Mac rate before the weekly journal post (~8 AM ET,
+# tools/WEEKLY-JOURNAL.md) is written.
 # Writes market.json, copies it into the decks' fallback (sync-decks), regenerates the pages that embed
 # snapshot data (town pages, home value), runs QA, and commits; Vercel redeploys on the push.
 name: Update market data
 on:
   schedule:
     - cron: "0 11 * * 1"
+    - cron: "0 11 * * 5"
   workflow_dispatch:
 permissions:
   contents: write

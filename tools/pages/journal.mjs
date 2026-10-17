@@ -12,12 +12,52 @@
 // Never invent listings, sales, prices or reviews. Fair Housing: describe places and homes, never people.
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT as SITE_ROOT } from "../lib/layout.mjs";
+import { ROOT as SITE_ROOT, photos } from "../lib/layout.mjs";
 import { loadFeed, httpsUrl, listingCards, saleCards, MK_STYLE } from "../lib/marketora.mjs";
 
 // Spanish town pages exist only for towns with an "es" block in tools/data/towns.json; others link to English.
 const ES_TOWN_PAGES = new Set(JSON.parse(fs.readFileSync(path.join(SITE_ROOT, "tools/data/towns.json"), "utf8")).towns.filter((t) => t.es).map((t) => t.slug));
 const esTownHref = (t) => (ES_TOWN_PAGES.has(t) ? `/es/pueblos/${t}` : `/towns/${t}`);
+
+const COUNT = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+
+// Weekly posts (tools/WEEKLY-JOURNAL.md) are data, not hand-written pages: a posts.json entry carrying
+// h1 + metaTitle, with its body in tools/data/journal/<slug>.html. The English and the Spanish edition are
+// both built by postPage below, the template the Spanish editions already used.
+const JOURNAL_DIR = path.join(SITE_ROOT, "tools/data/journal");
+function dataBody(post) {
+  const f = path.join(JOURNAL_DIR, `${post.slug}.html`);
+  return post.h1 && post.metaTitle && fs.existsSync(f) ? { h1: post.h1, metaTitle: post.metaTitle, html: fs.readFileSync(f, "utf8").trim() } : null;
+}
+
+/* ---------------- dates ---------------- */
+const MES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+const fmt = (d, lang) => {
+  const [y, m, day] = d.split("-").map(Number);
+  return lang === "es" ? `${day} de ${MES[m - 1]} de ${y}`
+    : new Date(Date.UTC(y, m - 1, day, 12)).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+};
+const CAT_ES = { Market: "Mercado", Buyers: "Compradores", Investing: "Inversión", Sellers: "Vendedores" };
+
+/**
+ * The five newest journal cards for the home page (between <!--journal:cards--> markers in index.html,
+ * filled by generate.mjs). Spanish rides in data-es like the rest of the home; es-home.mjs points a card
+ * at its Spanish edition when there is one.
+ */
+export function homeJournalCards(esc) {
+  const DATA = JSON.parse(fs.readFileSync(path.join(SITE_ROOT, "tools/data/posts.json"), "utf8"));
+  const esByPath = Object.fromEntries(DATA.es.map((p) => [p.path, p]));
+  const all = photos();
+  const posts = [...DATA.en].sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 5);
+  return posts.map((post, i) => {
+    const p = all.find((x) => x.slug === post.cover);
+    const es = esByPath[post.esPath];
+    const titleEs = es ? es.title : post.titleEs || post.title, summaryEs = es ? es.summary : post.summaryEs || post.summary;
+    const sizes = i === 0 ? "(max-width:600px) 100vw, (max-width:900px) 100vw, 760px" : "(max-width:600px) 100vw, (max-width:900px) 50vw, 380px";
+    const img = p ? `<img src="/img/photos/${p.slug}-800.webp" srcset="/img/photos/${p.slug}-800.webp 800w, /img/photos/${p.slug}-1600.webp 1600w" sizes="${sizes}" width="${p.w}" height="${p.h}" alt="" loading="lazy" decoding="async">` : "";
+    return `      <a href="${post.path}" hreflang="en"><span class="cv">${img}</span><span class="tx"><span class="dt" data-es="${esc(`${CAT_ES[post.category] || post.category} · ${fmt(post.date, "es")}`)}">${esc(post.category)} · ${fmt(post.date, "en")}</span><h3 data-es="${esc(titleEs)}">${esc(post.title)}</h3><p data-es="${esc(summaryEs)}">${esc(post.summary)}</p><span class="go" data-es="Leer (en inglés)">Read</span></span></a>`;
+  }).join("\n");
+}
 
 const REALSCOUT_URL = "https://eduardoinoa.realscout.me";
 const TOWN_SLUGS = ["methuen", "lawrence", "haverhill", "andover", "north-andover", "dracut", "tewksbury", "lowell",
@@ -54,15 +94,6 @@ export default function journal(ctx) {
     return `<img${cls ? ` class="${cls}"` : ""} src="${s.src}" srcset="${s.set}" sizes="${sizes}" width="${p.w}" height="${p.h}" alt="${esc(a)}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}${s.pos}>`;
   }
   const imgObj = (p) => (p ? { "@type": "ImageObject", url: `${BASE}/img/photos/${p.slug}-1600.webp`, width: p.w, height: p.h } : undefined);
-
-  /* ---------------- dates ---------------- */
-  const MES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-  const fmt = (d, lang) => {
-    const [y, m, day] = d.split("-").map(Number);
-    return lang === "es" ? `${day} de ${MES[m - 1]} de ${y}`
-      : new Date(Date.UTC(y, m - 1, day, 12)).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
-  };
-  const CAT_ES = { Market: "Mercado", Buyers: "Compradores", Investing: "Inversión", Sellers: "Vendedores" };
 
   /* ---------------- shared styles for these pages (landing.css provides the system) ---------------- */
   const STYLE = `<style>
@@ -218,7 +249,7 @@ realscout-simple-search{display:block;width:100%}
   <span class="label">Journal</span>
   <h1>Worth knowing, <em>explained plainly.</em></h1>
   <p class="lede">Short notes on buying, selling and investing in the Merrimack Valley and Southern New Hampshire — in English and Spanish.</p>
-  <p class="aside"><a href="/es/blog" hreflang="es" lang="es">Leer en español</a> — two notes are also published in Spanish.</p>
+  <p class="aside"><a href="/es/blog" hreflang="es" lang="es">Leer en español</a> — ${ES.length === 1 ? "one note is" : `${COUNT[ES.length] ?? ES.length} notes are`} also published in Spanish.</p>
 </div></section>
 <section class="section tight"><div class="wrap">
   <div class="jgrid">
@@ -324,17 +355,41 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
     },
   };
 
-  for (const post of ES) {
-    const en = enBySlug[post.enSlug], body = ES_BODIES[post.slug];
-    if (!en || !body) throw new Error(`journal.mjs: missing English original or body for ${post.slug}`);
+  // Strings for the post template, per language. The Spanish set is what the Spanish editions always used.
+  const POST_T = {
+    en: {
+      home: "Home", homePath: "/", blog: "Journal", blogPath: "/journal", crumbs: "Breadcrumb", nav: "/#journal", inLanguage: "en-US",
+      blogName: "Eduardo Inoa — Journal", other: "Read in Spanish", townsPath: "/towns", townHref: (t) => `/towns/${t}`,
+      townsLabel: "Towns in this note", allTowns: "All towns", areaLabel: "Get to know the area", areaAll: "Every town I work in, in Massachusetts and New Hampshire",
+      ctaH: "Have a question about <em>your</em> situation?", ctaP: "Reply is personal, usually the same day. Or run the numbers yourself in the toolkit.",
+      book: "Book 20 minutes", toolkit: "Open the toolkit", text: "Text me",
+      disclaimer: "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours.",
+      relLabel: "Related reading", relH: "Keep reading", relAll: "All journal notes",
+    },
+    es: {
+      home: "Inicio", homePath: "/es", blog: "Blog", blogPath: "/es/blog", crumbs: "Ruta de navegación", nav: "/es#journal", inLanguage: "es-US",
+      blogName: "Eduardo Inoa — Blog", other: "Read in English", townsPath: "/es/pueblos", townHref: esTownHref,
+      townsLabel: "Pueblos en esta nota", allTowns: "Todos los pueblos", areaLabel: "Conozca la zona", areaAll: "Todos los pueblos donde trabajo en Massachusetts y New Hampshire",
+      ctaH: "¿Tiene una pregunta sobre <em>su</em> situación?", ctaP: "Le respondo personalmente, normalmente el mismo día. O haga los números usted mismo en el toolkit.",
+      book: "Reservar 20 minutos", toolkit: "Abrir el toolkit", text: "Enviarme un texto",
+      disclaimer: "Esta nota es información general, no asesoría legal, fiscal ni financiera, y no es una tasación ni una aprobación de préstamo. Cada situación es diferente — hablemos de la suya.",
+      relLabel: "Lecturas relacionadas", relH: "Siga leyendo", relAll: "Todas las notas del blog",
+    },
+  };
+
+  /** One post page. `twin` is the other-language edition (required for Spanish, optional for English). */
+  function postPage(post, lang, body, twin) {
+    const T = POST_T[lang];
     const p = ph(post.cover, ["home", "interior", "lifestyle"]);
     const url = `${BASE}${post.path}`;
-    const related = post.related.map((s) => esBySlug[s] || enBySlug[s]).filter(Boolean);
+    const related = post.related.map((s) => (lang === "es" ? esBySlug[s] || enBySlug[s] : enBySlug[s])).filter(Boolean);
+    const trail = [[T.home, T.homePath], [T.blog, T.blogPath], [post.crumb, post.path]];
     const chips = post.towns.length
-      ? `<div class="area"><span class="label">Pueblos en esta nota</span><div class="chips">${post.towns.map((t) => `<a href="${esTownHref(t)}">${esc(TOWNS[t])}</a>`).join("")}<a href="/es/pueblos">Todos los pueblos</a></div></div>`
-      : `<div class="area"><span class="label">Conozca la zona</span><div class="chips"><a href="/es/pueblos">Todos los pueblos donde trabajo en Massachusetts y New Hampshire</a></div></div>`;
-    pages.push({
-      lang: "es", path: post.path, altPath: en.path, navCurrent: "/es#journal",
+      ? `<div class="area"><span class="label">${T.townsLabel}</span><div class="chips">${post.towns.map((t) => `<a href="${T.townHref(t)}">${esc(TOWNS[t])}</a>`).join("")}<a href="${T.townsPath}">${T.allTowns}</a></div></div>`
+      : `<div class="area"><span class="label">${T.areaLabel}</span><div class="chips"><a href="${T.townsPath}">${T.areaAll}</a></div></div>`;
+    const otherLang = lang === "es" ? "en" : "es";
+    return {
+      lang, path: post.path, altPath: twin ? twin.path : undefined, navCurrent: T.nav,
       title: body.metaTitle, description: post.summary,
       ogImage: p ? `/img/photos/${p.slug}-1600.webp` : undefined,
       head: STYLE + `<meta property="article:published_time" content="${post.date}"><meta name="author" content="Eduardo Inoa"><style>.en-hint{font-size:.7em;color:var(--muted);font-family:var(--bf)}</style>`,
@@ -342,41 +397,54 @@ ${enOnly.map((p) => card(p, "es", { heading: "h3" })).join("\n")}
       schema: [
         {
           "@type": "BlogPosting", "@id": `${url}#post`, mainEntityOfPage: url, url,
-          headline: post.title, description: post.summary, datePublished: post.date, dateModified: post.date, inLanguage: "es-US",
+          headline: post.title, description: post.summary, datePublished: post.date, dateModified: post.date, inLanguage: T.inLanguage,
           image: imgObj(p), author: { "@id": IDS.person }, publisher: { "@id": IDS.agent },
-          isPartOf: { "@type": "Blog", "@id": `${BASE}/es/blog#blog`, name: "Eduardo Inoa — Blog", url: `${BASE}/es/blog` },
-          translationOfWork: { "@id": `${BASE}${en.path}#post` },
+          isPartOf: { "@type": "Blog", "@id": `${BASE}${T.blogPath}#blog`, name: T.blogName, url: `${BASE}${T.blogPath}` },
+          ...(lang === "es" ? { translationOfWork: { "@id": `${BASE}${twin.path}#post` } } : {}),
           ...(post.towns.length ? { about: post.towns.map((t) => ({ "@type": "City", name: TOWNS[t].includes(",") ? TOWNS[t] : `${TOWNS[t]}, MA` })) } : {}),
         },
-        breadcrumb([["Inicio", "/es"], ["Blog", "/es/blog"], [post.crumb, post.path]]),
+        breadcrumb(trail),
       ],
       foot: { credits: [...new Set([post.cover, ...related.map((r) => r.cover)])].filter((s) => ph(s)) },
       body: `<header class="post-hero"><div class="wrap narrow">
-  ${crumbs([["Inicio", "/es"], ["Blog", "/es/blog"], [post.crumb, post.path]], "Ruta de navegación")}
-  <span class="label">${esc(post.category)} · <time datetime="${post.date}">${fmt(post.date, "es")}</time></span>
+  ${crumbs(trail, T.crumbs)}
+  <span class="label">${esc(post.category)} · <time datetime="${post.date}">${fmt(post.date, lang)}</time></span>
   <h1>${body.h1}</h1>
   <p class="lede">${esc(post.summary)}</p>
-  <div class="by"><img src="/img/eduardo-avatar.webp" alt="Eduardo Inoa" width="96" height="96"><div><b>Eduardo Inoa, REALTOR®</b>The Fermin Group · Century 21 North East</div><a href="${en.path}" hreflang="en" lang="en">Read in English</a></div>
+  <div class="by"><img src="/img/eduardo-avatar.webp" alt="Eduardo Inoa" width="96" height="96"><div><b>Eduardo Inoa, REALTOR®</b>The Fermin Group · Century 21 North East</div>${twin ? `<a href="${twin.path}" hreflang="${otherLang}" lang="${otherLang}">${T.other}</a>` : ""}</div>
 </div></header>
-${p ? `<figure class="cover"><div class="frame">${pimg(p, { lang: "es", eager: true, sizes: "(max-width:1000px) 100vw, 1000px" })}</div><figcaption class="credit">${p.credit_html}</figcaption></figure>` : ""}
+${p ? `<figure class="cover"><div class="frame">${pimg(p, { lang, eager: true, sizes: "(max-width:1000px) 100vw, 1000px" })}</div><figcaption class="credit">${p.credit_html}</figcaption></figure>` : ""}
 <article class="post wrap narrow">
 ${body.html}
 ${chips}
 <div class="post-cta">
-  <h2>¿Tiene una pregunta sobre <em>su</em> situación?</h2>
-  <p>Le respondo personalmente, normalmente el mismo día. O haga los números usted mismo en el toolkit.</p>
-  <div class="btn-row"><a class="btn btn-gold" href="${LINKS.book}" target="_blank" rel="noopener">Reservar 20 minutos</a><a class="btn btn-ghost" href="/buyers#toolkit">Abrir el toolkit</a><a class="btn btn-ghost" href="sms:${NAP.tel}">Enviarme un texto</a></div>
+  <h2>${T.ctaH}</h2>
+  <p>${T.ctaP}</p>
+  <div class="btn-row"><a class="btn btn-gold" href="${LINKS.book}" target="_blank" rel="noopener">${T.book}</a><a class="btn btn-ghost" href="/buyers#toolkit">${T.toolkit}</a><a class="btn btn-ghost" href="sms:${NAP.tel}">${T.text}</a></div>
 </div>
-<p class="disclaimer">Esta nota es información general, no asesoría legal, fiscal ni financiera, y no es una tasación ni una aprobación de préstamo. Cada situación es diferente — hablemos de la suya.</p>
+<p class="disclaimer">${T.disclaimer}</p>
 </article>
 <section class="section tight related" aria-labelledby="rel-h"><div class="wrap">
-  <span class="label">Lecturas relacionadas</span><h2 id="rel-h" style="margin-bottom:clamp(28px,4vw,44px)">Siga leyendo</h2>
+  <span class="label">${T.relLabel}</span><h2 id="rel-h" style="margin-bottom:clamp(28px,4vw,44px)">${T.relH}</h2>
   <div class="jgrid">
-${related.map((r) => card(r, "es", { heading: "h3" })).join("\n")}
+${related.map((r) => card(r, lang, { heading: "h3" })).join("\n")}
   </div>
-  <p style="margin-top:32px"><a href="/es/blog" style="color:var(--harbor);font-weight:500;text-decoration-color:var(--champagne);text-underline-offset:4px">Todas las notas del blog</a></p>
+  <p style="margin-top:32px"><a href="${T.blogPath}" style="color:var(--harbor);font-weight:500;text-decoration-color:var(--champagne);text-underline-offset:4px">${T.relAll}</a></p>
 </div></section>`,
-    });
+    };
+  }
+
+  for (const post of ES) {
+    const en = enBySlug[post.enSlug], body = ES_BODIES[post.slug] || dataBody(post);
+    if (!en || !body) throw new Error(`journal.mjs: missing English original or body for ${post.slug}`);
+    pages.push(postPage(post, "es", body, en));
+  }
+  // English weekly posts (data). Hand-written posts/<slug>.html pages are left alone.
+  const handWritten = new Set(fs.readdirSync(path.join(ROOT, "posts")).filter((f) => f.endsWith(".html")).map((f) => f.slice(0, -5)));
+  for (const post of EN.filter((e) => !handWritten.has(e.slug))) {
+    const body = dataBody(post);
+    if (!body) throw new Error(`journal.mjs: ${post.slug} has no posts/${post.slug}.html and no tools/data/journal/${post.slug}.html (+ h1, metaTitle)`);
+    pages.push(postPage(post, "en", body, ES.find((e) => e.path === post.esPath)));
   }
 
   /* ================= /listings + /es/propiedades ================= */

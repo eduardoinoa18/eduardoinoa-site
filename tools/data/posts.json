@@ -2,11 +2,27 @@
   "_note": "Journal metadata used by tools/pages/journal.mjs (indexes, related reading, town chips). Titles and summaries are copied from the posts themselves; edit both together. Order = newest first. cover = a slug from img/photos/manifest.json.",
   "en": [
     {
+      "slug": "mortgage-rates-7-4-percent-fall-2026",
+      "path": "/posts/mortgage-rates-7-4-percent-fall-2026",
+      "esPath": "/es/blog/tasas-hipotecarias-7-4-por-ciento-otono-2026",
+      "date": "2026-10-17",
+      "category": "Market",
+      "title": "Mortgage rates at 7.4%: what it means for buying and selling this fall",
+      "h1": "Rates at 7.4%: what it means for buying and selling <em>this fall.</em>",
+      "metaTitle": "Mortgage rates at 7.4%: what it means this fall in MA and NH | Eduardo Inoa, REALTOR®",
+      "crumb": "Rates at 7.4% this fall",
+      "summary": "Freddie Mac's 30-year rate held at 7.40% this week, up from 6.27% a year ago. What it does to a payment, why the market is moving two ways, and what buyers and sellers can do.",
+      "cover": "aerial-neighborhood-autumn",
+      "towns": ["lawrence", "methuen", "salem-nh"],
+      "related": ["how-to-read-the-market-pulse", "sell-and-buy-at-the-same-time", "first-time-buyer-programs-ma-nh"]
+    },
+    {
       "slug": "how-to-read-the-market-pulse",
       "path": "/posts/how-to-read-the-market-pulse",
       "date": "2026-10-12",
       "category": "Market",
       "title": "How to read the Market Pulse — and what it means for you",
+      "titleEs": "Cómo leer el Pulso del mercado — y lo que significa para usted",
       "crumb": "Reading the Market Pulse",
       "summary": "Typical value, forecast, sale-to-list, days on market, months of supply and rates: what each number is telling a buyer, a seller and an investor.",
       "summaryEs": "Valor típico, pronóstico, precio de venta frente al de lista, días en el mercado, meses de inventario y tasas: qué le dice cada número a quien compra, vende o invierte.",
@@ -33,6 +49,7 @@
       "date": "2026-10-11",
       "category": "Investing",
       "title": "Your first multi-family in the Merrimack Valley: the five numbers that decide it",
+      "titleEs": "Su primer multifamiliar en Merrimack Valley: los cinco números que deciden",
       "crumb": "Your first multi-family",
       "summary": "House hacking a two- or three-family in Lawrence, Lowell or Haverhill still works — with real rents, the lender's tests, DSCR and three local cautions.",
       "summaryEs": "Comprar una casa de dos o tres familias en Lawrence, Lowell o Haverhill y vivir en una unidad todavía funciona — con rentas reales, las pruebas del prestamista, DSCR y tres precauciones locales.",
@@ -46,6 +63,7 @@
       "date": "2026-10-11",
       "category": "Sellers",
       "title": "Selling and buying at the same time: four ways to move once",
+      "titleEs": "Vender y comprar al mismo tiempo: cuatro maneras de mudarse una sola vez",
       "crumb": "Selling and buying at once",
       "summary": "Sell first with a cushion, buy first, go contingent, or bridge — how each works in this market and how we pick the one that fits your equity and income.",
       "summaryEs": "Vender primero con margen, comprar primero, una oferta contingente o un préstamo puente — cómo funciona cada opción en este mercado y cómo escogemos la que se ajusta a su equidad y sus ingresos.",
@@ -68,6 +86,21 @@
     }
   ],
   "es": [
+    {
+      "slug": "tasas-hipotecarias-7-4-por-ciento-otono-2026",
+      "path": "/es/blog/tasas-hipotecarias-7-4-por-ciento-otono-2026",
+      "enSlug": "mortgage-rates-7-4-percent-fall-2026",
+      "date": "2026-10-17",
+      "category": "Mercado",
+      "title": "Tasas hipotecarias al 7.4%: lo que significa para comprar y vender este otoño",
+      "h1": "Tasas al 7.4%: lo que significa para comprar y vender <em>este otoño.</em>",
+      "metaTitle": "Tasas hipotecarias al 7.4%: lo que significa este otoño en MA y NH | Eduardo Inoa, REALTOR®",
+      "crumb": "Tasas al 7.4% este otoño",
+      "summary": "La tasa a 30 años de Freddie Mac se mantuvo en 7.40%, frente a 6.27% hace un año. Qué le hace al pago, por qué el mercado va en dos direcciones y qué pueden hacer compradores y vendedores.",
+      "cover": "aerial-neighborhood-autumn",
+      "towns": ["lawrence", "methuen", "salem-nh"],
+      "related": ["programas-primer-comprador-ma-nh", "cuanto-cuesta-vender-ma-nh", "how-to-read-the-market-pulse"]
+    },
     {
       "slug": "programas-primer-comprador-ma-nh",
       "path": "/es/blog/programas-primer-comprador-ma-nh",

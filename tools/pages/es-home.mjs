@@ -18,10 +18,14 @@ const esDescription = (stats) =>
 // English path -> Spanish twin. Town pages map only when the Spanish twin exists (or is one of the four being built).
 const TWINS = { "/buyers": "/es/compradores", "/sellers": "/es/vendedores", "/home-value": "/es/valor-de-mi-casa", "/cash-offer": "/es/oferta-en-efectivo", "/towns": "/es/pueblos", "/journal": "/es/blog", "/toolkit": "/es/herramientas", "/listings": "/es/propiedades", "/site-map": "/es/mapa-del-sitio" };
 const ES_TOWNS = ["lawrence", "methuen", "haverhill", "lowell"];
-const POST_TWINS = { "/posts/first-time-buyer-programs-ma-nh": "/es/blog/programas-primer-comprador-ma-nh", "/posts/what-selling-costs-ma-nh": "/es/blog/cuanto-cuesta-vender-ma-nh" };
 
 export default function esHome(ctx) {
   const { ROOT, CONFIG } = ctx;
+  // English posts with a Spanish edition in tools/data/posts.json: their home cards open the Spanish one.
+  // Read from the data, not the disk: journal.mjs builds those pages after this module runs (and fails the
+  // build if one has no body), so a new Spanish post does not exist on disk yet on its first generate.
+  const POSTS = JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8"));
+  const POST_TWINS = Object.fromEntries(POSTS.es.map((e) => [POSTS.en.find((p) => p.slug === e.enSlug)?.path, e.path]).filter(([en]) => en));
   const exists = (p) => fs.existsSync(path.join(ROOT, p.replace(/^\//, ""), "index.html")) || fs.existsSync(path.join(ROOT, p.replace(/^\//, "") + ".html"));
   let src = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
   const doctype = (src.match(/^<!doctype[^>]*>\s*/i) || [""])[0];
@@ -67,7 +71,7 @@ export default function esHome(ctx) {
     let to = null;
     if (TWINS[p]) to = TWINS[p];
     else if (/^\/towns\/[\w-]+$/.test(p)) { const slug = p.split("/")[2]; if (ES_TOWNS.includes(slug) || exists("/es/pueblos/" + slug)) to = "/es/pueblos/" + slug; }
-    else if (POST_TWINS[p] && exists(POST_TWINS[p])) {
+    else if (POST_TWINS[p]) {
       to = POST_TWINS[p]; a.setAttribute("hreflang", "es");
       const go = a.querySelector(".go"); if (go) go.set_content("Leer");
     }

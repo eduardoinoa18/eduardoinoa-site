@@ -53,6 +53,15 @@ function creditsPage() {
   if (next !== home) fs.writeFileSync(homeFile, next);
 }
 
+/* ---------- home: the five newest journal cards between <!--journal:cards--> markers ---------- */
+{
+  const { homeJournalCards } = await import("./pages/journal.mjs");
+  const homeFile = path.join(ROOT, "index.html");
+  const home = fs.readFileSync(homeFile, "utf8");
+  const next = home.replace(/<!--journal:cards-->[\s\S]*?<!--\/journal:cards-->/, `<!--journal:cards-->\n${homeJournalCards(esc)}\n      <!--/journal:cards-->`);
+  if (next !== home) fs.writeFileSync(homeFile, next);
+}
+
 /* ---------- collect ---------- */
 const modulesDir = path.join(ROOT, "tools/pages");
 const specs = [];

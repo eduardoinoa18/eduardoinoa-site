@@ -1,6 +1,6 @@
 // Blog posts Eduardo publishes in Marketora become real pages here: /posts/<slug>.
-// A hand-written posts/<slug>.html with the same slug always wins (his original articles are never
-// replaced). Marketora's copy of each post points its canonical at https://eduardoinoa.com/posts/<slug>
+// A hand-written posts/<slug>.html or a weekly post with the same slug always wins (his original articles
+// are never replaced). Marketora's copy of each post points its canonical at https://eduardoinoa.com/posts/<slug>
 // (site-templates-eduardo canonical), so this page is the one search engines index.
 import fs from "node:fs";
 import path from "node:path";
@@ -10,6 +10,8 @@ export default function marketoraPosts(ctx) {
   const { ROOT, BASE, IDS, esc, breadcrumb, CONFIG } = ctx;
   const feed = loadFeed();
   const handWritten = new Set(fs.readdirSync(path.join(ROOT, "posts")).filter((f) => f.endsWith(".html")).map((f) => f.slice(0, -5)));
+  // Weekly posts (tools/data/posts.json + tools/data/journal/) are built by journal.mjs; they win too.
+  for (const p of JSON.parse(fs.readFileSync(path.join(ROOT, "tools/data/posts.json"), "utf8")).en) handWritten.add(p.slug);
   const all = ctx.photos();
   const fallback = all.find((p) => p.category === "home" && !p.town) || null;
 
