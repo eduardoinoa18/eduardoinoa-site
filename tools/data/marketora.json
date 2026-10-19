@@ -29,7 +29,7 @@
       "beds": "2",
       "baths": "2.5",
       "sqft": "1286",
-      "status": "under_contract",
+      "status": "sold",
       "photoUrl": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/6-web-or-mls-006_DJI_20260906135114_0555_D-OaxlCJUNzJiH42m9yaKuqhSAiLI9hk.jpg",
       "url": "https://www.marketora.me/home/58-ledgecrest-dr-worcester"
     },
@@ -455,7 +455,7 @@
     {
       "text": "Great guy, honest, great communication, I highly recommend him",
       "name": "Cayetano Cefalu",
-      "role": null
+      "role": "Salem NH"
     }
   ],
   "links": {
