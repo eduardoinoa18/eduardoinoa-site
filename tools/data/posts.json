@@ -2,6 +2,30 @@
   "_note": "Journal metadata used by tools/pages/journal.mjs (indexes, related reading, town chips). Titles and summaries are copied from the posts themselves; edit both together. Order = newest first. cover = a slug from img/photos/manifest.json.",
   "en": [
     {
+      "slug": "new-hampshire-home-prices-september-2026",
+      "path": "/posts/new-hampshire-home-prices-september-2026",
+      "esPath": "/es/blog/precios-casas-new-hampshire-septiembre-2026",
+      "date": "2026-10-23",
+      "category": "Market",
+      "title": "New Hampshire home prices: what the September report means this fall",
+      "h1": "New Hampshire home prices: what September means <em>this fall.</em>",
+      "metaTitle": "New Hampshire home prices: the September report, explained | Eduardo Inoa, REALTOR®",
+      "crumb": "NH home prices in September",
+      "summary": "New Hampshire home prices rose 6.5% in September as listings jumped 19.3%. What it means in Salem, Windham, Pelham and Nashua, plus rates at 7.32%.",
+      "cover": "londonderry-grange-autumn",
+      "towns": ["salem-nh", "windham-nh", "pelham-nh"],
+      "related": ["mortgage-rates-7-4-percent-fall-2026", "how-to-read-the-market-pulse", "sell-and-buy-at-the-same-time"],
+      "keywords": ["New Hampshire home prices", "Southern New Hampshire real estate", "Salem NH home values", "New Hampshire housing market September 2026", "mortgage rates New Hampshire", "selling a home in New Hampshire"],
+      "takeaways": ["New Hampshire's median single-family sale price rose 6.5% to $569,900 in September, according to New Hampshire REALTORS®.", "Single-family homes for sale rose 19.3% and days on market 18.5%, so buyers have more choice and more time.", "Zillow's typical home value is up over the year in every Southern New Hampshire town we track, from 0.2% to 3.3%.", "Freddie Mac's 30-year rate eased to 7.32% on October 22, its first weekly decline since August."],
+      "faqs": [
+        {"q": "Are home prices still going up in New Hampshire?", "a": "Yes, as of September. New Hampshire REALTORS® reported a median single-family sale price of $569,900, up 6.5% from a year earlier, and Zillow's typical home value for the state was up 2.9% as of September 30. What changed is time on market: single-family homes took 18.5% longer to sell."},
+        {"q": "What is the median home price in New Hampshire right now?", "a": "For September 2026, New Hampshire REALTORS® reported $569,900 for single-family homes and $415,000 for townhouse-condo properties. A median sale price reflects the homes that sold that month, so it can move more than a town's typical value."},
+        {"q": "Is it a good time to buy a home in Southern New Hampshire?", "a": "It depends on your payment and plans. Single-family listings are up 19.3% statewide and homes are taking longer to sell, which gives buyers more choice and room to negotiate. Prices are still up over the year, so waiting for a lower price is not a sure thing."},
+        {"q": "Did mortgage rates go down this week?", "a": "Yes. Freddie Mac's average 30-year fixed rate was 7.32% on October 22, down from 7.40% the week before and the first weekly decline since August. A year ago it was 6.19%."},
+        {"q": "Should I sell my home in New Hampshire this fall?", "a": "Values have held across Southern New Hampshire, but there are more homes competing for buyers. If you sell, price against the homes on the market now and plan for a few extra weeks. We can look at your town's numbers together before you decide."}
+      ]
+    },
+    {
       "slug": "mortgage-rates-7-4-percent-fall-2026",
       "path": "/posts/mortgage-rates-7-4-percent-fall-2026",
       "esPath": "/es/blog/tasas-hipotecarias-7-4-por-ciento-otono-2026",
@@ -94,6 +118,30 @@
     }
   ],
   "es": [
+    {
+      "slug": "precios-casas-new-hampshire-septiembre-2026",
+      "path": "/es/blog/precios-casas-new-hampshire-septiembre-2026",
+      "enSlug": "new-hampshire-home-prices-september-2026",
+      "date": "2026-10-23",
+      "category": "Mercado",
+      "title": "Precios de casas en New Hampshire: lo que significa el informe de septiembre",
+      "h1": "Precios de casas en New Hampshire: lo que significa septiembre <em>este otoño.</em>",
+      "metaTitle": "Precios de casas en New Hampshire: el informe de septiembre | Eduardo Inoa, REALTOR®",
+      "crumb": "Precios en NH en septiembre",
+      "summary": "Los precios de casas en New Hampshire subieron 6.5% en septiembre y las propiedades en venta 19.3%. Qué significa en Salem, Windham, Pelham y Nashua.",
+      "cover": "londonderry-grange-autumn",
+      "towns": ["salem-nh", "windham-nh", "pelham-nh"],
+      "related": ["tasas-hipotecarias-7-4-por-ciento-otono-2026", "programas-primer-comprador-ma-nh", "cuanto-cuesta-vender-ma-nh"],
+      "keywords": ["precios de casas New Hampshire", "bienes raíces sur de New Hampshire", "valor de casas Salem NH", "mercado de vivienda New Hampshire septiembre 2026", "tasas hipotecarias New Hampshire"],
+      "takeaways": ["El precio mediano de venta de una casa unifamiliar en New Hampshire subió 6.5% a $569,900 en septiembre, según New Hampshire REALTORS®.", "Las casas unifamiliares en venta subieron 19.3% y los días en el mercado 18.5%: quien compra tiene más opciones y más tiempo.", "El valor típico de Zillow sube en el año en todos los pueblos del sur de New Hampshire que seguimos, entre 0.2% y 3.3%.", "La tasa a 30 años de Freddie Mac bajó a 7.32% el 22 de octubre, su primera baja semanal desde agosto."],
+      "faqs": [
+        {"q": "¿Siguen subiendo los precios de las casas en New Hampshire?", "a": "Sí, a septiembre. New Hampshire REALTORS® reportó un precio mediano de venta de $569,900 para casas unifamiliares, un 6.5% más que hace un año, y el valor típico de Zillow para el estado subió 2.9% al 30 de septiembre. Lo que cambió es el tiempo en el mercado: las casas unifamiliares tardaron 18.5% más en venderse."},
+        {"q": "¿Cuál es el precio mediano de una casa en New Hampshire hoy?", "a": "En septiembre de 2026, New Hampshire REALTORS® reportó $569,900 para casas unifamiliares y $415,000 para townhouses y condominios. El precio mediano refleja las casas que se vendieron ese mes, así que puede moverse más que el valor típico de un pueblo."},
+        {"q": "¿Es buen momento para comprar casa en el sur de New Hampshire?", "a": "Depende de su pago y de sus planes. Hay 19.3% más casas unifamiliares en venta en el estado y tardan más en venderse, lo que da a quien compra más opciones y margen para negociar. Los precios siguen subiendo en el año, así que esperar un precio más bajo no es algo seguro."},
+        {"q": "¿Bajaron las tasas hipotecarias esta semana?", "a": "Sí. La tasa fija promedio a 30 años de Freddie Mac fue 7.32% el 22 de octubre, frente a 7.40% la semana anterior, y fue la primera baja semanal desde agosto. Hace un año era 6.19%."},
+        {"q": "¿Debo vender mi casa en New Hampshire este otoño?", "a": "Los valores se han mantenido en el sur de New Hampshire, pero hay más casas compitiendo por los compradores. Si vende, fije el precio frente a las casas que están hoy en el mercado y cuente con unas semanas más. Podemos revisar juntos los números de su pueblo antes de que decida."}
+      ]
+    },
     {
       "slug": "tasas-hipotecarias-7-4-por-ciento-otono-2026",
       "path": "/es/blog/tasas-hipotecarias-7-4-por-ciento-otono-2026",
