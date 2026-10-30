@@ -2,6 +2,60 @@
   "_note": "Journal metadata used by tools/pages/journal.mjs (indexes, related reading, town chips). Titles and summaries are copied from the posts themselves; edit both together. Order = newest first. cover = a slug from img/photos/manifest.json.",
   "en": [
     {
+      "slug": "mortgage-rates-7-24-percent-second-weekly-drop-2026",
+      "path": "/posts/mortgage-rates-7-24-percent-second-weekly-drop-2026",
+      "esPath": "/es/blog/tasas-hipotecarias-7-24-por-ciento-segunda-baja-2026",
+      "date": "2026-10-30",
+      "category": "Market",
+      "title": "Mortgage rates fall to 7.24%: what a second weekly drop means in MA and NH",
+      "h1": "Mortgage rates fall to 7.24%: what the second drop means <em>for you.</em>",
+      "metaTitle": "Mortgage rates Massachusetts: 7.24%, a second weekly drop | Eduardo Inoa, REALTOR®",
+      "crumb": "Rates fall to 7.24%",
+      "summary": "Mortgage rates in Massachusetts and NH fell to 7.24% this week, a second drop. What 0.16 points does to a payment, and what buyers and sellers can do.",
+      "cover": "home-colonial-evening-glow",
+      "towns": [
+        "haverhill",
+        "lowell",
+        "salem-nh"
+      ],
+      "related": [
+        "mortgage-rates-7-4-percent-fall-2026",
+        "sell-and-buy-at-the-same-time",
+        "first-multi-family-merrimack-valley"
+      ],
+      "keywords": [
+        "mortgage rates Massachusetts",
+        "mortgage rates New Hampshire",
+        "Freddie Mac 30-year rate October 2026",
+        "buying a home in Haverhill",
+        "Southern New Hampshire real estate"
+      ],
+      "takeaways": [
+        "Freddie Mac's 30-year fixed rate fell to 7.24% on October 29, the second weekly decline, from 7.32% and a 7.40% peak.",
+        "On a $400,000 loan, that is about $44 a month less than at 7.40%, but still about $284 more than a year ago.",
+        "A few cents of movement matters less than the home, the price and the terms you negotiate.",
+        "Ask your lender about a fresh pre-approval, a seller credit or buydown, and your rate lock."
+      ],
+      "faqs": [
+        {
+          "q": "What is the mortgage rate in Massachusetts this week?",
+          "a": "Freddie Mac's national weekly average for a 30-year fixed mortgage was 7.24% on October 29, 2026, down from 7.32% the week before. Your own rate depends on your credit, down payment and lender, so ask for a quote."
+        },
+        {
+          "q": "How much does a drop to 7.24% save on a mortgage payment?",
+          "a": "On a $400,000 loan, principal and interest is about $2,726 a month at 7.24% compared with about $2,770 at 7.40%, roughly $44 less, before taxes and insurance. This is an illustration, not a loan quote."
+        },
+        {
+          "q": "Should I wait for rates to fall further before buying?",
+          "a": "No one can say where rates will go. Waiting has a cost if prices or competition rise, and buying has a cost if the payment stretches you. Choose a payment you can carry today; refinancing later is possible, but not guaranteed, and has closing costs."
+        },
+        {
+          "q": "Is it a good time to buy in Haverhill, Lowell or Salem, NH?",
+          "a": "It depends on your payment and your plans. The Market Pulse on each town page shows the latest rate and local figures. Send me the home or town you are considering and I will run the numbers with you."
+        }
+      ]
+    },
+    {
       "slug": "new-hampshire-home-prices-september-2026",
       "path": "/posts/new-hampshire-home-prices-september-2026",
       "esPath": "/es/blog/precios-casas-new-hampshire-septiembre-2026",
@@ -13,16 +67,51 @@
       "crumb": "NH home prices in September",
       "summary": "New Hampshire home prices rose 6.5% in September as listings jumped 19.3%. What it means in Salem, Windham, Pelham and Nashua, plus rates at 7.32%.",
       "cover": "londonderry-grange-autumn",
-      "towns": ["salem-nh", "windham-nh", "pelham-nh"],
-      "related": ["mortgage-rates-7-4-percent-fall-2026", "how-to-read-the-market-pulse", "sell-and-buy-at-the-same-time"],
-      "keywords": ["New Hampshire home prices", "Southern New Hampshire real estate", "Salem NH home values", "New Hampshire housing market September 2026", "mortgage rates New Hampshire", "selling a home in New Hampshire"],
-      "takeaways": ["New Hampshire's median single-family sale price rose 6.5% to $569,900 in September, according to New Hampshire REALTORS®.", "Single-family homes for sale rose 19.3% and days on market 18.5%, so buyers have more choice and more time.", "Zillow's typical home value is up over the year in every Southern New Hampshire town we track, from 0.2% to 3.3%.", "Freddie Mac's 30-year rate eased to 7.32% on October 22, its first weekly decline since August."],
+      "towns": [
+        "salem-nh",
+        "windham-nh",
+        "pelham-nh"
+      ],
+      "related": [
+        "mortgage-rates-7-4-percent-fall-2026",
+        "how-to-read-the-market-pulse",
+        "sell-and-buy-at-the-same-time"
+      ],
+      "keywords": [
+        "New Hampshire home prices",
+        "Southern New Hampshire real estate",
+        "Salem NH home values",
+        "New Hampshire housing market September 2026",
+        "mortgage rates New Hampshire",
+        "selling a home in New Hampshire"
+      ],
+      "takeaways": [
+        "New Hampshire's median single-family sale price rose 6.5% to $569,900 in September, according to New Hampshire REALTORS®.",
+        "Single-family homes for sale rose 19.3% and days on market 18.5%, so buyers have more choice and more time.",
+        "Zillow's typical home value is up over the year in every Southern New Hampshire town we track, from 0.2% to 3.3%.",
+        "Freddie Mac's 30-year rate eased to 7.32% on October 22, its first weekly decline since August."
+      ],
       "faqs": [
-        {"q": "Are home prices still going up in New Hampshire?", "a": "Yes, as of September. New Hampshire REALTORS® reported a median single-family sale price of $569,900, up 6.5% from a year earlier, and Zillow's typical home value for the state was up 2.9% as of September 30. What changed is time on market: single-family homes took 18.5% longer to sell."},
-        {"q": "What is the median home price in New Hampshire right now?", "a": "For September 2026, New Hampshire REALTORS® reported $569,900 for single-family homes and $415,000 for townhouse-condo properties. A median sale price reflects the homes that sold that month, so it can move more than a town's typical value."},
-        {"q": "Is it a good time to buy a home in Southern New Hampshire?", "a": "It depends on your payment and plans. Single-family listings are up 19.3% statewide and homes are taking longer to sell, which gives buyers more choice and room to negotiate. Prices are still up over the year, so waiting for a lower price is not a sure thing."},
-        {"q": "Did mortgage rates go down this week?", "a": "Yes. Freddie Mac's average 30-year fixed rate was 7.32% on October 22, down from 7.40% the week before and the first weekly decline since August. A year ago it was 6.19%."},
-        {"q": "Should I sell my home in New Hampshire this fall?", "a": "Values have held across Southern New Hampshire, but there are more homes competing for buyers. If you sell, price against the homes on the market now and plan for a few extra weeks. We can look at your town's numbers together before you decide."}
+        {
+          "q": "Are home prices still going up in New Hampshire?",
+          "a": "Yes, as of September. New Hampshire REALTORS® reported a median single-family sale price of $569,900, up 6.5% from a year earlier, and Zillow's typical home value for the state was up 2.9% as of September 30. What changed is time on market: single-family homes took 18.5% longer to sell."
+        },
+        {
+          "q": "What is the median home price in New Hampshire right now?",
+          "a": "For September 2026, New Hampshire REALTORS® reported $569,900 for single-family homes and $415,000 for townhouse-condo properties. A median sale price reflects the homes that sold that month, so it can move more than a town's typical value."
+        },
+        {
+          "q": "Is it a good time to buy a home in Southern New Hampshire?",
+          "a": "It depends on your payment and plans. Single-family listings are up 19.3% statewide and homes are taking longer to sell, which gives buyers more choice and room to negotiate. Prices are still up over the year, so waiting for a lower price is not a sure thing."
+        },
+        {
+          "q": "Did mortgage rates go down this week?",
+          "a": "Yes. Freddie Mac's average 30-year fixed rate was 7.32% on October 22, down from 7.40% the week before and the first weekly decline since August. A year ago it was 6.19%."
+        },
+        {
+          "q": "Should I sell my home in New Hampshire this fall?",
+          "a": "Values have held across Southern New Hampshire, but there are more homes competing for buyers. If you sell, price against the homes on the market now and plan for a few extra weeks. We can look at your town's numbers together before you decide."
+        }
       ]
     },
     {
@@ -37,15 +126,47 @@
       "crumb": "Rates at 7.4% this fall",
       "summary": "The 30-year rate held at 7.40% this week, up from 6.27% a year ago. What it does to a payment in MA and NH, and what buyers and sellers can do now.",
       "cover": "aerial-neighborhood-autumn",
-      "towns": ["lawrence", "methuen", "salem-nh"],
-      "related": ["how-to-read-the-market-pulse", "sell-and-buy-at-the-same-time", "first-time-buyer-programs-ma-nh"],
-      "keywords": ["mortgage rates Massachusetts", "mortgage rates New Hampshire", "Merrimack Valley housing market", "Southern New Hampshire real estate", "Massachusetts home sales September 2026", "buying a home at 7% mortgage rates"],
-      "takeaways": ["Freddie Mac's 30-year fixed rate held at 7.40% on October 15, up from 6.27% a year earlier.", "On a $400,000 loan that is about $301 more a month in principal and interest.", "Massachusetts single-family sales rose 4.8% in September while condo sales fell 6.4%.", "More listings and longer market times give buyers more room to negotiate; prices are still edging up."],
+      "towns": [
+        "lawrence",
+        "methuen",
+        "salem-nh"
+      ],
+      "related": [
+        "how-to-read-the-market-pulse",
+        "sell-and-buy-at-the-same-time",
+        "first-time-buyer-programs-ma-nh"
+      ],
+      "keywords": [
+        "mortgage rates Massachusetts",
+        "mortgage rates New Hampshire",
+        "Merrimack Valley housing market",
+        "Southern New Hampshire real estate",
+        "Massachusetts home sales September 2026",
+        "buying a home at 7% mortgage rates"
+      ],
+      "takeaways": [
+        "Freddie Mac's 30-year fixed rate held at 7.40% on October 15, up from 6.27% a year earlier.",
+        "On a $400,000 loan that is about $301 more a month in principal and interest.",
+        "Massachusetts single-family sales rose 4.8% in September while condo sales fell 6.4%.",
+        "More listings and longer market times give buyers more room to negotiate; prices are still edging up."
+      ],
       "faqs": [
-        {"q": "Are mortgage rates going to come down soon?", "a": "No one can say for certain. Freddie Mac's 30-year average rose every week from late August to 7.40% on October 8 and held there on October 15. Decide on the payment that works for you today; refinancing later is possible if rates fall, but it is not guaranteed and it has costs."},
-        {"q": "How much more is a mortgage payment at 7.4% than a year ago?", "a": "On a $400,000 loan, principal and interest is about $2,770 a month at 7.40%, compared with about $2,468 at last year's 6.27%: roughly $301 more, before taxes and insurance."},
-        {"q": "Is now a good time to buy in the Merrimack Valley or Southern New Hampshire?", "a": "It depends on your payment and your plans. Massachusetts had 18.1% more active listings in September than a year earlier, and homes are taking longer to sell in both states, which gives buyers more room to negotiate. Prices are still edging up, so waiting for a lower price is not a sure thing either."},
-        {"q": "As a seller, should I cut my price or offer a credit?", "a": "Often a credit toward the buyer's closing costs or a rate buydown helps their monthly payment more than a price cut of the same size, and your list price stays the same. The right answer depends on your home and your buyer, so we run both before deciding."}
+        {
+          "q": "Are mortgage rates going to come down soon?",
+          "a": "No one can say for certain. Freddie Mac's 30-year average rose every week from late August to 7.40% on October 8 and held there on October 15. Decide on the payment that works for you today; refinancing later is possible if rates fall, but it is not guaranteed and it has costs."
+        },
+        {
+          "q": "How much more is a mortgage payment at 7.4% than a year ago?",
+          "a": "On a $400,000 loan, principal and interest is about $2,770 a month at 7.40%, compared with about $2,468 at last year's 6.27%: roughly $301 more, before taxes and insurance."
+        },
+        {
+          "q": "Is now a good time to buy in the Merrimack Valley or Southern New Hampshire?",
+          "a": "It depends on your payment and your plans. Massachusetts had 18.1% more active listings in September than a year earlier, and homes are taking longer to sell in both states, which gives buyers more room to negotiate. Prices are still edging up, so waiting for a lower price is not a sure thing either."
+        },
+        {
+          "q": "As a seller, should I cut my price or offer a credit?",
+          "a": "Often a credit toward the buyer's closing costs or a rate buydown helps their monthly payment more than a price cut of the same size, and your list price stays the same. The right answer depends on your home and your buyer, so we run both before deciding."
+        }
       ]
     },
     {
@@ -59,8 +180,16 @@
       "summary": "Typical value, forecast, sale-to-list, days on market, months of supply and rates: what each number is telling a buyer, a seller and an investor.",
       "summaryEs": "Valor típico, pronóstico, precio de venta frente al de lista, días en el mercado, meses de inventario y tasas: qué le dice cada número a quien compra, vende o invierte.",
       "cover": "north-andover-old-center-aerial",
-      "towns": ["dracut", "tewksbury", "salem-nh"],
-      "related": ["first-time-buyer-programs-ma-nh", "what-selling-costs-ma-nh", "sell-and-buy-at-the-same-time"]
+      "towns": [
+        "dracut",
+        "tewksbury",
+        "salem-nh"
+      ],
+      "related": [
+        "first-time-buyer-programs-ma-nh",
+        "what-selling-costs-ma-nh",
+        "sell-and-buy-at-the-same-time"
+      ]
     },
     {
       "slug": "first-time-buyer-programs-ma-nh",
@@ -72,8 +201,13 @@
       "crumb": "First-time buyer programs",
       "summary": "MassHousing, the ONE Mortgage, New Hampshire Housing, FHA and 3–5% conventional: the four doors, what assistance really means, and the order to do things in.",
       "cover": "keys-new-home",
-      "towns": ["salem-nh"],
-      "related": ["first-multi-family-merrimack-valley", "how-to-read-the-market-pulse"]
+      "towns": [
+        "salem-nh"
+      ],
+      "related": [
+        "first-multi-family-merrimack-valley",
+        "how-to-read-the-market-pulse"
+      ]
     },
     {
       "slug": "first-multi-family-merrimack-valley",
@@ -86,8 +220,16 @@
       "summary": "House hacking a two- or three-family in Lawrence, Lowell or Haverhill still works — with real rents, the lender's tests, DSCR and three local cautions.",
       "summaryEs": "Comprar una casa de dos o tres familias en Lawrence, Lowell o Haverhill y vivir en una unidad todavía funciona — con rentas reales, las pruebas del prestamista, DSCR y tres precauciones locales.",
       "cover": "multifamily-triple-decker",
-      "towns": ["lawrence", "lowell", "haverhill", "methuen"],
-      "related": ["first-time-buyer-programs-ma-nh", "how-to-read-the-market-pulse"]
+      "towns": [
+        "lawrence",
+        "lowell",
+        "haverhill",
+        "methuen"
+      ],
+      "related": [
+        "first-time-buyer-programs-ma-nh",
+        "how-to-read-the-market-pulse"
+      ]
     },
     {
       "slug": "sell-and-buy-at-the-same-time",
@@ -100,8 +242,14 @@
       "summary": "Sell first with a cushion, buy first, go contingent, or bridge — how each works in this market and how we pick the one that fits your equity and income.",
       "summaryEs": "Vender primero con margen, comprar primero, una oferta contingente o un préstamo puente — cómo funciona cada opción en este mercado y cómo escogemos la que se ajusta a su equidad y sus ingresos.",
       "cover": "porch-rocking-chairs",
-      "towns": ["methuen", "dracut"],
-      "related": ["what-selling-costs-ma-nh", "how-to-read-the-market-pulse"]
+      "towns": [
+        "methuen",
+        "dracut"
+      ],
+      "related": [
+        "what-selling-costs-ma-nh",
+        "how-to-read-the-market-pulse"
+      ]
     },
     {
       "slug": "what-selling-costs-ma-nh",
@@ -114,10 +262,67 @@
       "summary": "Price is what the market says; net is what you keep. The short list of costs between the two, with real numbers.",
       "cover": "home-colonial-black-shutters",
       "towns": [],
-      "related": ["sell-and-buy-at-the-same-time", "how-to-read-the-market-pulse"]
+      "related": [
+        "sell-and-buy-at-the-same-time",
+        "how-to-read-the-market-pulse"
+      ]
     }
   ],
   "es": [
+    {
+      "slug": "tasas-hipotecarias-7-24-por-ciento-segunda-baja-2026",
+      "path": "/es/blog/tasas-hipotecarias-7-24-por-ciento-segunda-baja-2026",
+      "enSlug": "mortgage-rates-7-24-percent-second-weekly-drop-2026",
+      "date": "2026-10-30",
+      "category": "Mercado",
+      "title": "Tasas hipotecarias bajan a 7.24%: qué significa la segunda baja semanal en MA y NH",
+      "h1": "Tasas hipotecarias bajan a 7.24%: qué significa la segunda baja <em>para usted.</em>",
+      "metaTitle": "Tasas hipotecarias Massachusetts: 7.24%, segunda baja | Eduardo Inoa, REALTOR®",
+      "crumb": "Tasas bajan a 7.24%",
+      "summary": "Las tasas hipotecarias en Massachusetts y NH bajaron a 7.24%, la segunda baja seguida. Qué hacen 0.16 puntos al pago y qué pueden hacer quienes compran y venden.",
+      "cover": "home-colonial-evening-glow",
+      "towns": [
+        "haverhill",
+        "lowell",
+        "salem-nh"
+      ],
+      "related": [
+        "tasas-hipotecarias-7-4-por-ciento-otono-2026",
+        "cuanto-cuesta-vender-ma-nh",
+        "programas-primer-comprador-ma-nh"
+      ],
+      "keywords": [
+        "tasas hipotecarias Massachusetts",
+        "tasas hipotecarias New Hampshire",
+        "tasa Freddie Mac octubre 2026",
+        "comprar casa en Haverhill",
+        "bienes raíces sur de New Hampshire"
+      ],
+      "takeaways": [
+        "La tasa fija a 30 años de Freddie Mac bajó a 7.24% el 29 de octubre, la segunda baja semanal, desde 7.32% y un máximo de 7.40%.",
+        "En un préstamo de $400,000 son unos $44 menos al mes que al 7.40%, pero todavía unos $284 más que hace un año.",
+        "Unos centésimos de cambio importan menos que la casa, el precio y las condiciones que negocie.",
+        "Pida a su prestamista una preaprobación nueva, un crédito del vendedor o reducción de tasa, y revise su aseguramiento de tasa."
+      ],
+      "faqs": [
+        {
+          "q": "¿Cuál es la tasa hipotecaria en Massachusetts esta semana?",
+          "a": "El promedio nacional semanal de Freddie Mac para una hipoteca fija a 30 años fue 7.24% el 29 de octubre de 2026, por debajo de 7.32% la semana anterior. Su tasa depende de su crédito, su pago inicial y su prestamista, así que pida una cotización."
+        },
+        {
+          "q": "¿Cuánto ahorra en el pago una baja a 7.24%?",
+          "a": "En un préstamo de $400,000, el capital y los intereses son unos $2,726 al mes al 7.24%, frente a unos $2,770 al 7.40%: aproximadamente $44 menos, sin contar impuestos ni seguro. Es una ilustración, no una cotización."
+        },
+        {
+          "q": "¿Debo esperar a que las tasas bajen más antes de comprar?",
+          "a": "Nadie puede decir hacia dónde irán las tasas. Esperar tiene un costo si suben los precios o la competencia, y comprar lo tiene si el pago lo aprieta. Elija un pago que pueda sostener hoy; refinanciar después es posible, pero no está garantizado y tiene costos de cierre."
+        },
+        {
+          "q": "¿Es buen momento para comprar en Haverhill, Lowell o Salem, NH?",
+          "a": "Depende de su pago y de sus planes. El Pulso del Mercado de cada página de pueblo muestra la tasa más reciente y las cifras locales. Envíeme la casa o el pueblo que considera y hacemos las cuentas juntos."
+        }
+      ]
+    },
     {
       "slug": "precios-casas-new-hampshire-septiembre-2026",
       "path": "/es/blog/precios-casas-new-hampshire-septiembre-2026",
@@ -130,16 +335,50 @@
       "crumb": "Precios en NH en septiembre",
       "summary": "Los precios de casas en New Hampshire subieron 6.5% en septiembre y las propiedades en venta 19.3%. Qué significa en Salem, Windham, Pelham y Nashua.",
       "cover": "londonderry-grange-autumn",
-      "towns": ["salem-nh", "windham-nh", "pelham-nh"],
-      "related": ["tasas-hipotecarias-7-4-por-ciento-otono-2026", "programas-primer-comprador-ma-nh", "cuanto-cuesta-vender-ma-nh"],
-      "keywords": ["precios de casas New Hampshire", "bienes raíces sur de New Hampshire", "valor de casas Salem NH", "mercado de vivienda New Hampshire septiembre 2026", "tasas hipotecarias New Hampshire"],
-      "takeaways": ["El precio mediano de venta de una casa unifamiliar en New Hampshire subió 6.5% a $569,900 en septiembre, según New Hampshire REALTORS®.", "Las casas unifamiliares en venta subieron 19.3% y los días en el mercado 18.5%: quien compra tiene más opciones y más tiempo.", "El valor típico de Zillow sube en el año en todos los pueblos del sur de New Hampshire que seguimos, entre 0.2% y 3.3%.", "La tasa a 30 años de Freddie Mac bajó a 7.32% el 22 de octubre, su primera baja semanal desde agosto."],
+      "towns": [
+        "salem-nh",
+        "windham-nh",
+        "pelham-nh"
+      ],
+      "related": [
+        "tasas-hipotecarias-7-4-por-ciento-otono-2026",
+        "programas-primer-comprador-ma-nh",
+        "cuanto-cuesta-vender-ma-nh"
+      ],
+      "keywords": [
+        "precios de casas New Hampshire",
+        "bienes raíces sur de New Hampshire",
+        "valor de casas Salem NH",
+        "mercado de vivienda New Hampshire septiembre 2026",
+        "tasas hipotecarias New Hampshire"
+      ],
+      "takeaways": [
+        "El precio mediano de venta de una casa unifamiliar en New Hampshire subió 6.5% a $569,900 en septiembre, según New Hampshire REALTORS®.",
+        "Las casas unifamiliares en venta subieron 19.3% y los días en el mercado 18.5%: quien compra tiene más opciones y más tiempo.",
+        "El valor típico de Zillow sube en el año en todos los pueblos del sur de New Hampshire que seguimos, entre 0.2% y 3.3%.",
+        "La tasa a 30 años de Freddie Mac bajó a 7.32% el 22 de octubre, su primera baja semanal desde agosto."
+      ],
       "faqs": [
-        {"q": "¿Siguen subiendo los precios de las casas en New Hampshire?", "a": "Sí, a septiembre. New Hampshire REALTORS® reportó un precio mediano de venta de $569,900 para casas unifamiliares, un 6.5% más que hace un año, y el valor típico de Zillow para el estado subió 2.9% al 30 de septiembre. Lo que cambió es el tiempo en el mercado: las casas unifamiliares tardaron 18.5% más en venderse."},
-        {"q": "¿Cuál es el precio mediano de una casa en New Hampshire hoy?", "a": "En septiembre de 2026, New Hampshire REALTORS® reportó $569,900 para casas unifamiliares y $415,000 para townhouses y condominios. El precio mediano refleja las casas que se vendieron ese mes, así que puede moverse más que el valor típico de un pueblo."},
-        {"q": "¿Es buen momento para comprar casa en el sur de New Hampshire?", "a": "Depende de su pago y de sus planes. Hay 19.3% más casas unifamiliares en venta en el estado y tardan más en venderse, lo que da a quien compra más opciones y margen para negociar. Los precios siguen subiendo en el año, así que esperar un precio más bajo no es algo seguro."},
-        {"q": "¿Bajaron las tasas hipotecarias esta semana?", "a": "Sí. La tasa fija promedio a 30 años de Freddie Mac fue 7.32% el 22 de octubre, frente a 7.40% la semana anterior, y fue la primera baja semanal desde agosto. Hace un año era 6.19%."},
-        {"q": "¿Debo vender mi casa en New Hampshire este otoño?", "a": "Los valores se han mantenido en el sur de New Hampshire, pero hay más casas compitiendo por los compradores. Si vende, fije el precio frente a las casas que están hoy en el mercado y cuente con unas semanas más. Podemos revisar juntos los números de su pueblo antes de que decida."}
+        {
+          "q": "¿Siguen subiendo los precios de las casas en New Hampshire?",
+          "a": "Sí, a septiembre. New Hampshire REALTORS® reportó un precio mediano de venta de $569,900 para casas unifamiliares, un 6.5% más que hace un año, y el valor típico de Zillow para el estado subió 2.9% al 30 de septiembre. Lo que cambió es el tiempo en el mercado: las casas unifamiliares tardaron 18.5% más en venderse."
+        },
+        {
+          "q": "¿Cuál es el precio mediano de una casa en New Hampshire hoy?",
+          "a": "En septiembre de 2026, New Hampshire REALTORS® reportó $569,900 para casas unifamiliares y $415,000 para townhouses y condominios. El precio mediano refleja las casas que se vendieron ese mes, así que puede moverse más que el valor típico de un pueblo."
+        },
+        {
+          "q": "¿Es buen momento para comprar casa en el sur de New Hampshire?",
+          "a": "Depende de su pago y de sus planes. Hay 19.3% más casas unifamiliares en venta en el estado y tardan más en venderse, lo que da a quien compra más opciones y margen para negociar. Los precios siguen subiendo en el año, así que esperar un precio más bajo no es algo seguro."
+        },
+        {
+          "q": "¿Bajaron las tasas hipotecarias esta semana?",
+          "a": "Sí. La tasa fija promedio a 30 años de Freddie Mac fue 7.32% el 22 de octubre, frente a 7.40% la semana anterior, y fue la primera baja semanal desde agosto. Hace un año era 6.19%."
+        },
+        {
+          "q": "¿Debo vender mi casa en New Hampshire este otoño?",
+          "a": "Los valores se han mantenido en el sur de New Hampshire, pero hay más casas compitiendo por los compradores. Si vende, fije el precio frente a las casas que están hoy en el mercado y cuente con unas semanas más. Podemos revisar juntos los números de su pueblo antes de que decida."
+        }
       ]
     },
     {
@@ -154,15 +393,46 @@
       "crumb": "Tasas al 7.4% este otoño",
       "summary": "La tasa a 30 años se mantuvo en 7.40%, frente a 6.27% hace un año. Qué le hace al pago en MA y NH y qué pueden hacer hoy quienes compran y venden.",
       "cover": "aerial-neighborhood-autumn",
-      "towns": ["lawrence", "methuen", "salem-nh"],
-      "related": ["programas-primer-comprador-ma-nh", "cuanto-cuesta-vender-ma-nh", "how-to-read-the-market-pulse"],
-      "keywords": ["tasas hipotecarias Massachusetts", "tasas hipotecarias New Hampshire", "mercado de vivienda Merrimack Valley", "bienes raíces sur de New Hampshire", "comprar casa con tasas del 7%"],
-      "takeaways": ["La tasa fija a 30 años de Freddie Mac se mantuvo en 7.40% el 15 de octubre, frente a 6.27% un año antes.", "En un préstamo de $400,000 son unos $301 más al mes en capital e intereses.", "En septiembre, las ventas de casas unifamiliares en Massachusetts subieron 4.8% y las de condominios bajaron 6.4%.", "Más propiedades en venta y más tiempo en el mercado dan a quien compra más margen para negociar; los precios todavía suben un poco."],
+      "towns": [
+        "lawrence",
+        "methuen",
+        "salem-nh"
+      ],
+      "related": [
+        "programas-primer-comprador-ma-nh",
+        "cuanto-cuesta-vender-ma-nh",
+        "how-to-read-the-market-pulse"
+      ],
+      "keywords": [
+        "tasas hipotecarias Massachusetts",
+        "tasas hipotecarias New Hampshire",
+        "mercado de vivienda Merrimack Valley",
+        "bienes raíces sur de New Hampshire",
+        "comprar casa con tasas del 7%"
+      ],
+      "takeaways": [
+        "La tasa fija a 30 años de Freddie Mac se mantuvo en 7.40% el 15 de octubre, frente a 6.27% un año antes.",
+        "En un préstamo de $400,000 son unos $301 más al mes en capital e intereses.",
+        "En septiembre, las ventas de casas unifamiliares en Massachusetts subieron 4.8% y las de condominios bajaron 6.4%.",
+        "Más propiedades en venta y más tiempo en el mercado dan a quien compra más margen para negociar; los precios todavía suben un poco."
+      ],
       "faqs": [
-        {"q": "¿Van a bajar pronto las tasas hipotecarias?", "a": "Nadie lo puede asegurar. El promedio a 30 años de Freddie Mac subió todas las semanas desde finales de agosto hasta 7.40% el 8 de octubre y se mantuvo ahí el 15 de octubre. Decida según el pago que le funciona hoy; refinanciar más adelante es posible si las tasas bajan, pero no está garantizado y tiene costos."},
-        {"q": "¿Cuánto más es el pago de una hipoteca al 7.4% que hace un año?", "a": "En un préstamo de $400,000, el capital y los intereses son unos $2,770 al mes al 7.40%, frente a unos $2,468 con el 6.27% del año pasado: aproximadamente $301 más, sin contar impuestos ni seguro."},
-        {"q": "¿Es buen momento para comprar en Merrimack Valley o el sur de New Hampshire?", "a": "Depende de su pago y de sus planes. En septiembre, Massachusetts tenía 18.1% más propiedades activas que un año antes, y las casas tardan más en venderse en ambos estados, lo que da más margen para negociar. Los precios todavía suben un poco, así que esperar un precio más bajo tampoco es seguro."},
-        {"q": "Si vendo, ¿bajo el precio u ofrezco un crédito?", "a": "Muchas veces un crédito para los costos de cierre o para bajar la tasa del comprador ayuda más a su pago mensual que una rebaja del mismo tamaño, y su precio de lista se mantiene. La respuesta depende de su casa y de su comprador, así que comparamos las dos opciones antes de decidir."}
+        {
+          "q": "¿Van a bajar pronto las tasas hipotecarias?",
+          "a": "Nadie lo puede asegurar. El promedio a 30 años de Freddie Mac subió todas las semanas desde finales de agosto hasta 7.40% el 8 de octubre y se mantuvo ahí el 15 de octubre. Decida según el pago que le funciona hoy; refinanciar más adelante es posible si las tasas bajan, pero no está garantizado y tiene costos."
+        },
+        {
+          "q": "¿Cuánto más es el pago de una hipoteca al 7.4% que hace un año?",
+          "a": "En un préstamo de $400,000, el capital y los intereses son unos $2,770 al mes al 7.40%, frente a unos $2,468 con el 6.27% del año pasado: aproximadamente $301 más, sin contar impuestos ni seguro."
+        },
+        {
+          "q": "¿Es buen momento para comprar en Merrimack Valley o el sur de New Hampshire?",
+          "a": "Depende de su pago y de sus planes. En septiembre, Massachusetts tenía 18.1% más propiedades activas que un año antes, y las casas tardan más en venderse en ambos estados, lo que da más margen para negociar. Los precios todavía suben un poco, así que esperar un precio más bajo tampoco es seguro."
+        },
+        {
+          "q": "Si vendo, ¿bajo el precio u ofrezco un crédito?",
+          "a": "Muchas veces un crédito para los costos de cierre o para bajar la tasa del comprador ayuda más a su pago mensual que una rebaja del mismo tamaño, y su precio de lista se mantiene. La respuesta depende de su casa y de su comprador, así que comparamos las dos opciones antes de decidir."
+        }
       ]
     },
     {
@@ -175,8 +445,14 @@
       "crumb": "Programas para primeros compradores",
       "summary": "MassHousing, ONE Mortgage, New Hampshire Housing, FHA y el préstamo convencional con 3–5% de pago inicial: las cuatro puertas, lo que de verdad significa la asistencia y el orden en que conviene hacer las cosas.",
       "cover": "keys-new-home",
-      "towns": ["salem-nh"],
-      "related": ["cuanto-cuesta-vender-ma-nh", "first-multi-family-merrimack-valley", "how-to-read-the-market-pulse"]
+      "towns": [
+        "salem-nh"
+      ],
+      "related": [
+        "cuanto-cuesta-vender-ma-nh",
+        "first-multi-family-merrimack-valley",
+        "how-to-read-the-market-pulse"
+      ]
     },
     {
       "slug": "cuanto-cuesta-vender-ma-nh",
@@ -189,12 +465,27 @@
       "summary": "El precio lo dice el mercado; la ganancia neta es lo que usted se queda. La lista corta de costos entre uno y otro, con números reales.",
       "cover": "home-colonial-black-shutters",
       "towns": [],
-      "related": ["programas-primer-comprador-ma-nh", "sell-and-buy-at-the-same-time", "how-to-read-the-market-pulse"]
+      "related": [
+        "programas-primer-comprador-ma-nh",
+        "sell-and-buy-at-the-same-time",
+        "how-to-read-the-market-pulse"
+      ]
     }
   ],
   "towns": {
-    "methuen": "Methuen", "lawrence": "Lawrence", "haverhill": "Haverhill", "andover": "Andover", "north-andover": "North Andover",
-    "dracut": "Dracut", "tewksbury": "Tewksbury", "lowell": "Lowell", "tyngsborough": "Tyngsborough", "chelmsford": "Chelmsford",
-    "westford": "Westford", "salem-nh": "Salem, NH", "windham-nh": "Windham, NH", "pelham-nh": "Pelham, NH"
+    "methuen": "Methuen",
+    "lawrence": "Lawrence",
+    "haverhill": "Haverhill",
+    "andover": "Andover",
+    "north-andover": "North Andover",
+    "dracut": "Dracut",
+    "tewksbury": "Tewksbury",
+    "lowell": "Lowell",
+    "tyngsborough": "Tyngsborough",
+    "chelmsford": "Chelmsford",
+    "westford": "Westford",
+    "salem-nh": "Salem, NH",
+    "windham-nh": "Windham, NH",
+    "pelham-nh": "Pelham, NH"
   }
 }
