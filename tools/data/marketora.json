@@ -15,7 +15,7 @@
       "beds": "3",
       "baths": "1",
       "sqft": "1100",
-      "status": "under_contract",
+      "status": "sold",
       "photoUrl": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/181559-XsiBC7k92Xvq5PC6FYOZZg1dViN8wL.png",
       "url": "https://www.marketora.me/home/14-pinedale-ave-methuen"
     },
@@ -52,6 +52,116 @@
     {
       "role": "Represented the buyer",
       "outcome": "Closed",
+      "where": "38-40 Sanborn St, Lawrence",
+      "when": "",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": null,
+      "media": []
+    },
+    {
+      "role": "Represented the seller",
+      "outcome": "Sold",
+      "where": "58 Ledgecrest Dr",
+      "when": "October 2026",
+      "price": null,
+      "headline": null,
+      "note": null,
+      "cover": {
+        "id": "d0fa6a52-0baf-4636-b2f9-c64179bf68f7",
+        "kind": "photo",
+        "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/6-web-or-mls-006_DJI_20260906135114_0555_D-MNuSXP7lM1rX8vb7HEsqiIB1PVUjMK.jpg",
+        "title": null,
+        "sortOrder": 1,
+        "source": "deal"
+      },
+      "media": [
+        {
+          "id": "321ea2eb-6266-404b-a68e-b38a0b051b65",
+          "kind": "doc",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/Open-House-Sheets-YeyV4OP0mJr7Asbk6Hci5KK0Ycg2bp.pdf",
+          "title": "Open House Sheets",
+          "sortOrder": 1,
+          "source": "deal"
+        },
+        {
+          "id": "d0fa6a52-0baf-4636-b2f9-c64179bf68f7",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/6-web-or-mls-006_DJI_20260906135114_0555_D-MNuSXP7lM1rX8vb7HEsqiIB1PVUjMK.jpg",
+          "title": null,
+          "sortOrder": 1,
+          "source": "deal"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:0",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/6-web-or-mls-006_DJI_20260906135114_0555_D-OaxlCJUNzJiH42m9yaKuqhSAiLI9hk.jpg",
+          "title": null,
+          "sortOrder": 10000,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:1",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/12-web-or-mls-012_DJI_20260906134823_0530_D-FpeyWYxr1VEZDz9B5BcKoH7EhjZjIR.jpg",
+          "title": null,
+          "sortOrder": 10001,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:2",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/4-web-or-mls-004_DJI_20260906135346_0580_D-6vTnKEr0xGlKE2ooMLthhv5lJUy9e4.jpg",
+          "title": null,
+          "sortOrder": 10002,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:3",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/10-web-or-mls-010_DJI_20260906135314_0575_D-l4KVNvAdBm3DfnFYfhLiMF7QnbzF65.jpg",
+          "title": null,
+          "sortOrder": 10003,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:4",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/1-web-or-mls-001_DJI_20260906134931_0538_D-3v89MDz39wvRbnHA2cIHr1hdCNRSad.jpg",
+          "title": null,
+          "sortOrder": 10004,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:5",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/2-web-or-mls-002_DJI_20260906135013_0542_D-cDxDZk0SagxyjHVwyQkpIOH9EN1GqH.jpg",
+          "title": null,
+          "sortOrder": 10005,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:6",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/8-web-or-mls-008_DJI_20260906135246_0571_D-SAJvH9kjmhzdrzXkKDcRvd3rY29hFj.jpg",
+          "title": null,
+          "sortOrder": 10006,
+          "source": "listing"
+        },
+        {
+          "id": "listing-photo:364c8b98-b18e-4e96-b617-67ffbd72d704:7",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/9-web-or-mls-009_DJI_20260906135524_0595_D-y3YQI6ituUIIjNF6HzH3ZVU6OqIKXe.jpg",
+          "title": null,
+          "sortOrder": 10007,
+          "source": "listing"
+        }
+      ]
+    },
+    {
+      "role": "Represented the buyer",
+      "outcome": "Closed",
       "where": "64 Bridge St, Salem NH 03079",
       "when": "September 2026",
       "price": "$625,000",
@@ -75,382 +185,91 @@
           "source": "deal"
         }
       ]
+    },
+    {
+      "role": "Represented the buyer",
+      "outcome": "Closed",
+      "where": "6 Michael Anthony Rd, Haverhill",
+      "when": "October 2024",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": null,
+      "media": []
+    },
+    {
+      "role": "Represented the seller",
+      "outcome": "Sold",
+      "where": "19 James Ave, Haverhill",
+      "when": "September 2024",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": {
+        "id": "b53f8b9d-5d4c-4ef5-bd02-d6b5e3d3590f",
+        "kind": "photo",
+        "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/2cc2fd47-149b-43e0-86ff-e50922da8d6c-1_all_256-UVwVOUa4tQA8oox3cddlORinnwJd8g.webp",
+        "title": null,
+        "sortOrder": 0,
+        "source": "deal"
+      },
+      "media": [
+        {
+          "id": "b53f8b9d-5d4c-4ef5-bd02-d6b5e3d3590f",
+          "kind": "photo",
+          "url": "https://lzr2e92aqfiexdfi.public.blob.vercel-storage.com/2cc2fd47-149b-43e0-86ff-e50922da8d6c-1_all_256-UVwVOUa4tQA8oox3cddlORinnwJd8g.webp",
+          "title": null,
+          "sortOrder": 0,
+          "source": "deal"
+        }
+      ]
+    },
+    {
+      "role": "Represented the buyer",
+      "outcome": "Closed",
+      "where": "9 Salem St, Lawrence",
+      "when": "September 2024",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": null,
+      "media": []
+    },
+    {
+      "role": "Represented the buyer",
+      "outcome": "Closed",
+      "where": "19 Webster Ct, Lawrence",
+      "when": "August 2024",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": null,
+      "media": []
+    },
+    {
+      "role": "Represented the buyer",
+      "outcome": "Closed",
+      "where": "211 Pelham St, Methuen",
+      "when": "July 2024",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": null,
+      "media": []
+    },
+    {
+      "role": "Represented the buyer",
+      "outcome": "Closed",
+      "where": "75 Alden St, Lynn",
+      "when": "March 2024",
+      "price": null,
+      "headline": null,
+      "note": "Closed",
+      "cover": null,
+      "media": []
     }
   ],
-  "posts": [
-    {
-      "slug": "how-to-read-the-market-pulse",
-      "title": "How to read the Market Pulse — and what it means for you",
-      "excerpt": "Typical value, forecast, sale-to-list, days on market, months of supply and rates: what each number is telling a buyer, a seller and an investor.",
-      "heroUrl": "https://eduardoinoa.com/img/photos/north-andover-old-center-aerial-1600.webp",
-      "publishedAt": "2026-10-12T12:00:00.000Z",
-      "updatedAt": "2026-10-14T00:54:23.171Z",
-      "sections": [
-        {
-          "body": [
-            "Every Monday this site refreshes a page of numbers for Massachusetts, New Hampshire and the sixteen towns I work most. Numbers are only useful if you know what each one is telling you — and what it isn't. Here is how I read them, and what they mean depending on which side of the table you are on."
-          ]
-        },
-        {
-          "body": [
-            "This is Zillow's estimate of the value of the middle home in the town — not the average sale, and not any particular house. It is smoothed, so it moves slowly and it is best used for the direction of travel: the year-over-year change tells you whether a town is appreciating, flat or softening. For a seller, it anchors expectations before we look at your specific comparables. For a buyer, it shows which towns are still gaining value and which have paused — useful when you are choosing between Dracut and Tewksbury, or Salem and Derry."
-          ],
-          "heading": "Typical home value (Zillow)"
-        },
-        {
-          "body": [
-            "Zillow publishes a forecast per ZIP code for one month, three months and twelve months ahead; the town figure on this site averages the town's ZIPs. Treat it as a weather forecast, not a promise. It is most useful as a comparison between places — when one side of the border is projected at +3% and the other at +1%, that difference is worth noticing — and least useful as a reason to wait or to rush."
-          ],
-          "heading": "The 12-month forecast"
-        },
-        {
-          "body": [
-            "The median sale price is the middle of what actually closed in the period. It jumps around in small towns where only 20 or 30 homes close in a month, so read it with the year-over-year change and the sale count in mind. Sale-to-list is the one I watch most closely: at 101–104% of asking, homes are selling above list and buyers must come in strong; at 98–99%, there is room to negotiate. Note the date on this figure — Redfin's public data is published with a lag of a few months."
-          ],
-          "heading": "Median sale price and sale-to-list (Redfin)"
-        },
-        {
-          "body": [
-            "How long the typical listing takes to go under agreement. Under 21 days means well-priced homes are moving in the first weekend. When this number rises while inventory rises — as it has through 2026 in both states — buyers get a little more time and a little more leverage, and sellers need sharper pricing and better presentation to stay in the \"first weekend\" group."
-          ],
-          "heading": "Days on market"
-        },
-        {
-          "body": [
-            "Active listings (Realtor.com) is how many homes are for sale right now; the year-over-year change tells you whether choice is expanding. Months of supply asks how long it would take to sell everything on the market at the current pace. Under three months is a seller's market; three to six is balanced; above six favors buyers. Most of our towns still sit well under three — which is why a well-priced home still draws multiple offers even as the headlines talk about a cooling market."
-          ],
-          "heading": "Active listings and months of supply"
-        },
-        {
-          "body": [
-            "The 30- and 15-year figures are the Freddie Mac weekly national averages. Your rate will differ with credit score, down payment and points — but the direction and the year-over-year change matter for timing. A full percentage point on a $500,000 loan changes the payment by roughly $300 a month; the buying-power tool shows exactly what it does to your budget."
-          ],
-          "heading": "Mortgage rates"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "Selling: typical value and sale-to-list set the strategy; days on market tells us how aggressively to price; months of supply tells us how much competition you face. Then we go hyper-local with the comparables on your street.",
-            "Buying: compare towns on value trend and forecast; use sale-to-list to decide how strong an offer needs to be; watch rates and run the payment, not the price.",
-            "Investing: rent growth isn't on this page yet — but value trend, forecast and days on market tell you where demand is durable, and the toolkit does the rest."
-          ],
-          "heading": "How to use all of it"
-        },
-        {
-          "body": [
-            "Zillow Research (values and forecasts), Realtor.com via the Federal Reserve's FRED database (list prices, days on market, active listings), Redfin Data Center (sale metrics) and Freddie Mac (rates). All public, all cited on the page, refreshed automatically every week."
-          ],
-          "heading": "Where the data comes from"
-        },
-        {
-          "body": [
-            "“Headlines describe a national market. Your decision happens on one street in one town — these numbers are the bridge between the two.”"
-          ]
-        },
-        {
-          "body": [
-            "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours."
-          ]
-        }
-      ],
-      "seoTitle": null,
-      "seoDescription": null,
-      "ctaUrl": "https://marketora.me/book/eduardoinoa",
-      "ctaLabel": "Book 20 minutes",
-      "url": "https://www.marketora.me/s/eduardoinoa/blog/how-to-read-the-market-pulse"
-    },
-    {
-      "slug": "first-time-buyer-programs-ma-nh",
-      "title": "First-time buyer programs in Massachusetts and New Hampshire, explained",
-      "excerpt": "MassHousing, the ONE Mortgage, New Hampshire Housing, FHA and 3–5% conventional: the four doors, what assistance really means, and the order to do things in.",
-      "heroUrl": "https://eduardoinoa.com/img/photos/keys-new-home-1600.webp",
-      "publishedAt": "2026-10-12T12:00:00.000Z",
-      "updatedAt": "2026-10-14T00:54:23.164Z",
-      "sections": [
-        {
-          "body": [
-            "Most first-time buyers in the Merrimack Valley and Southern New Hampshire believe they need 20% down. They don't. Between state programs, FHA and a newer conventional option, the real question is which path fits your income, your credit and the home you want — not whether a path exists. Here is the map I draw for clients at the first meeting."
-          ]
-        },
-        {
-          "body": [],
-          "bullets": [
-            "1. MassHousing and the ONE Mortgage (Massachusetts)",
-            "2. New Hampshire Housing (New Hampshire)",
-            "3. FHA",
-            "4. Conventional with 3% or 5% down"
-          ],
-          "heading": "The four doors"
-        },
-        {
-          "body": [
-            "Massachusetts has two first-time buyer programs worth knowing by name. MassHousing loans come with low down payments, below-market rates and, in many cases, down payment assistance that is layered on top of the mortgage. The ONE Mortgage (through the Massachusetts Housing Partnership) is a 30-year fixed loan with a low down payment, no private mortgage insurance, and an interest subsidy for qualifying households. Both have income limits that vary by town, and both require a first-time homebuyer education class — plan the class early; it is the step that most often delays an offer."
-          ],
-          "heading": "1. MassHousing and the ONE Mortgage (Massachusetts)"
-        },
-        {
-          "body": [
-            "Across the border, New Hampshire Housing offers its own first-time programs, including options with down payment and closing-cost assistance built in. The income and purchase-price limits are generally friendlier than people expect, and Salem, Nashua, Derry and Londonderry all fall inside them for many households."
-          ],
-          "heading": "2. New Hampshire Housing (New Hampshire)"
-        },
-        {
-          "body": [
-            "The federal FHA loan allows 3.5% down with flexible credit requirements. It carries mortgage insurance for the life of the loan at that down payment, which is the trade-off. Its quiet superpower: it works on two- to four-family homes when you live in one unit — which is how many of my clients buy their first investment and their first home in the same closing."
-          ],
-          "heading": "3. FHA"
-        },
-        {
-          "body": [
-            "Conventional loans now allow 3% down for first-time buyers on single-family homes and 5% down on owner-occupied two- to four-unit properties. Mortgage insurance applies but drops off once you reach 20% equity — the reason buyers with stronger credit often end up here instead of FHA."
-          ],
-          "heading": "4. Conventional with 3% or 5% down"
-        },
-        {
-          "body": [
-            "Down payment assistance is rarely a gift. It is usually a second loan — sometimes at 0% with payments deferred, sometimes forgiven after a set number of years in the home, sometimes repaid when you sell. None of those are bad. They are simply terms, and you should know which one you are signing. Ask three questions of any program: Is it forgiven, deferred or repaid? Does it limit how soon I can sell or refinance? Does it require the home to be my primary residence, and for how long?"
-          ],
-          "heading": "What \"assistance\" actually means"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "1. Pre-approval first, with a lender who knows these programs. Not every loan officer works MassHousing or NH Housing files. I keep a short list of the ones who do.",
-            "2. Run the real monthly number. Principal, interest, taxes, insurance, mortgage insurance and — for condos — the fee. My buying-power tool does this for every town in the toolkit so you see the payment before you fall in love with a kitchen.",
-            "3. Take the education class if your program needs it. Many are online and finish in a weekend.",
-            "4. Keep cash for closing. Even with assistance, you will need money for the home inspection, appraisal and the first year of insurance. Budget it from the start."
-          ],
-          "heading": "The order of operations"
-        },
-        {
-          "body": [
-            "Program limits, rates and assistance amounts change — often every year. Everything above describes how the programs work; the exact numbers for your household come from the lender's current sheet, which I will pull with you before we write an offer."
-          ],
-          "heading": "Worth knowing"
-        },
-        {
-          "body": [
-            "“The down payment is rarely the wall people think it is. The monthly payment is the real conversation — so that is where we start.”"
-          ]
-        },
-        {
-          "body": [
-            "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours."
-          ]
-        }
-      ],
-      "seoTitle": null,
-      "seoDescription": null,
-      "ctaUrl": "https://marketora.me/book/eduardoinoa",
-      "ctaLabel": "Book 20 minutes",
-      "url": "https://www.marketora.me/s/eduardoinoa/blog/first-time-buyer-programs-ma-nh"
-    },
-    {
-      "slug": "sell-and-buy-at-the-same-time",
-      "title": "Selling and buying at the same time: four ways to move once",
-      "excerpt": "Sell first with a cushion, buy first, go contingent, or bridge — how each works in this market and how we pick the one that fits your equity and income.",
-      "heroUrl": "https://eduardoinoa.com/img/photos/porch-rocking-chairs-1600.webp",
-      "publishedAt": "2026-10-11T12:00:00.000Z",
-      "updatedAt": "2026-10-14T00:54:23.183Z",
-      "sections": [
-        {
-          "body": [
-            "\"We would move, but we can't buy before we sell and we can't sell before we buy.\" I hear it every week, usually from a family that has outgrown a two-bedroom in Methuen or Dracut. The problem is real, but it has four workable answers, and the right one depends on three things: how much equity you have, how strong your income is, and how much uncertainty you can live with for about sixty days."
-          ]
-        },
-        {
-          "body": [
-            "You list, accept an offer, and negotiate either a longer closing (60–75 days instead of 30–45) or a rent-back, where you close and then rent your own home from the buyer for a few weeks while you close on the next one. In a market with under three months of supply, many buyers accept a rent-back to win the house. Best when: you need the sale proceeds for your down payment, and you want the certainty of a known number before you shop."
-          ],
-          "heading": "Option 1 — Sell first, with a cushion"
-        },
-        {
-          "body": [
-            "If your income qualifies you to carry both mortgages for a short period, you buy the new home, move once, and then sell the old one empty and staged — which typically sells faster and for more. Best when: you have strong income and savings, or significant equity you can access with a home-equity line before you list. The risk is carrying two payments longer than planned, so we price the old house to sell, not to test the market."
-          ],
-          "heading": "Option 2 — Buy first, then sell"
-        },
-        {
-          "body": [
-            "Your offer on the new home is contingent on selling your current one. Honest assessment: in a competitive price range this is the weakest offer on the table, and sellers often take a lower, cleaner one instead. It works better on homes that have sat for a few weeks, in higher price points, or when your home is already under agreement with a buyer who has passed inspection. Then it is not really a contingency — it is a timeline."
-          ],
-          "heading": "Option 3 — A sale-contingent offer"
-        },
-        {
-          "body": [
-            "A short-term loan against the equity in your current home gives you the down payment for the next one before you sell. The rate is higher and there are fees, but it buys you the ability to make a non-contingent offer and move once. Best when: you have substantial equity and the new home is one you do not want to lose."
-          ],
-          "heading": "Option 4 — A bridge loan"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "1. Net sheet first. What you would actually walk away with from the sale — after mortgage payoff, commission, transfer stamps and attorney — is the number that funds the next purchase. We run it before anything else.",
-            "2. Pre-approval with both scenarios. The lender tells us whether you qualify carrying both homes, and for how long. That answer alone eliminates one or two options.",
-            "3. Price the sale to move. When the two transactions are linked, the sale is the engine. A well-priced listing in the Merrimack Valley is under agreement in two to three weeks; that timeline is what makes every other piece work.",
-            "4. Negotiate the dates, not just the price. Closing dates, rent-backs and possession are tools. I use them on both sides of your move so that you move once, on a weekend you choose."
-          ],
-          "heading": "How we make the decision"
-        },
-        {
-          "body": [
-            "When I represent you on both the sale and the purchase, the two calendars are managed by the same person — which is the single biggest reason linked moves go smoothly. It also usually means a better overall fee for you. Ask me how that works."
-          ],
-          "heading": "Both sides, one agent"
-        },
-        {
-          "body": [
-            "“You don't need to choose between selling first and buying first. You need the version of each where the dates are designed, not hoped for.”"
-          ]
-        },
-        {
-          "body": [
-            "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours."
-          ]
-        }
-      ],
-      "seoTitle": null,
-      "seoDescription": null,
-      "ctaUrl": "https://marketora.me/book/eduardoinoa",
-      "ctaLabel": "Book 20 minutes",
-      "url": "https://www.marketora.me/s/eduardoinoa/blog/sell-and-buy-at-the-same-time"
-    },
-    {
-      "slug": "first-multi-family-merrimack-valley",
-      "title": "Your first multi-family in the Merrimack Valley: the five numbers that decide it",
-      "excerpt": "House hacking a two- or three-family in Lawrence, Lowell or Haverhill still works — with real rents, the lender's tests, DSCR and three local cautions.",
-      "heroUrl": "https://eduardoinoa.com/img/photos/multifamily-triple-decker-1600.webp",
-      "publishedAt": "2026-10-11T12:00:00.000Z",
-      "updatedAt": "2026-10-14T00:54:23.177Z",
-      "sections": [
-        {
-          "body": [
-            "Lawrence, Lowell, Haverhill, Methuen and Manchester are full of two- and three-family homes built for exactly the strategy people are rediscovering now: live in one unit, let the other units carry most of the mortgage. It still works. It just has to be done with real numbers, and the numbers in this area have a few local quirks."
-          ]
-        },
-        {
-          "body": [
-            "Three reasons. First, financing: an owner-occupant can buy a two- to four-unit home with as little as 3.5% down (FHA) or 5% down (conventional), the same as a single-family — a non-occupant investor typically needs 20–25%. Second, the rent-to-price ratio in the mill cities is stronger than in the suburbs; a three-family in Lawrence or Lowell often brings in more rent per dollar of price than a single-family anywhere nearby. Third, appreciation has been steady: the typical home value in these towns is up roughly 25–35% over the last five years, and the weekly Market Pulse on this site tracks it."
-          ],
-          "heading": "Why multi-family is the Merrimack Valley's best first investment"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "1. Gross rent — actual leases, not what the listing hopes. Ask for the rent roll and the leases before you write the offer.",
-            "2. Vacancy and repairs — budget 5% for vacancy and 8–10% of rent for maintenance on older buildings. A 1900s triple-decker is not a 2015 condo.",
-            "3. Taxes, insurance, water/sewer — in many of our multi-families the owner pays water and sewer for all units. It is a real line, often $150–300 a month on a three-family.",
-            "4. The full payment — principal, interest, taxes, insurance and mortgage insurance if you put less than 20% down.",
-            "5. Your share — the payment minus the rent from the units you don't live in. That is your true housing cost, and it is the number that makes or breaks house hacking."
-          ],
-          "heading": "The five numbers that decide the deal"
-        },
-        {
-          "body": [
-            "On three- and four-unit FHA purchases, the lender applies a self-sufficiency test: 75% of the total market rent (all units, including yours) must cover the full mortgage payment. Many three-families in higher-priced suburbs fail it; many in the mill cities pass it. On conventional loans, the lender will usually let you count 75% of the rental income from the other units toward qualifying, which can raise your buying power meaningfully."
-          ],
-          "heading": "Two tests lenders will run"
-        },
-        {
-          "body": [
-            "If you already own your home, or you want a property you will never live in, the DSCR loan qualifies the property on its own rent rather than your W-2. Lenders typically look for the rent to cover the payment by a ratio of 1.0 to 1.25. The toolkit on this site calculates it for any purchase price and rent; it is the fastest way to find out whether a listing is a real candidate or a pretty picture."
-          ],
-          "heading": "DSCR: the investor's second lane"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "Lead paint. In Massachusetts, a home built before 1978 with a child under six living in it must be deleaded. It affects who you can rent to and what you budget. Ask for the lead certificates.",
-            "Inherited tenants. You buy the leases as they are. Below-market rents can be a good thing (stable tenants) or a slow problem (rents that cannot be raised quickly). Know which one you are buying.",
-            "Utilities and meters. Separate electric and heat per unit is a big deal for your operating costs. Confirm it on the walkthrough, not from the listing."
-          ],
-          "heading": "Three local cautions"
-        },
-        {
-          "body": [
-            "Open the Buyer & Investor Toolkit, choose the Investing tab, and enter the price and the rents from any listing you are watching. It will show your share of the payment as an owner-occupant, the cash-on-cash return as an investor, and the DSCR a lender would see — in English or Spanish, with a PDF you can send me."
-          ],
-          "heading": "Try it on a real listing"
-        },
-        {
-          "body": [
-            "“Buy the numbers, then fall in love with the building. In that order.”"
-          ]
-        },
-        {
-          "body": [
-            "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours."
-          ]
-        }
-      ],
-      "seoTitle": null,
-      "seoDescription": null,
-      "ctaUrl": "https://marketora.me/book/eduardoinoa",
-      "ctaLabel": "Book 20 minutes",
-      "url": "https://www.marketora.me/s/eduardoinoa/blog/first-multi-family-merrimack-valley"
-    },
-    {
-      "slug": "what-selling-costs-ma-nh",
-      "title": "What selling your home actually costs in Massachusetts and New Hampshire",
-      "excerpt": "Price is what the market says; net is what you keep. The short list of costs between the two, with real numbers.",
-      "heroUrl": "https://eduardoinoa.com/img/photos/home-colonial-black-shutters-1600.webp",
-      "publishedAt": "2026-10-10T12:00:00.000Z",
-      "updatedAt": "2026-10-14T00:54:23.189Z",
-      "sections": [
-        {
-          "body": [
-            "The question I get most from sellers is not \"what is my home worth\" — it is \"what will I actually keep?\" The answer is the sale price minus a short list of costs. Here is that list, so nothing on your closing statement is a surprise."
-          ]
-        },
-        {
-          "body": [
-            "Your mortgage balance, any home-equity line, and a small payoff fee from the lender. The payoff letter is ordered before closing, and interest runs to the day of closing — so the number is a little higher than your last statement."
-          ],
-          "heading": "1. Paying off what you owe"
-        },
-        {
-          "body": [
-            "My listing fee is negotiable and in writing before we go to market. Separately, you decide whether to offer compensation to the buyer's agent. Offering it usually widens the pool of buyers; it is your choice, and we discuss it with real numbers before you sign anything."
-          ],
-          "heading": "2. Commission"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "State: Massachusetts · Who pays: Seller · How much: $4.56 for every $1,000 of the sale price (about $2,280 on a $500,000 sale)",
-            "State: New Hampshire · Who pays: Split buyer / seller · How much: $15 per $1,000 total — $7.50 per $1,000 from each side"
-          ],
-          "heading": "3. State transfer stamps"
-        },
-        {
-          "body": [],
-          "bullets": [
-            "Your attorney prepares the deed and clears title. Budget a few hundred to roughly a thousand dollars depending on the file.",
-            "Prorations: property taxes, water and sewer, and condo fees are split to the closing date. Sometimes they come back to you as a credit.",
-            "Smoke and carbon-monoxide certificate (Massachusetts), final water reading, and recording fees."
-          ],
-          "heading": "4. Attorney, prorations and the small lines"
-        },
-        {
-          "body": [
-            "On a $500,000 sale in Massachusetts with a $300,000 mortgage balance, the typical seller walks away with somewhere around $165,000 to $175,000 after everything above — the exact figure depends on the commission you agree to and what the buyer negotiates. The net proceeds tool in my seller presentation shows every one of these lines for your own numbers, and I hand you a written net sheet before you list.",
-            "“Price is what the market says. Net is what you keep. We plan for the second one.”"
-          ],
-          "heading": "What this looks like on a real sale"
-        },
-        {
-          "body": [
-            "This note is general information, not legal, tax or financial advice, and not an appraisal or loan approval. Every situation is different — let's talk about yours."
-          ]
-        }
-      ],
-      "seoTitle": null,
-      "seoDescription": null,
-      "ctaUrl": "https://marketora.me/book/eduardoinoa",
-      "ctaLabel": "Book 20 minutes",
-      "url": "https://www.marketora.me/s/eduardoinoa/blog/what-selling-costs-ma-nh"
-    }
-  ],
+  "posts": [],
   "testimonials": [
     {
       "text": "Great guy, honest, great communication, I highly recommend him",
